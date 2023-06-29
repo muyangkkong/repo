@@ -8,6 +8,7 @@ public class timemanager : MonoBehaviour
     [SerializeField]Transform Center=null;
     [SerializeField]RectTransform[] timingRect=null;
     Vector2[]timingBoxs=null;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,8 @@ public class timemanager : MonoBehaviour
                               Center.localPosition.x+timingRect[i].rect.width/2);
             Debug.Log(timingBoxs[i]);               
         }
-        
+        GameObject perfect = GameObject.Find("perfect");
+        perfect.SetActive(false);
         
     }
 
