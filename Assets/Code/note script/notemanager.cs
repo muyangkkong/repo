@@ -26,11 +26,12 @@ public class notemanager : MonoBehaviour
         {
             GameObject t_note=Instantiate(goNote,tfNoteAppear.position,Quaternion.identity);
             theTimingManager.boxNoteList.Add(t_note);
+            t_note.transform.SetParent(this.transform);
             currentTime-= 80d / bpm;
         }
     }
 
-    private void OnTriggerExit(Collider collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.CompareTag("Note"))
         {
