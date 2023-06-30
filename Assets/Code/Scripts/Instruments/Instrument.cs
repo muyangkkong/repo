@@ -11,8 +11,14 @@ public abstract class Instrument : MonoBehaviour
 
     public abstract void Construct();
     public abstract void Init();
-    public abstract void AttackA();
-    public abstract void AttackB();
+    public abstract AttackData Attack(int timing, int type);
+
+    public AttackTree GetCurrentAttackProgress() {
+        return currentAttackProgress;
+    }
+    public void InitProgress() {
+        currentAttackProgress = root;
+    }
 }
 
 public class AttackTree
@@ -21,40 +27,37 @@ public class AttackTree
     public string Combo {get; set;}
     public AttackTree[,] Children {get; set;} = new AttackTree[5,2];
 
-
-
-
     public void InsertCombo(AttackTree current, string[] type, int ComNum) // 콤보 트리 생성
     {
-        
         if (type.Length == ComNum) {return;}
 
+        /*Parse Attack Data*/
         char[] AttackTypeChar = type[ComNum].ToCharArray();
 
-        int TimingTemp = AttackTypeChar[1] - '0';
-        int AttackTypeTemp = AttackTypeChar[0] - 'A';
-        AttackTree TempAttackTree = new AttackTree();
+        int TimingTemp = AttackTypeChar[0] - '0';
+        int AttackTypeTemp = AttackTypeChar[1] - 'A';
 
-
-
+        /*Insert Combo to AttackTree*/
         if (current.Children[TimingTemp,AttackTypeTemp] == null)
         {
+            AttackTree TempAttackTree = new AttackTree();
             TempAttackTree.data = AttackDataCalcuate(AttackTypeTemp, TimingTemp);
             TempAttackTree.Combo = type[ComNum];
             current.Children[TimingTemp,AttackTypeTemp] = TempAttackTree;
         }
 
+        /*Recursive Insert*/
         InsertCombo(current.Children[TimingTemp,AttackTypeTemp],type,ComNum+1);
-
     }
 
-
-    public AttackData AttackDataCalcuate(int DataType, int Timing) // AttackData 설정
+    public AttackData AttackDataCalcuate(int AttackType, int Timing) // AttackData 설정
     {
         float AttackDataDamageMulti = 1f;
         float TimingDamageMulti = 1f;
         float AttackDamage = 10f;
-        switch(DataType)
+
+        /*damage hard codded*/
+        switch(AttackType)
         {
             case 0:
                 AttackDataDamageMulti = 1.0f;
@@ -83,14 +86,16 @@ public class AttackTree
                 break;
         }
 
+        /*construct AttackData*/
         AttackData attackInfo = new AttackData();
-        attackInfo.currentComboName = "Attack" + (char)(DataType + 'A') + Timing.ToString(); 
+        attackInfo.currentComboName = "Attack" + (char)(AttackType + 'A') + Timing.ToString(); 
         attackInfo.damage = AttackDamage * AttackDataDamageMulti * TimingDamageMulti ; 
-        attackInfo.animationTrigger = "AttackAnimationTrigger" + (char)(DataType + 'A') +Timing.ToString();
+        attackInfo.animationTrigger = "AttackAnimationTrigger" + (char)(AttackType + 'A') +Timing.ToString();
         
         return attackInfo;
     }
 
+    //? 무슨 코드인지 모름
     public AttackTree ComboTest(AttackTree current,int DataType, int Timing)
     {
         if (Timing >= 5) {return null;}
@@ -104,7 +109,6 @@ public class AttackTree
         }
     }
 }
-
 
 public class AttackData
 {
