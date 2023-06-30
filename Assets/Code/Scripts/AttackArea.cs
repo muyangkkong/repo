@@ -9,11 +9,12 @@ public class AttackArea : MonoBehaviour
     {
         playerAttacking = GameObject.Find("Player").GetComponent<PlayerAttacking>();
     }
-     private void OnTriggerEnter(Collider other) 
+    private void OnTriggerEnter(Collider other) 
     {
         if (other.CompareTag("Enemy"))
         {
-            float damage = playerAttacking.PlayerDamage;
+            Debug.Log("enemy dettected");
+            float damage = /* playerAttacking.PlayerDamage */1;
             Health health = other.GetComponent<Health>();
             health.Damage(damage);
         }

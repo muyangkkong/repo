@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerAttacking : MonoBehaviour
 {
         public GameObject attackArea;
-        public GameObject instrument;
+        public GameObject instrumentObject;
+
+        Instrument instrument;
+
         AttackData attackdata;
 
-        public bool attacking = false;
+/*         public bool attacking = false;
         public float WaitingTime = 1.0f;
         private float TimeToWait = 0f;
 
@@ -18,20 +21,19 @@ public class PlayerAttacking : MonoBehaviour
         public float timer = 0;
 
         public float PlayerDamage;
-        public string PlayerAttackAnimation;
+        public string PlayerAttackAnimation; */
 
-    // Start is called before the first frame update
     void Start()
     {
         attackArea.SetActive(false);
-        instrument.GetComponent<Instrument>().Construct();
-        instrument.GetComponent<Instrument>().Init();
+        instrument = instrumentObject.GetComponent<Instrument>();
+        instrument.Construct();
+        instrument.Init();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (attacking)
+        /* if (attacking)
         {
             timer+=Time.deltaTime;
         }
@@ -79,6 +81,7 @@ public class PlayerAttacking : MonoBehaviour
         
         if (WaitingTime > 0) {WaitingTime-=Time.deltaTime;}
         if (TimeAttacking > 0) {TimeAttacking-=Time.deltaTime;}
-        else {attackArea.SetActive(false);}
+        else {attackArea.SetActive(false);} */
+
     }
 }
