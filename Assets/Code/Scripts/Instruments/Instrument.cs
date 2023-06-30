@@ -11,8 +11,8 @@ public abstract class Instrument : MonoBehaviour
 
     public abstract void Construct();
     public abstract void Init();
-    public abstract void AttackA();
-    public abstract void AttackB();
+    public abstract AttackData AttackA();
+    public abstract AttackData AttackB();
 }
 
 public class AttackTree

@@ -35,10 +35,10 @@ public class InstrumentSword : Instrument
     public override void Init()
     {
         currentAttackProgress = root;
-        playerAttacking = GameObject.Find("character2 (2)").GetComponent<PlayerAttacking>();
+        playerAttacking = GameObject.Find("Player").GetComponent<PlayerAttacking>();
     }
 
-    public override void AttackA()
+    public override AttackData AttackA()
     { 
         TimeCombo = Mathf.CeilToInt(playerAttacking.timer);
 
@@ -46,6 +46,7 @@ public class InstrumentSword : Instrument
         if (currentAttackProgress == null)
         {
             ComboReset();
+            return null;
         }
         else
         {
@@ -53,11 +54,12 @@ public class InstrumentSword : Instrument
             //animator.SetTrigger(currentAttackProgress.data.animationTrigger);
             Debug.Log(currentAttackProgress.data.currentComboName);
             playerAttacking.timer = 0;
+            return currentAttackProgress.data;
         }
     }
 
 
-    public override void AttackB()
+    public override AttackData AttackB()
     {
         TimeCombo = Mathf.CeilToInt(playerAttacking.timer);
 
@@ -65,6 +67,7 @@ public class InstrumentSword : Instrument
         if (currentAttackProgress == null)
         {
             ComboReset();
+            return null;
         }
         else
         {
@@ -72,6 +75,7 @@ public class InstrumentSword : Instrument
             //animator.SetTrigger(currentAttackProgress.data.animationTrigger);
             Debug.Log(currentAttackProgress.data.currentComboName);
             playerAttacking.timer = 0;
+            return currentAttackProgress.data;
         }
     }
 
