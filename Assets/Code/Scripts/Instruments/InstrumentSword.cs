@@ -37,44 +37,13 @@ public class InstrumentSword : Instrument
         playerAttacking = GameObject.Find("Player").GetComponent<PlayerAttacking>();
     }
 
-    public override AttackData AttackA()
-    {
-        return root.data;
-/*         TimeCombo = Mathf.CeilToInt(playerAttacking.timer);
-
-        currentAttackProgress = currentAttackProgress.ComboTest(currentAttackProgress,0,TimeCombo);
-        if (currentAttackProgress == null)
-        {
-            ComboReset();
-            return null;
-        }
-        else
-        {
-            Debug.Log(currentAttackProgress.data.currentComboName);
-            playerAttacking.timer = 0;
-            return currentAttackProgress.data;
-        } */
+    public override AttackData Attack(int timing, int type) {
+        if(currentAttackProgress.Children[timing,type] == null) return null;
+        
+        currentAttackProgress = currentAttackProgress.Children[timing,type];
+        return currentAttackProgress.data;
     }
 
-
-    public override AttackData AttackB()
-    {
-        return root.data;
-/*         TimeCombo = Mathf.CeilToInt(playerAttacking.timer);
-
-        currentAttackProgress = currentAttackProgress.ComboTest(currentAttackProgress,1,TimeCombo);
-        if (currentAttackProgress == null)
-        {
-            ComboReset();
-            return null;
-        }
-        else
-        {
-            Debug.Log(currentAttackProgress.data.currentComboName);
-            playerAttacking.timer = 0;
-            return currentAttackProgress.data;
-        } */
-    }
 
     public void ComboReset()
     {

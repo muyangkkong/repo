@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerAttacking : MonoBehaviour
 {
-        public GameObject attackArea;
-        public GameObject instrumentObject;
+    public GameObject attackArea;
+    public GameObject instrumentObject;
 
-        Instrument instrument;
+    Instrument instrument;
 
-        AttackData attackdata;
+    AttackTree currentAttackInfo;
+
+    TimingBarManager timingBarManager;
 
 /*         public bool attacking = false;
         public float WaitingTime = 1.0f;
@@ -29,6 +31,7 @@ public class PlayerAttacking : MonoBehaviour
         instrument = instrumentObject.GetComponent<Instrument>();
         instrument.Construct();
         instrument.Init();
+        timingBarManager = GameObject.Find("Timing Bar").GetComponent<TimingBarManager>();
     }
 
     void Update()
@@ -83,5 +86,24 @@ public class PlayerAttacking : MonoBehaviour
         if (TimeAttacking > 0) {TimeAttacking-=Time.deltaTime;}
         else {attackArea.SetActive(false);} */
 
+        int attackInput = (Input.GetKey(KeyCode.Z) ? 1 : 0) + (Input.GetKey(KeyCode.X) ? 2 : 0);
+        if(attackInput > 0) {
+            if(timingBarManager.GetTimerState() == false) {
+                instrument.InitProgress();
+            }
+            currentAttackInfo = instrument.GetCurrentAttackProgress();
+            float time = timingBarManager.GetTimerValue();
+            int timeIndex = (int)(time+0.5);
+            if(Mathf.Abs((int)(time+0.5) - time) > 0.2) timeIndex = -1;
+
+            if(timeIndex == -1) return;
+            if(attackInput == 3) return;
+            if(currentAttackInfo.Children[timeIndex,attackInput-1] == null) return;
+
+            instrument.Attack(timeIndex, attackInput-1);
+            currentAttackInfo = instrument.GetCurrentAttackProgress();
+            timingBarManager.SetAttackTree(currentAttackInfo);
+            timingBarManager.TimerStart();
+        }
     }
 }

@@ -11,8 +11,14 @@ public abstract class Instrument : MonoBehaviour
 
     public abstract void Construct();
     public abstract void Init();
-    public abstract AttackData AttackA();
-    public abstract AttackData AttackB();
+    public abstract AttackData Attack(int timing, int type);
+
+    public AttackTree GetCurrentAttackProgress() {
+        return currentAttackProgress;
+    }
+    public void InitProgress() {
+        currentAttackProgress = root;
+    }
 }
 
 public class AttackTree

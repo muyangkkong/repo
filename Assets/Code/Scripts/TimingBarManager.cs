@@ -45,7 +45,7 @@ public class TimingBarManager : MonoBehaviour
     {
         if(isTimerOn) {
             slider.value += Time.deltaTime * timerSpeed;
-            if(slider.value > slider.maxValue) {
+            if(slider.value >= slider.maxValue) {
                 isTimerOn = false;
                 slider.value = 0;
             }
@@ -66,11 +66,15 @@ public class TimingBarManager : MonoBehaviour
             }
         }
     }
-    public bool getTimerState() {
+    public bool GetTimerState() {
         return isTimerOn;
     }
 
-    public float getTimerValue() {
+    public float GetTimerValue() {
         return slider.value;
+    }
+    
+    public void SetAttackTree(AttackTree _attackTree) {
+        attackTree = _attackTree;
     }
 }
