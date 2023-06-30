@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10219,6 +10219,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5353263257229851791, guid: 154703c8827a19241a289d4cd734d234, type: 3}
   m_PrefabInstance: {fileID: 1029832170}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1152583659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 529718490116992115, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
+  m_PrefabInstance: {fileID: 2071126800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1152583663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152583659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7242761fb0699964da6e13202e17ccc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ComboNumber: 0
+  AttackDelay: 0
 --- !u!1001 &1153551134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13337,6 +13356,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5353263257229851791, guid: 154703c8827a19241a289d4cd734d234, type: 3}
   m_PrefabInstance: {fileID: 889637986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1611639945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 529718491331009478, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
+  m_PrefabInstance: {fileID: 2071126800}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1616558781
 PrefabInstance:
@@ -16691,6 +16715,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 529718491799393219, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
+      propertyPath: attackArea
+      value: 
+      objectReference: {fileID: 1611639945}
+    - target: {fileID: 529718491799393219, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
+      propertyPath: instrumentObject
+      value: 
+      objectReference: {fileID: 1152583659}
     - target: {fileID: 529718491799393220, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
       propertyPath: m_UseGravity
       value: 1
