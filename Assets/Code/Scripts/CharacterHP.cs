@@ -8,10 +8,7 @@ using UnityEngine.UI;
 public class CharacterHP : MonoBehaviour
 {
     public float HP;
-    /*{
-        get { return (HP); }    
-        set { HP = value; } 
-    }*/
+    
     public Slider slider; // ui hp 게이지
     float currentTime; // 닿였을 때 데미지 다는 속도 조절
     
@@ -19,10 +16,10 @@ public class CharacterHP : MonoBehaviour
     {
         HP -= damage;
         if (HP > 0)
-            slider.value = 225*(HP/100);
+            slider.value = HP/100;
         else
         {
-            slider.value = 100;
+            slider.value = 1;
             HP = 100f;
         }
     }
@@ -32,9 +29,9 @@ public class CharacterHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider = GetComponentInChildren<Slider>();
+       // slider = GetComponentInChildren<Slider>();
         HP = 100f;
-        slider.value = HP;
+        slider.value = 1;
         currentTime = 0;
     }
 
