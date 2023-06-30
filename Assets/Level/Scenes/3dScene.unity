@@ -7028,7 +7028,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 941549922}
+  - {fileID: 1606679239}
   - {fileID: 232278018}
   - {fileID: 8928754979562528086}
   m_Father: {fileID: 0}
@@ -7763,11 +7763,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 154703c8827a19241a289d4cd734d234, type: 3}
---- !u!224 &941549922 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6739250057857324974, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
-  m_PrefabInstance: {fileID: 1606679238}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &943391613
 GameObject:
   m_ObjectHideFlags: 0
@@ -13455,6 +13450,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
+--- !u!224 &1606679239 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4212697400803944741, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
+  m_PrefabInstance: {fileID: 1606679238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1616558781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16684,6 +16684,10 @@ PrefabInstance:
       propertyPath: attackArea
       value: 
       objectReference: {fileID: 1594107692}
+    - target: {fileID: 529718491799393219, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
+      propertyPath: instrumentObject
+      value: 
+      objectReference: {fileID: 1406628885}
     - target: {fileID: 1065832699323695452, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
       propertyPath: m_Name
       value: Player
