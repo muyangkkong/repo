@@ -11790,6 +11790,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5353263257229851791, guid: 154703c8827a19241a289d4cd734d234, type: 3}
   m_PrefabInstance: {fileID: 305403548}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1406628885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 529718490116992115, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
+  m_PrefabInstance: {fileID: 2071126800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1406628889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406628885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7242761fb0699964da6e13202e17ccc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ComboNumber: 0
+  AttackDelay: 0
 --- !u!4 &1422853288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5353263257229851791, guid: 154703c8827a19241a289d4cd734d234, type: 3}
@@ -13234,6 +13253,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5353263257229851791, guid: 154703c8827a19241a289d4cd734d234, type: 3}
   m_PrefabInstance: {fileID: 200708336}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1594107692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 529718491331009478, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
+  m_PrefabInstance: {fileID: 2071126800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1594107695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594107692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc19cbf46fcf04149b56e3b8a2900157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1604085475 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5353263257229851791, guid: 154703c8827a19241a289d4cd734d234, type: 3}
@@ -16643,6 +16679,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 529718491799393219, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
+      propertyPath: attackArea
+      value: 
+      objectReference: {fileID: 1594107692}
     - target: {fileID: 1065832699323695452, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
       propertyPath: m_Name
       value: Player
