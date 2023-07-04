@@ -47,7 +47,7 @@ public class CharacterHP : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             currentTime = 0;// 누적 시간 초기화
-            getDamage(1.0f);
+            getDamage(5.0f);
         }
     }
     void OnCollisionStay(Collision other) // 계속 닿을 시
@@ -59,7 +59,7 @@ public class CharacterHP : MonoBehaviour
             if (currentTime > 1)
             {
                 currentTime = 0;
-                getDamage(1.0f);
+                getDamage(5.0f);
             }     
             }
 
