@@ -44,5 +44,17 @@ public class TutorialController : MonoBehaviour
         currnetTutorial = tutorials[currentIndex];
         //새로 바뀐 튜토리얼의 Enter() 메소드 호출  
         currentTutorial.Enter();
+
     } 
+    public void CompletedAllTutorials()
+    {
+        currentTutorial =null;
+
+        Debug.Log("Complete All");
+
+        if (!nextSceneName.Equals(""))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+    }
 }
