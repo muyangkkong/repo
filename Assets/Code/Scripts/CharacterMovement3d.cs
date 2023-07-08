@@ -71,11 +71,10 @@ public class CharacterMovement3d : MonoBehaviour
         }
     }
     private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.layer == 9) {
+        if(other.gameObject.layer == 9) 
+        {
             onGround = true;
-            if(animator.GetCurrentAnimatorStateInfo(0).IsName("Falling Idle")) {
-                animator.SetTrigger("Landing");
-            }
+            
         }
     }
 }
