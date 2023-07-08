@@ -23,7 +23,7 @@ public class TutorialController : MonoBehaviour
     {
         if (currentTutorial != null)
         {
-            currentTutorial.Execuge(this);
+            currentTutorial.Execute(this);
         }
     }
 
