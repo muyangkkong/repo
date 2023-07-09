@@ -5,7 +5,7 @@ using UnityEngine;
 public class InstrumentSword : Instrument
 {
     Animator animator;
-    PlayerAttacking playerAttacking;
+    PlayerAttack playerAttack;
 
 
     public int ComboNumber=0;
@@ -34,7 +34,7 @@ public class InstrumentSword : Instrument
     public override void Init()
     {
         currentAttackProgress = root;
-        playerAttacking = GameObject.Find("Player").GetComponent<PlayerAttacking>();
+        playerAttack = GameObject.Find("Player").GetComponent<PlayerAttack>();
     }
 
     public override AttackData Attack(int timing, int type) {

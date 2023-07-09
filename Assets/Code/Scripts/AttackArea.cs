@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AttackArea : MonoBehaviour
 {
-    PlayerAttacking playerAttacking;
+    PlayerAttack playerAttacking;
     private void Awake() 
     {
-        playerAttacking = GameObject.Find("Player").GetComponent<PlayerAttacking>();
+        playerAttacking = GameObject.Find("Player").GetComponent<PlayerAttack>();
     }
     private void OnTriggerEnter(Collider other) 
     {
