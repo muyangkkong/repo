@@ -9,6 +9,9 @@ public abstract class Instrument : MonoBehaviour
     protected AttackTree root = new AttackTree();
     protected AttackTree currentAttackProgress = new AttackTree();
 
+    public GameObject leftArmed = null;
+    public GameObject rightArmed = null;
+
     public abstract void Construct();
     public abstract void Init();
     public abstract AttackData Attack(int timing, int type);
