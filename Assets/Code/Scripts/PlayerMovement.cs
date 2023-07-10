@@ -20,16 +20,9 @@ public class PlayerMovement : MonoBehaviour
     void Update(){
         Run();
         Jump();
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position - Vector3.down * 0.1f, Vector3.down, out hit, 0.15f, LayerMask.GetMask("Platform"))) {
-            Debug.DrawRay(transform.position - Vector3.down * 0.1f, Vector3.down * hit.distance, Color.red);
-        }
-        else {
-            animator.SetBool("Fall", true);
-            onGround = false;
-            Debug.DrawRay(transform.position - Vector3.down * 0.1f, Vector3.down * 0.15f, Color.blue);
-        }
+        Fall();
     }
+    
     void Run() {
         if(!movable) return;
 
@@ -57,6 +50,18 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("Jump");
         }
         characterRigidbody.velocity = velocity;
+    }
+
+    void Fall() {
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position - Vector3.down * 0.1f, Vector3.down, out hit, 0.15f, LayerMask.GetMask("Platform"))) {
+            Debug.DrawRay(transform.position - Vector3.down * 0.1f, Vector3.down * hit.distance, Color.red);
+        }
+        else {
+            animator.SetBool("Fall", true);
+            onGround = false;
+            Debug.DrawRay(transform.position - Vector3.down * 0.1f, Vector3.down * 0.15f, Color.blue);
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
