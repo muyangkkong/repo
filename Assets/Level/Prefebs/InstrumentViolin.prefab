@@ -46,5 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftArmed: {fileID: 7079853515279284839, guid: 0140fdbdd29dc2f4a92b22978378dcaf, type: 3}
   rightArmed: {fileID: 5551317944044571852, guid: 40c926368b96c8f4f8e96bab113a7e90, type: 3}
-  ComboNumber: 0
-  AttackDelay: 0
+  animationClips:
+  - {fileID: 7400000, guid: 4f4c06eca5287b64393bddc26087385a, type: 3}
+  - {fileID: 7400000, guid: eb3de5a559f1a134999a02aac7ca2ab8, type: 3}
+  - {fileID: 7400000, guid: 72ec907caaa1ccc4c807bfb481f1e569, type: 3}
+  - {fileID: 7400000, guid: 9710d3696ca48774da886b6eede11e3d, type: 3}
+  - {fileID: 1827226128182048838, guid: bcfc4ca8499477348886851a29df5dbb, type: 3}
+  - {fileID: 1827226128182048838, guid: 2d6761053261f5542bb17830c96e2fd8, type: 3}
+  - {fileID: 1827226128182048838, guid: 17645845b3e737446aad4f3883595d82, type: 3}
+  - {fileID: 1827226128182048838, guid: bead3d002d7b59941890e7212d292240, type: 3}
+  - {fileID: 1827226128182048838, guid: 06787ab5cd5c02f43a8314ddf0ec0000, type: 3}

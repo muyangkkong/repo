@@ -71,17 +71,8 @@ public class AttackTree
         AttackData attackInfo = new AttackData();
         attackInfo.currentComboName = "Attack" + (char)(AttackType + 'A') + Timing.ToString(); 
         attackInfo.damage = AttackDamage * AttackDataDamageMulti * TimingDamageMulti ; 
-        attackInfo.animationTrigger = "AttackAnimationTrigger" + (char)(AttackType + 'A') +Timing.ToString();
+        attackInfo.animationClipIdx = 1;
         
         return attackInfo;
     }
-}
-
-public class AttackData
-{
-    //Attack data (ex: damage, motion, ...)
-    public string currentComboName;
-    public float damage;
-    public string animationTrigger;
-
 }

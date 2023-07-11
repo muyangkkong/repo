@@ -6,21 +6,25 @@ public abstract class Instrument : MonoBehaviour
 {
     protected string InstrumentType;
 
-    protected AttackTree root = new AttackTree();
-    protected AttackTree currentAttackProgress = new AttackTree();
+    protected AttackDictionary attackDictionary = new AttackDictionary();
+    protected int currentAttackId;
+/*     protected AttackTree root = new AttackTree();
+    protected AttackTree currentAttackProgress = new AttackTree(); */
 
     public GameObject leftArmed = null;
     public GameObject rightArmed = null;
+
+    public AnimationClip[] animationClips;
 
     public abstract void Construct();
     public abstract void Init();
     public abstract AttackData Attack(int timing, int type);
 
-    public AttackTree GetCurrentAttackProgress() {
-        return currentAttackProgress;
+    public AttackData GetCurrentAttackData() {
+        return attackDictionary.GetAttackData(currentAttackId);
     }
     public void InitProgress() {
-        currentAttackProgress = root;
+        currentAttackId = 1000;
     }
 }
 

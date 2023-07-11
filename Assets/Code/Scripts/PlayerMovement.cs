@@ -48,19 +48,20 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = speed * 1.5f;
             onGround = false;
             animator.SetTrigger("Jump");
+            animator.ResetTrigger("Land");
         }
         characterRigidbody.velocity = velocity;
     }
 
     void Fall() {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position - Vector3.down * 0.1f, Vector3.down, out hit, 0.15f, LayerMask.GetMask("Platform"))) {
+        if(Physics.Raycast(transform.position - Vector3.down * 0.1f, Vector3.down, out hit, 1f, LayerMask.GetMask("Platform"))) {
             Debug.DrawRay(transform.position - Vector3.down * 0.1f, Vector3.down * hit.distance, Color.red);
         }
         else {
             animator.SetBool("Fall", true);
             onGround = false;
-            Debug.DrawRay(transform.position - Vector3.down * 0.1f, Vector3.down * 0.15f, Color.blue);
+            Debug.DrawRay(transform.position - Vector3.down * 0.1f, Vector3.down * 0.20f, Color.blue);
         }
     }
 

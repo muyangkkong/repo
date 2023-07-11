@@ -12,8 +12,9 @@ public class TimingBarManager : MonoBehaviour
     bool isTimerOn;
     Slider slider;
 
-    AttackTree attackTree = new AttackTree();
+    //AttackTree attackTree = new AttackTree();
 
+    int[,] nextAttackInfo = new int[5,2];
     GameObject[,] indicator = new GameObject[5,2];
 
     void Start()
@@ -26,10 +27,10 @@ public class TimingBarManager : MonoBehaviour
         audioSource.clip = soundClip;
         audioSource.volume = 1.0f;
 
-        attackTree.Children[1,0] = attackTree;
-        attackTree.Children[2,1] = attackTree;
-        attackTree.Children[4,0] = attackTree;
-        attackTree.Children[4,1] = attackTree;
+        nextAttackInfo[1,0] = 1000;
+        nextAttackInfo[2,1] = 1000;
+        nextAttackInfo[4,0] = 1000;
+        nextAttackInfo[4,1] = 1000;
 
         indicator[1,0] = GameObject.Find("Indicator1").transform.Find("IndicatorA").gameObject;
         indicator[1,1] = GameObject.Find("Indicator1").transform.Find("IndicatorB").gameObject;
@@ -62,7 +63,7 @@ public class TimingBarManager : MonoBehaviour
 
         for(int i = 1; i <= 4; i++) {
             for(int j = 0; j < 2; j++) {
-                indicator[i,j].SetActive(attackTree.Children[i,j] != null);
+                indicator[i,j].SetActive(nextAttackInfo[i,j] != 0);
             }
         }
     }
@@ -74,7 +75,7 @@ public class TimingBarManager : MonoBehaviour
         return slider.value;
     }
     
-    public void SetAttackTree(AttackTree _attackTree) {
-        attackTree = _attackTree;
+    public void SetAttackInfo(int[,] attackInfo) {
+        nextAttackInfo = attackInfo;
     }
 }

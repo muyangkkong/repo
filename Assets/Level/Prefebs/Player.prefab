@@ -2664,7 +2664,7 @@ GameObject:
   - component: {fileID: 8210966074256146660}
   - component: {fileID: 2815623812608924318}
   - component: {fileID: 7595167547666835605}
-  - component: {fileID: -1275157023459516630}
+  - component: {fileID: 4938704649528158558}
   - component: {fileID: 2905400375159293562}
   - component: {fileID: -3255328902908869750}
   - component: {fileID: 1941836975775101443}
@@ -2734,8 +2734,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 88
   m_CollisionDetection: 0
---- !u!65 &-1275157023459516630
-BoxCollider:
+--- !u!136 &4938704649528158558
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2744,8 +2744,9 @@ BoxCollider:
   m_Material: {fileID: 13400000, guid: 759f6ba84272d0c42b6e062803e69da6, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.8, z: 0.5}
+  m_Radius: 0.2
+  m_Height: 1.8
+  m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!65 &2905400375159293562
 BoxCollider:
@@ -2788,5 +2789,3 @@ MonoBehaviour:
   lefthand: {fileID: 5195129136411422403}
   righthand: {fileID: 6041066633531296270}
   instrument: {fileID: 0}
-  leftinst: {fileID: 7079853515279284839, guid: 0140fdbdd29dc2f4a92b22978378dcaf, type: 3}
-  rightinst: {fileID: 5551317944044571852, guid: 40c926368b96c8f4f8e96bab113a7e90, type: 3}
