@@ -21282,7 +21282,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b1df70f1f2445434fa3dca10b261ed91, type: 3}
     - target: {fileID: 5870832540849951288, guid: e363fe276f58e4b478e918d4a801c3f6, type: 3}
       propertyPath: timerSpeed
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5870832540849951291, guid: e363fe276f58e4b478e918d4a801c3f6, type: 3}
       propertyPath: m_RootOrder
