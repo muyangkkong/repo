@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85.6049, y: -4.298}
+  m_AnchoredPosition: {x: 98, y: -4.298}
   m_SizeDelta: {x: 261.4424, y: 91.404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &101081550
@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Also skill is different from before'
+  m_Text: ' Also basic attack improved into combo attack.'
 --- !u!222 &101081551
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -118, y: 84}
+  m_AnchoredPosition: {x: -113, y: 101}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &629236178
@@ -417,7 +417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -254, y: -5}
+  m_AnchoredPosition: {x: -254, y: 10}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &911592782
@@ -455,8 +455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.2693, y: 4.4739}
-  m_SizeDelta: {x: 178.5385, y: 91.0524}
+  m_AnchoredPosition: {x: 38.5913, y: 3.0208}
+  m_SizeDelta: {x: 189.379, y: 106.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &911592784
 MonoBehaviour:
@@ -882,8 +882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 718, y: 330}
+  m_AnchoredPosition: {x: 3.0737, y: 5.3751}
+  m_SizeDelta: {x: 936.7825, y: 407.3289}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1239414196
 GameObject:
@@ -1539,8 +1539,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 114, y: -66}
-  m_SizeDelta: {x: 182.0429, y: 85.0042}
+  m_AnchoredPosition: {x: 114, y: -68.73981}
+  m_SizeDelta: {x: 182.0429, y: 90.4838}
   m_Pivot: {x: 0.5602834, y: 0.5}
 --- !u!114 &1773470487
 MonoBehaviour:
@@ -1575,11 +1575,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Back&Forth(A,D)
+  m_Text: 'Back&Forth
 
-    Jump(W)
+    (RIGHT/LEFT)
 
-    Crawl(S)'
+    Jump(UP)
+
+    Crawl(DOWN)'
 --- !u!222 &1773470488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1706,7 +1708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1773,8 +1775,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 97.28511, y: -54.834713}
-  m_SizeDelta: {x: 181.7202, y: 86.0873}
+  m_AnchoredPosition: {x: 100.24, y: -66.2719}
+  m_SizeDelta: {x: 187.62, y: 108.9618}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1863441442
 MonoBehaviour:
