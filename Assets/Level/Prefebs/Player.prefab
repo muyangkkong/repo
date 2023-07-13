@@ -2788,4 +2788,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lefthand: {fileID: 5195129136411422403}
   righthand: {fileID: 6041066633531296270}
-  instrument: {fileID: 0}
+  instrument: {fileID: 8879253659752185330, guid: a7c6d4e7a2f0c944a8f88641ccae9f06, type: 3}
