@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressbar: {fileID: 0}
-  loadtext: {fileID: 0}
+  delayTime: 1
 --- !u!1 &495776145
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,8 +710,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67917db4e57264547a03184a26d7e1db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressbar: {fileID: 0}
-  loadtext: {fileID: 0}
+  progressbar: {fileID: 2090097653}
+  delayTime: 1
 --- !u!114 &1639202086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,4 +1076,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressbar: {fileID: 2090097653}
-  loadtext: {fileID: 0}
+  delayTime: 1
