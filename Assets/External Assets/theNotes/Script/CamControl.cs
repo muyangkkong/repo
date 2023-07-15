@@ -14,7 +14,7 @@ using System.Collections;
 	2016.04.23
 */
 
-
+/*
 
 public class CamControl : MonoBehaviour {
 
@@ -157,3 +157,4 @@ public class CamControl : MonoBehaviour {
 
 
 }
+*/
