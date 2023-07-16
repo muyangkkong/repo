@@ -70,30 +70,10 @@ public class InstrumentViolin : Instrument
         attackDictionary.SetAttackData(1015, "Hook Straight Straight", 10.0f, 7, children);
         attackDictionary.SetAttackData(1016, "Straight Hook Hook", 10.0f, 7, children);
         attackDictionary.SetAttackData(1017, "Big Straight Straight", 10.0f, 8, children);
-
-/*         string[] ComboA = {"0A","3A","3A","3A","3A"};
-        string[] ComboB = {"0A","3A","3A","4A","4A"};
-        string[] ComboC = {"0A","3A","3B","3A","3B"};
-        string[] ComboD = {"0A","2A","1B","2B","2A"};
-        string[] ComboE = {"0A","2A","1B","2A","4B","4B"};
-
-        root.InsertCombo(root, ComboA, 0);
-        root.InsertCombo(root, ComboB, 0);
-        root.InsertCombo(root, ComboC, 0);
-        root.InsertCombo(root, ComboD, 0);
-        root.InsertCombo(root, ComboE, 0); */
     }
 
 
     public override void Init()
     {
-    }
-
-    public override AttackData Attack(int timing, int type) {
-        if(GetCurrentAttackData().children[timing,type] == 0) return null;
-        //if(currentAttackProgress.Children[timing,type] == null) return null;
-        currentAttackId = GetCurrentAttackData().children[timing,type];
-        //currentAttackProgress = currentAttackProgress.Children[timing,type];
-        return GetCurrentAttackData();
     }
 }

@@ -88,12 +88,4 @@ public class InstrumentHarp : Instrument
     public override void Init()
     {
     }
-
-    public override AttackData Attack(int timing, int type) {
-        if(GetCurrentAttackData().children[timing,type] == 0) return null;
-        //if(currentAttackProgress.Children[timing,type] == null) return null;
-        currentAttackId = GetCurrentAttackData().children[timing,type];
-        //currentAttackProgress = currentAttackProgress.Children[timing,type];
-        return GetCurrentAttackData();
-    }
 }

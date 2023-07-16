@@ -37,13 +37,13 @@ public class InstrumentSword : Instrument
         playerAttack = GameObject.Find("Player").GetComponent<PlayerAttack>(); */
     }
 
-    public override AttackData Attack(int timing, int type) {
-/*         if(currentAttackProgress.Children[timing,type] == null) return null;
+/*     public override ComboData Attack(int timing, int type) {
+        if(currentAttackProgress.Children[timing,type] == null) return null;
         
         currentAttackProgress = currentAttackProgress.Children[timing,type];
-        return currentAttackProgress.data; */
+        return currentAttackProgress.data;
         return GetCurrentAttackData();
-    }
+    } */
 
 
     public void ComboReset()

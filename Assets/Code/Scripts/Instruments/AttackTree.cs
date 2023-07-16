@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackTree
 {
-    public AttackData data {get; set;}
+    public ComboData data {get; set;}
     public string Combo {get; set;}
     public AttackTree[,] Children {get; set;} = new AttackTree[5,2];
 
@@ -31,7 +31,7 @@ public class AttackTree
         InsertCombo(current.Children[TimingTemp,AttackTypeTemp],type,ComNum+1);
     }
 
-    public AttackData AttackDataCalcuate(int AttackType, int Timing) // AttackData 설정
+    public ComboData AttackDataCalcuate(int AttackType, int Timing) // AttackData 설정
     {
         float AttackDataDamageMulti = 1f;
         float TimingDamageMulti = 1f;
@@ -68,7 +68,7 @@ public class AttackTree
         }
 
         /*construct AttackData*/
-        AttackData attackInfo = new AttackData();
+        ComboData attackInfo = new ComboData();
         attackInfo.currentComboName = "Attack" + (char)(AttackType + 'A') + Timing.ToString(); 
         attackInfo.damage = AttackDamage * AttackDataDamageMulti * TimingDamageMulti ; 
         attackInfo.animationClipIdx = 1;

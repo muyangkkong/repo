@@ -100,15 +100,15 @@ public class InstrumentPiano : Instrument
         playerAttack = GameObject.Find("Player").GetComponent<PlayerAttack>(); */
     }
 
-   public override AttackData Attack(int timing, int type) {
-        /*         if(currentAttackProgress.Children[timing,type] == null) return null;
+/*     public override ComboData Attack(int timing, int type) {
+                // if(currentAttackProgress.Children[timing,type] == null) return null;
 
-                currentAttackProgress = currentAttackProgress.Children[timing,type];
-                return currentAttackProgress.data; */
+                // currentAttackProgress = currentAttackProgress.Children[timing,type];
+                // return currentAttackProgress.data;
         if (GetCurrentAttackData().children[timing, type] == 0) return null;
         currentAttackId = GetCurrentAttackData().children[timing, type];
         return GetCurrentAttackData();
-   }
+    } */
 
     
     public void ComboReset()

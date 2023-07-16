@@ -6,10 +6,8 @@ public abstract class Instrument : MonoBehaviour
 {
     protected string InstrumentType;
 
-    protected AttackDictionary attackDictionary = new AttackDictionary();
+    protected ComboDictionary attackDictionary = new ComboDictionary();
     protected int currentAttackId;
-/*     protected AttackTree root = new AttackTree();
-    protected AttackTree currentAttackProgress = new AttackTree(); */
 
     public GameObject leftArmed = null;
     public GameObject rightArmed = null;
@@ -18,9 +16,14 @@ public abstract class Instrument : MonoBehaviour
 
     public abstract void Construct();
     public abstract void Init();
-    public abstract AttackData Attack(int timing, int type);
+    
+    public ComboData Attack(int timing, int type) {
+        if(GetCurrentAttackData().children[timing,type] == 0) return null;
+        currentAttackId = GetCurrentAttackData().children[timing,type];
+        return GetCurrentAttackData();
+    }
 
-    public AttackData GetCurrentAttackData() {
+    public ComboData GetCurrentAttackData() {
         return attackDictionary.GetAttackData(currentAttackId);
     }
     public void InitProgress() {
