@@ -6525,71 +6525,6 @@ Transform:
   m_Father: {fileID: 910234808}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &635425946
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2025474645}
-    m_Modifications:
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2927797
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1984186
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.0664
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1491
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752110557197472475, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5384391948898650209, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
-      propertyPath: m_Name
-      value: AG_trumpet
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e9a46fc3d496f4a4da6e25fa994e05da, type: 3}
 --- !u!1001 &662331495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20025,11 +19960,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
---- !u!4 &2025474645 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8055852948280105159, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
-  m_PrefabInstance: {fileID: 5518830096045521949}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2027602714 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 529718491331009478, guid: 281b5426b17a31543aaca537213f82b5, type: 3}
@@ -21120,7 +21050,6 @@ PrefabInstance:
     - target: {fileID: 1941836975775101443, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: instrument
       value: 
-
       objectReference: {fileID: 8879253659752185330, guid: 46a9019990c12bc40b557fd5f2c986fb, type: 3}
     - target: {fileID: 2105138891624174320, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_Layer
