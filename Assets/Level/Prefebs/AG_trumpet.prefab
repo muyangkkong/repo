@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3762596605389969607}
   - component: {fileID: 87011468535924652}
   m_Layer: 0
-  m_Name: AG_trumpet 1
+  m_Name: AG_trumpet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8911349632589043027}
   - component: {fileID: 8911349632589043026}
   m_Layer: 0
-  m_Name: InstrumentTrumpet 1
+  m_Name: InstrumentTrumpet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftArmed: {fileID: 0}
-  rightArmed: {fileID: 671283944972862753, guid: d24584805cc9eae408fd066340bf593b, type: 3}
+  rightArmed: {fileID: 671283944972862753, guid: 2fe04923dfecb354d94d2f2aaa9c5e23, type: 3}
   animationClips:
   - {fileID: 7400000, guid: d16438c7c5ae5924aac4072d845d9169, type: 3}
   - {fileID: 7400000, guid: c64109b2ee83db448a1643d5387177cd, type: 3}
