@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public bool isAttack;
     public GameObject bullet;
     public GameObject[] instruments;
+    public bool isPlayer;
     
 
     Rigidbody rigid;
@@ -24,6 +25,9 @@ public class Enemy : MonoBehaviour
     NavMeshAgent nav;
     Animator anim;
 
+    GameObject targetplayer;
+    CharacterHP Chp;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
@@ -31,13 +35,16 @@ public class Enemy : MonoBehaviour
         meshs = GetComponentsInChildren<MeshRenderer>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
-
+       
+        
         // Invoke("ChaseStart", 2);
     }
     
     void Start() 
     {
         InvokeRepeating("UpdateTarget", 0f, 0.15f);
+        targetplayer = GameObject.Find("Player");
+        Chp = targetplayer.GetComponent<CharacterHP>();
     }
 
     void UpdateTarget()
@@ -134,9 +141,15 @@ public class Enemy : MonoBehaviour
          switch(enemyType)
         {
             case Type.SHORT: // 근거리
-                yield return new WaitForSeconds(0.01f); 
+                yield return new WaitForSeconds(0.01f);
+                if (isPlayer)
+                {
+                    Chp.getDamage(5.0f);
+                    isPlayer = false;
+                }
                 anim.SetBool("isAttack", true);
-                meleeArea.enabled = true;  
+                meleeArea.enabled = true;
+                
 
                 yield return new WaitForSeconds(1.2f);
                 meleeArea.enabled = false;  
@@ -153,6 +166,11 @@ public class Enemy : MonoBehaviour
                 yield return new WaitForSeconds(0.01f);
                 rigid.AddForce(transform.right * 10, ForceMode.Impulse);
                 meleeArea.enabled = true;
+                if (isPlayer)
+                {
+                    Chp.getDamage(5.0f);
+                    isPlayer = false;
+                }
 
                 yield return new WaitForSeconds(0.5f); 
                 rigid.velocity =Vector3.zero;
@@ -172,12 +190,17 @@ public class Enemy : MonoBehaviour
 
             
             case Type.LONG:    //원거리
-                yield return new WaitForSeconds(0.5f); 
+                yield return new WaitForSeconds(0.5f);
+                if (isPlayer)
+                {
+                    Chp.getDamage(5.0f);
+                    isPlayer = false;
+                }
                 anim.SetBool("isAttack", true);
                 GameObject instantBullet = Instantiate(bullet, transform.position, transform.rotation);
                 Rigidbody rigidBullet = instantBullet.GetComponent<Rigidbody>();
                 rigidBullet.velocity = transform.forward * 20;
-
+                Debug.Log("Bullet Instantiated");
                 anim.SetBool("isAttack", false);
                 anim.SetBool("isWalk", false);
                
@@ -188,8 +211,18 @@ public class Enemy : MonoBehaviour
             case Type.ELITE:
                 yield return new WaitForSeconds(0.1f);
                 rigid.AddForce(transform.forward * 10, ForceMode.Impulse);
+                if (isPlayer)
+                {
+                    Chp.getDamage(5.0f);
+                    isPlayer = false;
+                }
                 anim.SetBool("isAttack", true);
                 meleeArea.enabled = true;
+                if (isPlayer)
+                {
+                    Chp.getDamage(5.0f);
+                    isPlayer = false;
+                }
 
                 yield return new WaitForSeconds(1f); 
                 rigid.velocity =Vector3.zero;
@@ -197,10 +230,19 @@ public class Enemy : MonoBehaviour
                 meleeArea.enabled = false;  
 
 
-                yield return new WaitForSeconds(0.1f); 
+                yield return new WaitForSeconds(0.1f);
+                if (isPlayer)
+                {
+                    Chp.getDamage(5.0f);
+                    isPlayer = false;
+                }
                 anim.SetBool("isAttack", true);
-                meleeArea.enabled = true;  
-
+                meleeArea.enabled = true;
+                if (isPlayer)
+                {
+                    Chp.getDamage(5.0f);
+                    isPlayer = false;
+                }
                 yield return new WaitForSeconds(1.5f);
                 anim.SetBool("isAttack", false);
                 meleeArea.enabled = false;  
@@ -247,9 +289,27 @@ public class Enemy : MonoBehaviour
         {
 
         }
+        if(other.tag == "Player")
+        {
+            isPlayer= true;
+        }
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            isPlayer = true;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            isPlayer = false;
+        }
     }
 
-    
+
 
 
     IEnumerator OnDamge(Vector3 reactVec)
