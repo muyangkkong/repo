@@ -885,6 +885,10 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5870832540849951288, guid: e363fe276f58e4b478e918d4a801c3f6, type: 3}
+      propertyPath: timerSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5870832540849951291, guid: e363fe276f58e4b478e918d4a801c3f6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

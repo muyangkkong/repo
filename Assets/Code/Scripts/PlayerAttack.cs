@@ -11,7 +11,7 @@ public class PlayerAttack : MonoBehaviour
     ComboData currentAttackInfo;
     
     TimingBarManager timingBarManager;
-
+    
     void Start()
     {
         instrument = GetComponent<PlayerEquipment>().instrument;
