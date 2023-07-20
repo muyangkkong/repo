@@ -695,6 +695,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   instruments: []
   isPlayer: 0
+  isSuccess: 0
 --- !u!195 &47918736
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1369,13 +1370,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104710024}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 885c0defb083d1546919cfce7b30dadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  ismelee: 1
 --- !u!4 &104710027
 Transform:
   m_ObjectHideFlags: 0
@@ -2303,13 +2303,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206845016}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 885c0defb083d1546919cfce7b30dadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  ismelee: 1
 --- !u!4 &206845019
 Transform:
   m_ObjectHideFlags: 0
@@ -2451,6 +2450,7 @@ MonoBehaviour:
   bullet: {fileID: 5081795784118083706, guid: d6c72e2b3170a6f448dbee67c828e370, type: 3}
   instruments: []
   isPlayer: 0
+  isSuccess: 0
 --- !u!65 &208811497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6184,6 +6184,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   instruments: []
   isPlayer: 0
+  isSuccess: 0
 --- !u!195 &564327944
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8920,6 +8921,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   instruments: []
   isPlayer: 0
+  isSuccess: 0
 --- !u!195 &991757926
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10046,6 +10048,7 @@ MonoBehaviour:
   bullet: {fileID: 5081795784118083706, guid: d6c72e2b3170a6f448dbee67c828e370, type: 3}
   instruments: []
   isPlayer: 0
+  isSuccess: 0
 --- !u!195 &1057650882
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11400,13 +11403,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131793149}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 885c0defb083d1546919cfce7b30dadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  ismelee: 1
 --- !u!4 &1131793152
 Transform:
   m_ObjectHideFlags: 0
@@ -11472,13 +11474,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136034774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 885c0defb083d1546919cfce7b30dadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  ismelee: 1
 --- !u!65 &1136034777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11874,6 +11875,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   instruments: []
   isPlayer: 0
+  isSuccess: 0
 --- !u!65 &1197395641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12635,13 +12637,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310357942}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 885c0defb083d1546919cfce7b30dadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  ismelee: 1
 --- !u!4 &1310357945
 Transform:
   m_ObjectHideFlags: 0
@@ -13358,6 +13359,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   instruments: []
   isPlayer: 0
+  isSuccess: 0
 --- !u!1 &1430111289
 GameObject:
   m_ObjectHideFlags: 0
@@ -14061,6 +14063,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   instruments: []
   isPlayer: 0
+  isSuccess: 0
 --- !u!65 &1511170097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16986,13 +16989,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823263913}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 885c0defb083d1546919cfce7b30dadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  ismelee: 1
 --- !u!4 &1823263916
 Transform:
   m_ObjectHideFlags: 0

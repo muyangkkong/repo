@@ -17,7 +17,8 @@ public class Enemy : MonoBehaviour
     public GameObject bullet;
     public GameObject[] instruments;
     public bool isPlayer;
-    
+    public bool isSuccess;
+    public float knockbackDuration = 0.3f;
 
     Rigidbody rigid;
     BoxCollider Boxcollider;
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour
 
     GameObject targetplayer;
     CharacterHP Chp;
+    Rigidbody playerrigid;
 
     void Awake()
     {
@@ -45,6 +47,7 @@ public class Enemy : MonoBehaviour
         InvokeRepeating("UpdateTarget", 0f, 0.15f);
         targetplayer = GameObject.Find("Player");
         Chp = targetplayer.GetComponent<CharacterHP>();
+        playerrigid = targetplayer.GetComponent<Rigidbody>();
     }
 
     void UpdateTarget()
@@ -142,17 +145,25 @@ public class Enemy : MonoBehaviour
         {
             case Type.SHORT: // 근거리
                 yield return new WaitForSeconds(0.01f);
+               
+                anim.SetBool("isAttack", true);
+              
+                // meleeArea.enabled = true;
+
+
+                yield return new WaitForSeconds(0.6f);
+               // meleeArea.enabled = false;
                 if (isPlayer)
                 {
+                  
                     Chp.getDamage(5.0f);
+                    Vector3 knockbackDirection = (transform.forward).normalized;
+                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 100f));
                     isPlayer = false;
-                }
-                anim.SetBool("isAttack", true);
-                meleeArea.enabled = true;
-                
 
-                yield return new WaitForSeconds(1.2f);
-                meleeArea.enabled = false;  
+                }
+
+                yield return new WaitForSeconds(0.6f);
 
                 anim.SetBool("isAttack", false);
                 anim.SetBool("isWalk", false);  
@@ -165,16 +176,25 @@ public class Enemy : MonoBehaviour
             case Type.RUSH:   //돌진
                 yield return new WaitForSeconds(0.01f);
                 rigid.AddForce(transform.right * 10, ForceMode.Impulse);
-                meleeArea.enabled = true;
+                // meleeArea.enabled = true;
+               
+
+
+                yield return new WaitForSeconds(0.5f);
                 if (isPlayer)
                 {
-                    Chp.getDamage(5.0f);
-                    isPlayer = false;
+               
+                    
+                        Chp.getDamage(5.0f);
+                        Vector3 knockbackDirection = (transform.forward).normalized;
+                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 200f));
+                    
+                    isPlayer = false;                  
+                  
                 }
 
-                yield return new WaitForSeconds(0.5f); 
                 rigid.velocity =Vector3.zero;
-                meleeArea.enabled = false;  
+               // meleeArea.enabled = false;  
 
 
                 
@@ -184,18 +204,14 @@ public class Enemy : MonoBehaviour
                     nav.SetDestination(target.position);
                     nav.isStopped = !isChase;
                 }   
-                yield return new WaitForSeconds(3f); 
+                yield return new WaitForSeconds(1.5f); 
                 nav.enabled = true;
                 break;
 
             
             case Type.LONG:    //원거리
                 yield return new WaitForSeconds(0.5f);
-                if (isPlayer)
-                {
-                    Chp.getDamage(5.0f);
-                    isPlayer = false;
-                }
+       
                 anim.SetBool("isAttack", true);
                 GameObject instantBullet = Instantiate(bullet, transform.position, transform.rotation);
                 Rigidbody rigidBullet = instantBullet.GetComponent<Rigidbody>();
@@ -211,41 +227,72 @@ public class Enemy : MonoBehaviour
             case Type.ELITE:
                 yield return new WaitForSeconds(0.1f);
                 rigid.AddForce(transform.forward * 10, ForceMode.Impulse);
-                if (isPlayer)
-                {
-                    Chp.getDamage(5.0f);
-                    isPlayer = false;
-                }
+              
                 anim.SetBool("isAttack", true);
-                meleeArea.enabled = true;
+               // meleeArea.enabled = true;
+                yield return new WaitForSeconds(0.5f);
                 if (isPlayer)
                 {
                     Chp.getDamage(5.0f);
+                    Vector3 knockbackDirection = (transform.forward).normalized;
+                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 150f));
                     isPlayer = false;
+                    isSuccess = true;
                 }
-
-                yield return new WaitForSeconds(1f); 
+                else
+                {
+                    isSuccess = false;
+                }
+                yield return new WaitForSeconds(0.5f);
+                if (isPlayer)
+                {
+                    if (!isSuccess)
+                    {
+                        Chp.getDamage(5.0f);
+                        Vector3 knockbackDirection = (transform.forward).normalized;
+                        StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 150f));
+                        isPlayer = false;
+                    }
+                    isSuccess = false;
+                }
                 rigid.velocity =Vector3.zero;
                 anim.SetBool("isAttack", false);
-                meleeArea.enabled = false;  
+               // meleeArea.enabled = false;  
 
 
                 yield return new WaitForSeconds(0.1f);
-                if (isPlayer)
-                {
-                    Chp.getDamage(5.0f);
-                    isPlayer = false;
-                }
+             
                 anim.SetBool("isAttack", true);
-                meleeArea.enabled = true;
+               // meleeArea.enabled = true;
+                
+                yield return new WaitForSeconds(0.75f);
                 if (isPlayer)
                 {
                     Chp.getDamage(5.0f);
+                    Vector3 knockbackDirection = (transform.forward).normalized;
+                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 150f));
+                    isSuccess = true;
                     isPlayer = false;
                 }
-                yield return new WaitForSeconds(1.5f);
+                else
+                {
+                    isSuccess = false;
+                }
+
+                yield return new WaitForSeconds(0.75f);
+                if (isPlayer)
+                {
+                    if (!isSuccess)
+                    {
+                        Chp.getDamage(5.0f);
+                        Vector3 knockbackDirection = (transform.forward).normalized;
+                        StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 150f));
+                        isPlayer = false;
+                    }
+                    isSuccess = false;
+                }
                 anim.SetBool("isAttack", false);
-                meleeArea.enabled = false;  
+                //meleeArea.enabled = false;  
                 anim.SetBool("isWalk", false);
 
                 nav.enabled = false;
@@ -308,11 +355,29 @@ public class Enemy : MonoBehaviour
             isPlayer = false;
         }
     }
+    IEnumerator KnockbackCoroutine(Rigidbody targetRigidbody, Vector3 knockbackDirection, float knockbackForce)
+    {
+
+        float timer = 0f;
+        while (timer < knockbackDuration)
+        {
+            // 넉백 완화
+            float knockbackForceThisFrame = Mathf.Lerp(knockbackForce, 0f, timer / knockbackDuration);
+
+            // 넉백 가하기
+            targetRigidbody.AddForce(knockbackDirection * knockbackForceThisFrame);
+
+            // 시간 업데이트
+            timer += Time.deltaTime;
 
 
+            yield return null;
+        }
+
+    }
 
 
-    IEnumerator OnDamge(Vector3 reactVec)
+        IEnumerator OnDamge(Vector3 reactVec)
     {
         foreach(MeshRenderer mesh in meshs)
             mesh.material.color = Color.red;

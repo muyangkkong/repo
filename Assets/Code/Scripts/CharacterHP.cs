@@ -67,15 +67,4 @@ public class CharacterHP : MonoBehaviour
     }
 
     
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "EnemyBullet")
-        {
-            Debug.Log("Bullet Hit");
-            getDamage(5.0f);
-            Destroy(other.gameObject);
-        }
-
-    }
 }
