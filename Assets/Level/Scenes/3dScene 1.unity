@@ -625,43 +625,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 154703c8827a19241a289d4cd734d234, type: 3}
---- !u!1 &42236645 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4212697399311968186, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
-  m_PrefabInstance: {fileID: 4212697400940134471}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &42236647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42236645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12fca13cff6d41e479c19e9482036373, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relicArea: {fileID: 42236648}
-  RelicMaxHealth: 0
-  RelicDamage: 0
-  RelicComboDamage: 0
-  RelicNonComboDamage: 0
-  RelicRhythmSpeed: 0
-  RelicRhythmJudge: 0
-  RelicMoneyCollect: 0
-  RelicSkillObtain: 0
---- !u!114 &42236648 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4647283561219200686, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
-  m_PrefabInstance: {fileID: 4212697400940134471}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42236645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8985c837c29156140bc99126104ab19f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &54748276 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dac29f951da779844913614e3c79e634, type: 3}
@@ -21104,10 +21067,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4647283561219200686, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
-      propertyPath: relics.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b1bd21026451df46bef6dd95dc74d52, type: 2}
     - target: {fileID: 5189775434839058048, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
       propertyPath: image
       value: 
