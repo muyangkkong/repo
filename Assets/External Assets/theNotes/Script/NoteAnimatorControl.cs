@@ -13,7 +13,7 @@ using System.Collections;
 	
 	2015.03.01
 */
-
+/*
 public class NoteAnimatorControl : MonoBehaviour {
 
 	// required Object or component
@@ -248,3 +248,4 @@ public class NoteAnimatorControl : MonoBehaviour {
 		}
 	}
 }
+*/
