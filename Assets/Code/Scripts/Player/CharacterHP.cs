@@ -12,7 +12,7 @@ public class CharacterHP : MonoBehaviour
     public Slider slider; // ui hp 게이지
     float currentTime; // 닿였을 때 데미지 다는 속도 조절
     
-    void getDamage(float damage)
+    public void getDamage(float damage)
     {
         HP -= damage;
         if (HP > 0)
@@ -49,6 +49,7 @@ public class CharacterHP : MonoBehaviour
             currentTime = 0;// 누적 시간 초기화
             getDamage(5.0f);
         }
+       
     }
     void OnCollisionStay(Collision other) // 계속 닿을 시
     {

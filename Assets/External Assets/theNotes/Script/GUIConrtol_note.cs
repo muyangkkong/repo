@@ -13,7 +13,7 @@ using System.Collections;
 	
 	2016.04.23
 */
-
+/*
 public class GUIConrtol_note : MonoBehaviour {
 
 	// required Object or information
@@ -296,3 +296,4 @@ public class GUIConrtol_note : MonoBehaviour {
 	}
 
 }
+*/

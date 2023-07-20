@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Moving
+  - Weapon
+  - Enemy
+  - EnemyBullet
+  - Wall
+  - Floor
+  - Instrumnet
   layers:
   - Default
   - TransparentFX
@@ -16,7 +22,7 @@ TagManager:
   - enemy
   - Player
   - Platform
-  - 
+  - EnemyBullet
   - 
   - 
   - 
