@@ -8,10 +8,10 @@ public class PlayerAttack : MonoBehaviour
     AnimatorOverrideController animatorOverrideController;
 
     Instrument instrument;
-    AttackData currentAttackInfo;
+    ComboData currentAttackInfo;
     
     TimingBarManager timingBarManager;
-
+    
     void Start()
     {
         instrument = GetComponent<PlayerEquipment>().instrument;

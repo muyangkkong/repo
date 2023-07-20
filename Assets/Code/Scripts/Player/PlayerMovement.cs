@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
 
     bool onGround = false;
-    bool movable = true;
+    public int movable = 0;
     int direction = 1;
     public float speed = 5f;
 
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     }
     
     void Run() {
-        if(!movable) return;
+        if(movable > 0) return;
 
         float inputX = Input.GetAxisRaw("Horizontal");
 
@@ -60,13 +60,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Fall() {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position - Vector3.down * 0.5f, Vector3.down, out hit, 1.5f, LayerMask.GetMask("Platform"))) {
+        if(Physics.Raycast(transform.position - Vector3.down * 0.5f, Vector3.down, out hit, 1.0f, LayerMask.GetMask("Platform"))) {
             Debug.DrawRay(transform.position - Vector3.down * 0.5f, Vector3.down * hit.distance, Color.red);
         }
         else {
             animator.SetBool("Fall", true);
             onGround = false;
-            Debug.DrawRay(transform.position - Vector3.down * 0.5f, Vector3.down * 1.5f, Color.blue);
+            Debug.DrawRay(transform.position - Vector3.down * 0.5f, Vector3.down * 1.0f, Color.blue);
         }
     }
 
