@@ -47,6 +47,8 @@ public class PlayerAttack : MonoBehaviour
         instrument.Attack(timeIndex, attackInput-1);
         currentAttackInfo = instrument.GetCurrentAttackData();
         animatorOverrideController["Attack"] = instrument.animationClips[currentAttackInfo.animationClipIdx];
+        animator.runtimeAnimatorController = animatorOverrideController;
+
         Debug.Log(currentAttackInfo.currentComboName);
         timingBarManager.SetAttackInfo(currentAttackInfo.children);
 

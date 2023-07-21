@@ -16,11 +16,16 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         characterRigidbody = GetComponent<Rigidbody>();
     }
-
-    void Update(){
+    
+    void FixedUpdate(){
         Run();
         Jump();
         Fall();
+        if(onGround) {
+            Vector3 velocity = characterRigidbody.velocity;
+            velocity.y = 0;
+            characterRigidbody.velocity = velocity;
+        }
     }
     
     void Run() {
@@ -55,13 +60,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Fall() {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position - Vector3.down * 0.1f, Vector3.down, out hit, 1f, LayerMask.GetMask("Platform"))) {
-            Debug.DrawRay(transform.position - Vector3.down * 0.1f, Vector3.down * hit.distance, Color.red);
+        if(Physics.Raycast(transform.position - Vector3.down * 0.5f, Vector3.down, out hit, 1.5f, LayerMask.GetMask("Platform"))) {
+            Debug.DrawRay(transform.position - Vector3.down * 0.5f, Vector3.down * hit.distance, Color.red);
         }
         else {
             animator.SetBool("Fall", true);
             onGround = false;
-            Debug.DrawRay(transform.position - Vector3.down * 0.1f, Vector3.down * 0.20f, Color.blue);
+            Debug.DrawRay(transform.position - Vector3.down * 0.5f, Vector3.down * 1.5f, Color.blue);
         }
     }
 
