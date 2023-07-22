@@ -53,6 +53,8 @@ public class MapManager : MonoBehaviour
                 if(mapData[j,i] == -1) {
                     //Player.transform.position = new Vector3(i * tileSize, (height - j) * tileSize, 0);
                     GameObject.FindWithTag("Player").transform.position = new Vector3(i * tileSize, (height - j) * tileSize, 0);
+                    Debug.Log(j);
+                    Debug.Log(i);
                 }
                 if(mapData[j,i] > 0) {
                     Instantiate(tiles[mapData[j,i]], new Vector3(i * tileSize, (height - j) * tileSize, 0), Quaternion.identity).transform.SetParent(this.transform);

@@ -8,23 +8,22 @@ public class minimap : MonoBehaviour
 {
     int width;
     int height;
-    int[,] mapData;
-    int [,] newarray;
-    public int mapHeight;
-    public int mapWidth;
+     int[,] mapData;
+     int [,] newarray;
+    int mapHeight=14;
+    int mapWidth=14;
     public GameObject player;
-  
+    public Image minimapplayer;
     
-     Image[,] minimapobject;
-     
-     GameObject cell;
-    
-    
+    int a;
+    int b;
 
-    public Image front;
+    Vector3 posi;
+    RectTransform rectTransform;
+   
     
-    GridLayoutGroup grid;
-
+    public GridLayoutGroup grid;
+    public Image cellPrefab;
     
     
     
@@ -32,12 +31,18 @@ public class minimap : MonoBehaviour
     void Start()
     { 
         
-        front.rectTransform.sizeDelta=new Vector2(mapWidth*10,mapHeight*10);
-        //미니맵의 총크기를 newarray의 배열 크기에 맞춤(grid cell의 크기를 newarray의 열,행 크기에따라 맞춤)
-        LoadMap();
+        LoadMap(2);
         FindingPlayer();
         UpdateMiniMap();
-        
+        for(int j = 0; j < height; j++) {
+            for(int i = 0; i < width; i++) {
+                if (mapData[j,i]==-1)
+                {
+                    mapData[j,i]=0;
+                }
+            }
+        }
+       
         
     }
 
@@ -45,55 +50,55 @@ public class minimap : MonoBehaviour
     void Update()
     {
         
-        FindingPlayer();
         if (player.transform.hasChanged)
         {
+            foreach(Transform child in grid.transform )
+            {
+                Destroy(child.gameObject);
+            }
             
+            
+            Playermove();
+            FindingPlayer();
             UpdateMiniMap();
+            mapData[height-a,b]=0;
             player.transform.hasChanged = false;
         }
+
+        
+       
     }
     void UpdateMiniMap()
     {
         
-        
-
+    
         for ( int m =0 ;m<mapWidth;m++)
                 {
                     for ( int n =0 ;n<mapHeight;n++)
-                    {    
+                    {       //그 
+                        Image cell = Instantiate(cellPrefab, grid.transform);
+                        cell.rectTransform.localPosition = new Vector3(m * 10, n * 10, 0);
                         
                         if (newarray[m,n]==0)
                         {
-                            int t=m+14*n;
-                            //newarray의 값이 0이면 게임 오브젝트 cell를 newarray의 위치에 맞게 grid 칸에 위치 변경(gridlayoutgroup컴포넌트는 미니맵 이미지에 맞게 되어있음)
-                            Transform cell=grid.transform.GetChild(t);
-                            // 이미지 컴포넌트를  cell에 갖고옴
-                            Image cellObj=cell.GetComponent<Image>();
-                            // 검은 색으로 바꿈
-                            cellObj.color=Color.black;
+                                cell.color=Color.black;
+                                
                         }
                         
                         else
                         {
-                            int t=m+14*n;
-
-                            Transform cell=grid.transform.GetChild(t);
-                            Image cellObj=cell.GetComponent<Image>();
-                            cellObj.color=Color.white;
-                        }
-                        
-                        
-
-                        
+                            cell.color=Color.white;
+                                
+                        }  
                     }
                 }
         
+        
     }
-    public void LoadMap() {
-        FileStream fs = new FileStream("Assets\\Map\\2", FileMode.Open, FileAccess.Read);
+    public void LoadMap(int id) {
+        FileStream fs = new FileStream("Assets\\Map\\"+id, FileMode.Open, FileAccess.Read);
         StreamReader sr = new StreamReader(fs);
-
+       
         string[] s = sr.ReadLine().Split(" ", System.StringSplitOptions.None);
         if(s.Length != 2) {
             
@@ -122,7 +127,7 @@ public class minimap : MonoBehaviour
     }
     
      
-    void FindingPlayer(){
+    public void FindingPlayer(){
        //map파일 안의 플레이어 위치를 찾으면 함수 실행
 
         for(int j = 0; j < height; j++) 
@@ -132,8 +137,8 @@ public class minimap : MonoBehaviour
                 if(mapData[j,i] == -1) 
                 {
                     
-                     
                     NewArray(j,i);
+                    
                 }
             }
         }
@@ -148,31 +153,48 @@ public class minimap : MonoBehaviour
        
        
        //newarray 배열을 [mapwidth,mapHeight]크기로 정함
-       for (int x = j - halfWidth; x < j + halfHeight; x++)
+       for (int x = j - halfWidth,m=0; x < j + halfHeight; m++,x++)
        {
-          for (int y = i - halfHeight; y < i + halfWidth; y++)
-          {
+          for (int y = i - halfHeight,n=0; y < i + halfWidth; n++,y++)
+           {
             // 맵 파일의 플레이어 위치를 중심으로 newarray 배열의 크기만큼 값을 확인함
-            for ( int m =0 ;m<mapWidth;m++)
-            {
-                for ( int n =0 ;n<mapHeight;n++)
-                {    
+              
                     if (x < 0 ||  y < 0 )
                     {
                        newarray[m, n]=0;//x,y가 음수가 되면 배경이라 생각함
                     }
-
-                    newarray[m, n] = mapData[x, y];//newarray의 값을 mapData의 값으로 할당
-
+                    else
+                    {
+                        newarray[m, n] = mapData[x, y];
+                    }
+                    
+                    
+           }
             
-                }
-            
-            }
-          }
         }
-       
-
+        
+            
     }
-
-  //
+     void Playermove()
+    { 
+        
+        posi=player.transform.position;        
+        b = Mathf.FloorToInt(posi.x);//(23
+        a = Mathf.FloorToInt(posi.y);//8  mapData[j 12,i 23]
+        //파일 열고 다시 쓰기
+        
+        mapData[height-a,b]=-1;
+        minimapplayer.rectTransform.localPosition=new Vector3(height-a, b, 0);
+        
+        
+        
+    }
+    
 }
+        
+       
+    
+
+  //플레이어가 맵을 벗어나버리면 오류가 뜬다 이건 좀 찾아야할듯..
+  //맵이 사라지는 마법..
+
