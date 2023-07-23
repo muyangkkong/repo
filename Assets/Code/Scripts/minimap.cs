@@ -13,7 +13,7 @@ public class minimap : MonoBehaviour
     int mapHeight=14;
     int mapWidth=14;
     public GameObject player;
-    public Image minimapplayer;
+    
     
     int a;
     int b;
@@ -61,7 +61,7 @@ public class minimap : MonoBehaviour
             Playermove();
             FindingPlayer();
             UpdateMiniMap();
-            mapData[height-a,b]=0;
+            mapData[height-a-1,b]=0;
             player.transform.hasChanged = false;
         }
 
@@ -84,7 +84,9 @@ public class minimap : MonoBehaviour
                                 cell.color=Color.black;
                                 
                         }
-                        
+                        else if (newarray[m,n]==-1) {
+                            cell.color=Color.red;
+                        }
                         else
                         {
                             cell.color=Color.white;
@@ -159,13 +161,13 @@ public class minimap : MonoBehaviour
            {
             // 맵 파일의 플레이어 위치를 중심으로 newarray 배열의 크기만큼 값을 확인함
               
-                    if (x < 0 ||  y < 0 )
+                    if (x >= 0 && y >= 0 && x < height && y < width)
                     {
-                       newarray[m, n]=0;//x,y가 음수가 되면 배경이라 생각함
+                          newarray[m, n] = mapData[x, y]; // 세로 가로
                     }
                     else
                     {
-                        newarray[m, n] = mapData[x, y];
+                         newarray[m, n] = 0; // x, y가 음수이거나 맵 범위를 벗어나면 배경으로 설정
                     }
                     
                     
@@ -183,8 +185,7 @@ public class minimap : MonoBehaviour
         a = Mathf.FloorToInt(posi.y);//8  mapData[j 12,i 23]
         //파일 열고 다시 쓰기
         
-        mapData[height-a,b]=-1;
-        minimapplayer.rectTransform.localPosition=new Vector3(height-a, b, 0);
+        mapData[height-a-1,b]=-1;
         
         
         
