@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
         {
             Chp.getDamage(5.0f);
             Vector3 knockbackDirection = (transform.forward).normalized;
-            StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 200f));
+            StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 3000f));
             Destroy(gameObject);
         }
     }
