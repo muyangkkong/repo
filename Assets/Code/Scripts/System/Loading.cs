@@ -2,45 +2,56 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Loading : MonoBehaviour
 {
-    public Slider progressbar; // 로딩바 슬라이더
-    public Image loadingImage; // 로딩 진행 상황에 따라 나타날 이미지
-    public float revealSpeed = 1f; // 이미지가 나타날 속도
+    static string nextScene;
 
-    private void Start()
+    [SerializeField]
+    Image progressbar;
+
+    [SerializeField]
+    TextMeshProUGUI progressText; // TextMeshProUGUI 컴포넌트를 연결할 변수
+
+    public static void LoadScene(string sceneName)
     {
-        StartCoroutine(LoadScene());
+        nextScene = sceneName;
+        SceneManager.LoadScene("Loading"); // 로딩 씬으로 전환
     }
 
-    IEnumerator LoadScene()
+    void Start()
     {
-        yield return null;
-        AsyncOperation operation = SceneManager.LoadSceneAsync("3dScene");
-        operation.allowSceneActivation = false;
+        StartCoroutine(LoadSceneProcess());
+    }
 
-        while (!operation.isDone)
+    IEnumerator LoadSceneProcess()
+    {
+        AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
+        op.allowSceneActivation = false;
+
+        float loadingTime = 3f; // 로딩 시간 (초단위)
+        float timer = 0f;
+
+        while (!op.isDone)
         {
             yield return null;
 
-            // 로딩 진행 상황에 따라 로딩바 조절
-            float targetProgress = operation.progress < 0.9f ? 0.9f : 1f;
-            progressbar.value = Mathf.MoveTowards(progressbar.value, targetProgress, Time.deltaTime);
-
-            // 로딩 진행 상황에 따라 이미지 표시
-            float alphaValue = progressbar.value - 0.9f;
-            Color imageColor = loadingImage.color;
-            imageColor.a = alphaValue;
-            loadingImage.color = imageColor;
-
-            // 로딩이 완료되고 이미지가 완전히 나타났을 때 씬 전환
-            if (progressbar.value >= 1f && operation.progress >= 0.9f)
+            if (progressbar.fillAmount < 1f)
             {
-                operation.allowSceneActivation = true;
-            }
+                timer += Time.deltaTime;
+                progressbar.fillAmount = Mathf.Lerp(0f, 1f, timer / loadingTime);
 
-            yield return null;
+                // 로딩 진행 상태를 텍스트로 표시
+                int progressPercent = Mathf.RoundToInt(progressbar.fillAmount * 100f);
+                progressText.text = progressPercent.ToString() + "%"; // % 문자 추가
+            }
+            else
+            {
+                // 로딩 바가 완전히 채워졌을 때 Scene 활성화
+                op.allowSceneActivation = true;
+                yield break;
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
   
     public void OnClickNewGame()
     {
-        SceneManager.LoadScene("Loading");
+        Loading.LoadScene("3dScene");
     }
 
     public void OnclickOptions(){
