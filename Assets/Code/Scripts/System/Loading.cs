@@ -1,43 +1,57 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Loading : MonoBehaviour
 {
+    static string nextScene;
 
-    public Slider progressbar;
-    
-    private void Start()
+    [SerializeField]
+    Image progressbar;
+
+    [SerializeField]
+    TextMeshProUGUI progressText; // TextMeshProUGUI 컴포넌트를 연결할 변수
+
+    public static void LoadScene(string sceneName)
     {
-        StartCoroutine(LoadScene());
+        nextScene = sceneName;
+        SceneManager.LoadScene("Loading"); // 로딩 씬으로 전환
     }
 
-    IEnumerator LoadScene()
+    void Start()
     {
-        yield return null;
-        AsyncOperation operation = SceneManager.LoadSceneAsync("3dScene");
-        operation.allowSceneActivation = false;
+        StartCoroutine(LoadSceneProcess());
+    }
 
-        while(!operation.isDone){
+    IEnumerator LoadSceneProcess()
+    {
+        AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
+        op.allowSceneActivation = false;
+
+        float loadingTime = 3f; // 로딩 시간 (초단위)
+        float timer = 0f;
+
+        while (!op.isDone)
+        {
             yield return null;
 
-            if(progressbar.value<0.9f){
-                progressbar.value=Mathf.MoveTowards(progressbar.value, 0.9f, Time.deltaTime);
-            }else if(operation.progress>=0.9f)
+            if (progressbar.fillAmount < 1f)
             {
-                progressbar.value=Mathf.MoveTowards(progressbar.value, 1f, Time.deltaTime);
+                timer += Time.deltaTime;
+                progressbar.fillAmount = Mathf.Lerp(0f, 1f, timer / loadingTime);
+
+                // 로딩 진행 상태를 텍스트로 표시
+                int progressPercent = Mathf.RoundToInt(progressbar.fillAmount * 100f);
+                progressText.text = progressPercent.ToString() + "%"; // % 문자 추가
             }
-
-
-            if(progressbar.value>=1f&&operation.progress>=0.9f){
-                operation.allowSceneActivation = true;
+            else
+            {
+                // 로딩 바가 완전히 채워졌을 때 Scene 활성화
+                op.allowSceneActivation = true;
+                yield break;
             }
         }
     }
-
-
-   
 }
-

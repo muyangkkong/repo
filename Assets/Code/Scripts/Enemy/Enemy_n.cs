@@ -158,7 +158,7 @@ public class Enemy_n : MonoBehaviour
                   
                     Chp.getDamage(5.0f);
                     Vector3 knockbackDirection = (transform.forward).normalized;
-                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 100f));
+                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 700f));
                     isPlayer = false;
 
                 }
@@ -187,7 +187,7 @@ public class Enemy_n : MonoBehaviour
                     
                         Chp.getDamage(5.0f);
                         Vector3 knockbackDirection = (transform.forward).normalized;
-                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 200f));
+                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 1000f));
                     
                     isPlayer = false;                  
                   
@@ -204,7 +204,7 @@ public class Enemy_n : MonoBehaviour
                     nav.SetDestination(target.position);
                     nav.isStopped = !isChase;
                 }   
-                yield return new WaitForSeconds(1.5f); 
+                yield return new WaitForSeconds(1f); 
                 nav.enabled = true;
                 break;
 
@@ -235,7 +235,7 @@ public class Enemy_n : MonoBehaviour
                 {
                     Chp.getDamage(5.0f);
                     Vector3 knockbackDirection = (transform.forward).normalized;
-                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 150f));
+                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 1000f));
                     isPlayer = false;
                     isSuccess = true;
                 }
@@ -250,7 +250,7 @@ public class Enemy_n : MonoBehaviour
                     {
                         Chp.getDamage(5.0f);
                         Vector3 knockbackDirection = (transform.forward).normalized;
-                        StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 150f));
+                        StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 1000f));
                         isPlayer = false;
                     }
                     isSuccess = false;
@@ -270,7 +270,7 @@ public class Enemy_n : MonoBehaviour
                 {
                     Chp.getDamage(5.0f);
                     Vector3 knockbackDirection = (transform.forward).normalized;
-                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 150f));
+                    StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 1000f));
                     isSuccess = true;
                     isPlayer = false;
                 }
@@ -286,7 +286,7 @@ public class Enemy_n : MonoBehaviour
                     {
                         Chp.getDamage(5.0f);
                         Vector3 knockbackDirection = (transform.forward).normalized;
-                        StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 150f));
+                        StartCoroutine(KnockbackCoroutine(playerrigid, knockbackDirection, 1000f));
                         isPlayer = false;
                     }
                     isSuccess = false;

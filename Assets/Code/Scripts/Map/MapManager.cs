@@ -12,10 +12,13 @@ public class MapManager : MonoBehaviour
     int tileSize = 1;
     int[,] mapData;
 
+    
+    
     void Start() {
-        LoadMap(2);
+        LoadMap(1);
         BuildMap();
     }
+    
 
     public void LoadMap(int id) {
         FileStream fs = new FileStream("Assets\\Map\\"+id, FileMode.Open, FileAccess.Read);
@@ -33,6 +36,7 @@ public class MapManager : MonoBehaviour
         for(int j = 0; j < height; j++) {
             s = sr.ReadLine().Split(" ", System.StringSplitOptions.None);
             if(s.Length != width) {
+                Debug.Log(s.Length);
                 Debug.LogError("Parse Error : data does not match width");
                 return;
             }

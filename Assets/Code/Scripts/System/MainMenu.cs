@@ -5,10 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    // 배경 음악을 재생할 AudioSource 컴포넌트
+    public AudioSource backgroundMusic;
+
+    void Start()
+    {
+        // 배경 음악을 재생합니다.
+        backgroundMusic.Play();
+    }
   
     public void OnClickNewGame()
     {
-        SceneManager.LoadScene("Loading");
+        Loading.LoadScene("MapBuildTestScene");
     }
 
     public void OnclickOptions(){
@@ -17,7 +25,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnClickQuit()
     {
-        #if UNITY_EDITOR //에디터에서는 
+        #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #else
         Application.Quit();
