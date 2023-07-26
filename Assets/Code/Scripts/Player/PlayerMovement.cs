@@ -29,14 +29,14 @@ public class PlayerMovement : MonoBehaviour
     }
     
     void Run() {
-        if(movable > 0) return;
-
         float inputX = Input.GetAxisRaw("Horizontal");
+
+        if(movable > 0) inputX = 0;
 
         Vector3 velocity = characterRigidbody.velocity;
         velocity.x = inputX * speed;
         characterRigidbody.velocity = velocity;
-
+        
         if(inputX != 0) direction = (int)inputX;
         Vector3 rotation = new Vector3(0, 0, 0);
         rotation.y = -direction * 90 + 180;

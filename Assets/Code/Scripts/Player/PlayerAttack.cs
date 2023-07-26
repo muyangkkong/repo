@@ -33,7 +33,8 @@ public class PlayerAttack : MonoBehaviour
         int attackInput = (Input.GetKey(KeyCode.Z) ? 1 : 0) + (Input.GetKey(KeyCode.X) ? 2 : 0);
 
         if(attackInput <= 0 || attackInput >= 3) return;
-
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsTag("Attackable")) return;
+        
         if(timingBarManager.GetTimerState() == false) {
             instrument.InitProgress();
         }
