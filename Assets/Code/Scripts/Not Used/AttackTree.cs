@@ -70,7 +70,6 @@ public class AttackTree
         /*construct AttackData*/
         ComboData attackInfo = new ComboData();
         attackInfo.currentComboName = "Attack" + (char)(AttackType + 'A') + Timing.ToString(); 
-        attackInfo.damage = AttackDamage * AttackDataDamageMulti * TimingDamageMulti ; 
         attackInfo.animationClipIdx = 1;
         
         return attackInfo;

@@ -12,6 +12,8 @@ public class PlayerAttack : MonoBehaviour
     
     TimingBarManager timingBarManager;
 
+    float maxAcceptInterval = 0.2f;
+
     public GameObject attackObject;
 
     void Start()
@@ -25,43 +27,80 @@ public class PlayerAttack : MonoBehaviour
 
         animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
         animator.runtimeAnimatorController = animatorOverrideController;
-        
     }
 
     void Update()
     {
-        int attackInput = (Input.GetKey(KeyCode.Z) ? 1 : 0) + (Input.GetKey(KeyCode.X) ? 2 : 0);
+        int attackInput = (Input.GetKeyDown(KeyCode.Z) ? 1 : 0) + (Input.GetKeyDown(KeyCode.X) ? 2 : 0);
 
-        if(attackInput <= 0 || attackInput >= 3) return;
-        if(!animator.GetCurrentAnimatorStateInfo(0).IsTag("Attackable")) return;
-        
+        if(!CheckValidInput(attackInput)) return;
+        if(timingBarManager.gameObject.activeSelf == false) return;
         if(timingBarManager.GetTimerState() == false) {
             instrument.InitProgress();
         }
 
         currentAttackInfo = instrument.GetCurrentAttackData();
 
-        float time = timingBarManager.GetTimerValue();
-        int timeIndex = (int)(time+0.5);
-        if(Mathf.Abs((int)(time+0.5) - time) > 0.2) timeIndex = -1;
+        int timeIndex = getTimeIndex();
+        float timeInterval = getTimeInterval();
+        if(timeInterval > maxAcceptInterval || !CheckValidIndex(timeIndex, attackInput-1)) {
+            StartCoroutine(MissAttack());
+            return;
+        }
 
-        if(timeIndex < 0 || timeIndex > 4) return;
-        if(currentAttackInfo.children[timeIndex,attackInput-1] == 0) return;
-        
         instrument.AttackProgress(timeIndex, attackInput-1);
         currentAttackInfo = instrument.GetCurrentAttackData();
-        animatorOverrideController["Attack"] = instrument.animationClips[currentAttackInfo.animationClipIdx];
-        animator.runtimeAnimatorController = animatorOverrideController;
-
-        Debug.Log(currentAttackInfo.currentComboName);
         timingBarManager.SetAttackInfo(currentAttackInfo.children);
+
+        OverrideAnimator();
+        animator.SetTrigger("Attack");
+
+        timingBarManager.TimerStart();
 
         //temp code
         AttackBase attack = new RangeAttack().init(attackObject);
         attack.init();
         attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10);
+    }
 
-        animator.SetTrigger("Attack");
-        timingBarManager.TimerStart();
+    bool CheckValidInput(int attackInput) {
+        if(attackInput <= 0 || attackInput >= 3) return false;
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsTag("Attackable")) return false;
+
+        return true;
+    }
+
+    void OverrideAnimator() {
+        animatorOverrideController["Attack"] = instrument.animationClips[currentAttackInfo.animationClipIdx];
+        animator.runtimeAnimatorController = animatorOverrideController;
+    }
+
+    int getTimeIndex() {
+        float time = timingBarManager.GetTimerValue();
+        int timeIndex = (int)(time+0.5);
+        return timeIndex;
+    }
+
+    float getTimeInterval() {
+        float time = timingBarManager.GetTimerValue();
+        float timeInterval = Mathf.Abs((int)(time+0.5) - time);
+        return timeInterval;
+    }
+
+    bool CheckValidIndex(int timeIndex, int attackType) {
+        if(timeIndex < 0 || timeIndex > 4) return false;
+        if(currentAttackInfo.children[timeIndex,attackType] == 0) return false;
+
+        return true;
+    }
+
+    IEnumerator MissAttack() {
+        timingBarManager.TimerReset();
+        instrument.InitProgress();
+        timingBarManager.SetAttackInfo(instrument.GetCurrentAttackData().children);
+        timingBarManager.SetIndicator();
+        timingBarManager.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        timingBarManager.gameObject.SetActive(true);
     }
 }
