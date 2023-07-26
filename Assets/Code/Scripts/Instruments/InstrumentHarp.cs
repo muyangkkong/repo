@@ -10,6 +10,29 @@ public class InstrumentHarp : Instrument
     {
         int[,] children = new int[5,2];
         children[0,0] = 1001;
+        children[0,1] = 1101;
+        attackDictionary.SetAttackData(1000, "Initial State", 0f, -1, children);
+
+
+        List<Dictionary<string,object>> HarpCombo = CSVReader.Read("Harp_Combo");
+        for (int i=0; i < HarpCombo.Count; i++)
+        {
+            children = new int[5,2];
+            if ((int)HarpCombo[i]["1A"]!=0) { children[1,0] = (int)HarpCombo[i]["1A"]; } 
+            if ((int)HarpCombo[i]["2A"]!=0) { children[2,0] = (int)HarpCombo[i]["2A"]; } 
+            if ((int)HarpCombo[i]["3A"]!=0) { children[3,0] = (int)HarpCombo[i]["3A"]; }
+            if ((int)HarpCombo[i]["4A"]!=0) { children[4,0] = (int)HarpCombo[i]["4A"]; } 
+
+            if ((int)HarpCombo[i]["1B"]!=0) { children[1,1] = (int)HarpCombo[i]["1B"]; } 
+            if ((int)HarpCombo[i]["2B"]!=0) { children[2,1] = (int)HarpCombo[i]["2B"]; }
+            if ((int)HarpCombo[i]["3B"]!=0) { children[3,1] = (int)HarpCombo[i]["3B"]; }
+            if ((int)HarpCombo[i]["4B"]!=0) { children[3,1] = (int)HarpCombo[i]["4B"]; }             
+
+            attackDictionary.SetAttackData((int)HarpCombo[i]["ID"],(string)HarpCombo[i]["Name"],10.0f, 0 , children);
+        }
+        /*
+        int[,] children = new int[5,2];
+        children[0,0] = 1001;
         attackDictionary.SetAttackData(1000, "Initial State", 10.0f, -1, children);
         
         children = new int[5,2];
