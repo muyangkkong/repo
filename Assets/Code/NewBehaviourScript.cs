@@ -5,19 +5,20 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class NewBehaviourScript : MonoBehaviour
 {
-    public GameObject player;
-
     
-    Vector3 posi;
+
+  //타일 박스 콜라이더로 지정..
+   
     public GameObject[] relics;
     public GameObject[] Text;
 
-    int i;
+    public string coin_nu;
+    public int coin_num;
     Rito.Demo.Test_WRandomPick testrandom;
     
 
     
-    //텍스트를 일일이 유물에 대입해야함.
+    
 
     BoxCollider boxcollider;
     // Start is called before the first frame update
@@ -25,15 +26,17 @@ public class NewBehaviourScript : MonoBehaviour
     { 
         testrandom = GetComponent<Rito.Demo.Test_WRandomPick>();
         Transforming();
-
+        int coin_num=int.Parse(coin_nu);
         
-        boxcollider= GetComponent<BoxCollider>();
+        
         foreach (GameObject obj in Text){
         obj.SetActive(false);
         }
         foreach (GameObject obje in relics){
         obje.SetActive(false);
-    }
+        }
+        testrandom.Test();
+        Debug.Log(testrandom.relics_random.Count);
         
     }
 
@@ -43,31 +46,23 @@ public class NewBehaviourScript : MonoBehaviour
         
     }
 
-    public void OnTriggerStay(BoxCollider col){
-        if(col.tag == "Player"){
-            
-        for (int i =1 ;i< 10;i++)
-        if (relics[i]){
-        Text[i].SetActive(true); 
-
-        }
-
-        }
-    }
-    public void OnTriggerExit(BoxCollider col){
-        if(col.tag=="Player"){
-            Text[i].SetActive(false);
-        }
-    }
+    
+    
     void Transforming(){
-        for (int m =0;m<testrandom.relics_random.Count;m++ ){
-            GameObject.Find(testrandom.relics_random[m]).SetActive(true);
-        }
         
-        GameObject.Find(testrandom.relics_random[0]).transform.position=new Vector3(7,15,0);//collider위치에 y+1
-        GameObject.Find(testrandom.relics_random[1]).transform.position=new Vector3(17,10,0);
-        GameObject.Find(testrandom.relics_random[2]).transform.position=new Vector3(26,15,0);
-        //랜덤 아이템 3개 나왔으니  그걸 다른 transform 함
+        foreach (GameObject j in relics){
+            if(j.name==testrandom.relics_random[0]){
+                j.transform.position=new Vector3(7,15,0);
+            }
+            else if (j.name==testrandom.relics_random[1]){
+                j.transform.position=new Vector3(17,10,0);
+            }
+            else if (j.name==testrandom.relics_random[2]){
+                j.transform.position=new Vector3(26,15,0);
+            }
+        }
+       
     }
+    //
     
 }

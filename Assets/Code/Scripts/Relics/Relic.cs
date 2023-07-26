@@ -16,6 +16,8 @@ public class Relic : ScriptableObject
     public float RhythmJudgeChanges;
     public float MoneyCollectChanges;
     public float SkillObtainChanges; // 스킬 게이지 획득량
+    
+    public int price;
 
 
 }

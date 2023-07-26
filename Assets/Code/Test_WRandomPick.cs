@@ -13,12 +13,15 @@ namespace Rito.Demo
         {
             if (_flag)
             {
-                _flag = false;
+               _flag = false;
                 Test();
+               Debug.Log(relics_random.Count);
+                    
+                
             }
         }
 
-        void Test()
+        public void Test()
         {
             var wrPicker = new Rito.WeightedRandomPicker<string>();
 
@@ -39,24 +42,26 @@ namespace Rito.Demo
             );
 
            
-            for (int i=0;i<3;i++){
+            for (int i=0;i<10;i++){
                 a=wrPicker.GetRandomPick();
-                for (int j =0;j<relics_random.Count;j++){
-                    if (relics_random[j]!=a){
-                        relics_random.Add(a);
+                if(!relics_random.Contains(a)){
+                    relics_random.Add(a);
+                }
+                if (relics_random.Count==3){
+                        break;
                     }
-                Debug.Log(relics_random);
+                
+                    
+                       
+               
+                    
+                
+                    
+                
                 }
                 
 
-            }
-                
-                
-
             
-            
-            
-
             
         }
     }
