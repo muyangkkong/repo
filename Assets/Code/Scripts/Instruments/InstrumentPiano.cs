@@ -21,7 +21,7 @@ public class InstrumentPiano : Instrument
         int[,] children = new int[5,2];
         children[0,0] = 1001;
         children[0,1] = 1101;
-        attackDictionary.SetAttackData(1000, "Initial State", 0f, -1, children);
+        attackDictionary.SetComboData(1000, "Initial State", -1, children);
 
 
         List<Dictionary<string,object>> PianoCombo = CSVReader.Read("Piano_Combo");
@@ -38,7 +38,7 @@ public class InstrumentPiano : Instrument
             if ((int)PianoCombo[i]["3B"]!=0) { children[3,1] = (int)PianoCombo[i]["3B"]; }
             if ((int)PianoCombo[i]["4B"]!=0) { children[3,1] = (int)PianoCombo[i]["4B"]; }             
 
-            attackDictionary.SetAttackData((int)PianoCombo[i]["ID"],(string)PianoCombo[i]["Name"],10.0f, 0 , children);
+            attackDictionary.SetComboData((int)PianoCombo[i]["ID"],(string)PianoCombo[i]["Name"], 0 , children);
         }
         /*
         int[,] children = new int[5, 2];

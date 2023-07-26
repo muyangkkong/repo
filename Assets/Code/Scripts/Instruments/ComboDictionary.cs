@@ -9,6 +9,7 @@ public class ComboData
     public string currentComboName;
     public int animationClipIdx;
     public AttackBase attack;
+    public bool available;
     public int[,] children = new int[5,2];
 }
 

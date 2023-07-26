@@ -12,7 +12,7 @@ public class InstrumentViolin : Instrument
         int[,] children = new int[5,2];
         children[0,0] = 1001;
         children[0,1] = 1101;
-        attackDictionary.SetAttackData(1000, "Initial State", 0f, -1, children);
+        attackDictionary.SetComboData(1000, "Initial State", -1, children);
 
 
         List<Dictionary<string,object>> ViolinCombo = CSVReader.Read("Violin_Combo");
@@ -29,7 +29,7 @@ public class InstrumentViolin : Instrument
             if ((int)ViolinCombo[i]["3B"]!=0) { children[3,1] = (int)ViolinCombo[i]["3B"]; }
             if ((int)ViolinCombo[i]["4B"]!=0) { children[3,1] = (int)ViolinCombo[i]["4B"]; }             
 
-            attackDictionary.SetAttackData((int)ViolinCombo[i]["ID"],(string)ViolinCombo[i]["Name"],10.0f, 0 , children);
+            attackDictionary.SetComboData((int)ViolinCombo[i]["ID"],(string)ViolinCombo[i]["Name"], 0 , children);
         }
 
         /*
