@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Globalization;
 
 public class InstrumentViolin : Instrument
 {
@@ -8,6 +9,30 @@ public class InstrumentViolin : Instrument
 
     public override void Construct()
     {
+        int[,] children = new int[5,2];
+        children[0,0] = 1001;
+        children[0,1] = 1101;
+        attackDictionary.SetAttackData(1000, "Initial State", 0f, -1, children);
+
+
+        List<Dictionary<string,object>> ViolinCombo = CSVReader.Read("Violin_Combo");
+        for (int i=0; i < ViolinCombo.Count; i++)
+        {
+            children = new int[5,2];
+            if ((int)ViolinCombo[i]["1A"]!=0) { children[1,0] = (int)ViolinCombo[i]["1A"]; } 
+            if ((int)ViolinCombo[i]["2A"]!=0) { children[2,0] = (int)ViolinCombo[i]["2A"]; } 
+            if ((int)ViolinCombo[i]["3A"]!=0) { children[3,0] = (int)ViolinCombo[i]["3A"]; }
+            if ((int)ViolinCombo[i]["4A"]!=0) { children[4,0] = (int)ViolinCombo[i]["4A"]; } 
+
+            if ((int)ViolinCombo[i]["1B"]!=0) { children[1,1] = (int)ViolinCombo[i]["1B"]; } 
+            if ((int)ViolinCombo[i]["2B"]!=0) { children[2,1] = (int)ViolinCombo[i]["2B"]; }
+            if ((int)ViolinCombo[i]["3B"]!=0) { children[3,1] = (int)ViolinCombo[i]["3B"]; }
+            if ((int)ViolinCombo[i]["4B"]!=0) { children[3,1] = (int)ViolinCombo[i]["4B"]; }             
+
+            attackDictionary.SetAttackData((int)ViolinCombo[i]["ID"],(string)ViolinCombo[i]["Name"],10.0f, 0 , children);
+        }
+
+        /*
         int[,] children = new int[5,2];
         children[0,0] = 1001;
         attackDictionary.SetAttackData(1000, "Initial State", 10.0f, -1, children);
@@ -70,6 +95,7 @@ public class InstrumentViolin : Instrument
         attackDictionary.SetAttackData(1015, "Hook Straight Straight", 10.0f, 7, children);
         attackDictionary.SetAttackData(1016, "Straight Hook Hook", 10.0f, 7, children);
         attackDictionary.SetAttackData(1017, "Big Straight Straight", 10.0f, 8, children);
+        */    
     }
 
 
