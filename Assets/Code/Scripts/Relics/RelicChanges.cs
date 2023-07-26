@@ -13,7 +13,10 @@ public class RelicChanges : MonoBehaviour
     public float RelicRhythmJudge;
     public float RelicMoneyCollect;
     public float RelicSkillObtain; // 스킬 게이지 획득량
-
+    public float RelicFirstAttackDamage;
+    public float RelicSecondAttackDamage;
+    public float RelicThirdAttackDamage;
+    public float RelicFourthAttackDamage;
 
 
 
@@ -46,6 +49,10 @@ public class RelicChanges : MonoBehaviour
             RelicRhythmJudge += TempRelic.RhythmJudgeChanges;
             RelicMoneyCollect += TempRelic.MoneyCollectChanges;
             RelicSkillObtain += TempRelic.SkillObtainChanges;
+            RelicFirstAttackDamage += TempRelic.FirstAttackDamageChanges;
+            RelicSecondAttackDamage += TempRelic.SecondAttackDamageChanges;
+            RelicThirdAttackDamage += TempRelic.ThirdAttackDamageChanges;
+            RelicFirstAttackDamage += TempRelic.FourthAttackDamageChanges;
         }
     }
 
