@@ -17818,6 +17818,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 810978908}
     m_Modifications:
+    - target: {fileID: 943515891407530848, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
+      propertyPath: m_Name
+      value: GuageInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022022606917077527, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022022606917077527, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022022606917077527, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3018868
+      objectReference: {fileID: 0}
     - target: {fileID: 4212697399728819152, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
       propertyPath: m_Name
       value: CharacterInfoArea
@@ -17930,6 +17946,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4212697400903148512, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
+      propertyPath: m_Name
+      value: HpInfo
+      objectReference: {fileID: 0}
     - target: {fileID: 4212697400975613071, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -17986,6 +18006,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5609983064531064059, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609983064531064059, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c48a48643207e742a7f2c97392553eb, type: 3}
 --- !u!4 &4424193582329855225 stripped
@@ -18005,7 +18033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0314f388f756f489cf5aac96187b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
+  maxHp: 100
   slider: {fileID: 585151015}
 --- !u!1001 &5518830096045521949
 PrefabInstance:

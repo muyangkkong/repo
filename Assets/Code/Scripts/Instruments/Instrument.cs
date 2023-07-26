@@ -24,7 +24,7 @@ public abstract class Instrument : MonoBehaviour
     }
 
     public ComboData GetCurrentAttackData() {
-        return attackDictionary.GetAttackData(currentAttackId);
+        return attackDictionary.GetComboData(currentAttackId);
     }
     public void InitProgress() {
         currentAttackId = 1000;

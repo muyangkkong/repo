@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c22080d6498210141856de1d8db97eca, type: 3}
-  m_Name: 100_Score
+  m_Name: Thick_book
   m_EditorClassIdentifier: 
-  RelicName: 100_Score
-  Rarity: Unique
-  RelicImage: {fileID: 21300000, guid: 4efe8bf52011dff4d8739a240ccf8a87, type: 3}
+  RelicName: Thick_book
+  Rarity: Common
+  RelicImage: {fileID: 21300000, guid: adac0f19069d1de4d87d4c4304283920, type: 3}
   MaxHealthChanges: 0
   DamageChanges: 0
-  ComboDamageChanges: 0.8
-  NonComboDamageChanges: -0.5
+  ComboDamageChanges: 0
+  NonComboDamageChanges: 0
   RhythmSpeedChanges: 0
   RhythmJudgeChanges: 0
   MoneyCollectChanges: 0
@@ -26,4 +26,4 @@ MonoBehaviour:
   FirstAttackDamageChanges: 0
   SecondAttackDamageChanges: 0
   ThirdAttackDamageChanges: 0
-  FourthAttackDamageChanges: 0
+  FourthAttackDamageChanges: 0.3
