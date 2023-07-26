@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool onGround = false;
     public int movable = 0;
-    int direction = 1;
+    public int direction = 1;
     public float speed = 5f;
 
     void Start(){
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
         Run();
         Jump();
         Fall();
-        if(onGround) {
+        if(onGround && Physics.Raycast(transform.position, Vector3.down, 0.05f, LayerMask.GetMask("Platform"))) {
             Vector3 velocity = characterRigidbody.velocity;
             velocity.y = 0;
             characterRigidbody.velocity = velocity;
@@ -29,14 +29,14 @@ public class PlayerMovement : MonoBehaviour
     }
     
     void Run() {
-        if(movable > 0) return;
-
         float inputX = Input.GetAxisRaw("Horizontal");
+
+        if(movable > 0) inputX = 0;
 
         Vector3 velocity = characterRigidbody.velocity;
         velocity.x = inputX * speed;
         characterRigidbody.velocity = velocity;
-
+        
         if(inputX != 0) direction = (int)inputX;
         Vector3 rotation = new Vector3(0, 0, 0);
         rotation.y = -direction * 90 + 180;
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.layer == 9) {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Platform")) {
             onGround = true;
             if(animator.GetCurrentAnimatorStateInfo(0).IsTag("Jump")) {
                 animator.SetTrigger("Land");

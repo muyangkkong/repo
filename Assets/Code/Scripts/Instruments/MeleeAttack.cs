@@ -7,19 +7,22 @@ public struct Range {
     public Vector2 pos2;
 }
 
-public class MeleeAttackData : AttackData
+public class MeleeAttack : AttackBase
 {
     Range range;
-    float delay;
-    float damage;
     float angle;
 
-    public override void init() {
-        range.pos1 = new Vector2(0, 0);
-        range.pos2 = new Vector2(5f, 1.8f);
-        damage = 20f;
+    public override AttackBase init(float x1, float y1, float x2, float y2)
+    {
+        range.pos1.x = x1;
+        range.pos1.y = y1;
+        range.pos2.x = x2;
+        range.pos2.y = y2;
+        return this;
     }
-    public override void Attack(Vector3 position, int direction, float power) {
+
+    public override IEnumerator Attack(Vector3 position, int direction, float power) {
+        yield return new WaitForSeconds(delay);
         Vector3 center = new Vector3((range.pos1.x + range.pos2.x)/2, (range.pos1.y + range.pos2.y)/2, 0.5f);
         Quaternion rotation = Quaternion.Euler(0, direction * 90 - 90, angle);
         center = rotation * center;
@@ -30,8 +33,10 @@ public class MeleeAttackData : AttackData
             rotation,
             LayerMask.GetMask("enemy")
         );
+        //temp code
         foreach(Collider collider in hitColliders) {
-            Debug.Log(collider.ToString());
+            Enemy enemy = collider.GetComponent<Enemy>();
+            enemy.Damage(1f * power, 120f);
         }
     }
 }

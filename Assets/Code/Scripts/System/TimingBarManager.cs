@@ -38,7 +38,7 @@ public class TimingBarManager : MonoBehaviour
         indicator[4,1] = GameObject.Find("Indicator4").transform.Find("IndicatorB").gameObject;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(isTimerOn) {
             slider.value += Time.deltaTime * timerSpeed;
@@ -57,12 +57,24 @@ public class TimingBarManager : MonoBehaviour
         isTimerOn = true;
         audioSource.Play();
 
+        SetIndicator();
+    }
+
+    public void TimerReset() {
+        slider.value = 0;
+        isTimerOn = false;
+
+        SetIndicator();
+    }
+
+    public void SetIndicator() {
         for(int i = 1; i <= 4; i++) {
             for(int j = 0; j < 2; j++) {
                 indicator[i,j].SetActive(nextAttackInfo[i,j] != 0);
             }
         }
     }
+
     public bool GetTimerState() {
         return isTimerOn;
     }

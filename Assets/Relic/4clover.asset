@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 4clover
   m_EditorClassIdentifier: 
   RelicName: 4Clover
+  Rarity: Unique
   RelicImage: {fileID: 21300000, guid: 49142c4c43e7c314bb1d5e78ec258c33, type: 3}
   MaxHealthChanges: 0
   DamageChanges: 0
@@ -22,3 +23,7 @@ MonoBehaviour:
   RhythmJudgeChanges: 0.5
   MoneyCollectChanges: 0
   SkillObtainChanges: 0
+  FirstAttackDamageChanges: 0
+  SecondAttackDamageChanges: 0
+  ThirdAttackDamageChanges: 0
+  FourthAttackDamageChanges: 0
