@@ -990,6 +990,26 @@ PrefabInstance:
       propertyPath: instrument
       value: 
       objectReference: {fileID: 8911349632589043026, guid: 3b53de1b892a28741bdf7aa051f56721, type: 3}
+    - target: {fileID: 2905400375159293562, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: m_Size.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905400375159293562, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: m_Size.z
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595167547666835605, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595167547666835605, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595167547666835605, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8210966074256146660, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_RootOrder
       value: 3

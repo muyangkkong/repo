@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class Enemy : MonoBehaviour
+public class Enemy_n : MonoBehaviour
 {
     public enum Type {SHORT, RUSH , LONG, ELITE};
     public Type enemyType;

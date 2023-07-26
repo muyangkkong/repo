@@ -17,7 +17,7 @@ public abstract class Instrument : MonoBehaviour
     public abstract void Construct();
     public abstract void Init();
     
-    public ComboData Attack(int timing, int type) {
+    public ComboData AttackProgress(int timing, int type) {
         if(GetCurrentAttackData().children[timing,type] == 0) return null;
         currentAttackId = GetCurrentAttackData().children[timing,type];
         return GetCurrentAttackData();

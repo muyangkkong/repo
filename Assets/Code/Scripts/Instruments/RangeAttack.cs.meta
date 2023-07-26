@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 621cfe6286ca20843b66d3c3785dd114
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - animationClip: {instanceID: 0}
+  - projectileObject: {fileID: 5764672803649153873, guid: 6603485e8a511f24595867e1e83c880e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

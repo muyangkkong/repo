@@ -11,7 +11,9 @@ public class PlayerAttack : MonoBehaviour
     ComboData currentAttackInfo;
     
     TimingBarManager timingBarManager;
-    
+
+    public GameObject attackObject;
+
     void Start()
     {
         instrument = GetComponent<PlayerEquipment>().instrument;
@@ -23,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
 
         animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
         animator.runtimeAnimatorController = animatorOverrideController;
+        
     }
 
     void Update()
@@ -44,13 +47,18 @@ public class PlayerAttack : MonoBehaviour
         if(timeIndex < 0 || timeIndex > 4) return;
         if(currentAttackInfo.children[timeIndex,attackInput-1] == 0) return;
         
-        instrument.Attack(timeIndex, attackInput-1);
+        instrument.AttackProgress(timeIndex, attackInput-1);
         currentAttackInfo = instrument.GetCurrentAttackData();
         animatorOverrideController["Attack"] = instrument.animationClips[currentAttackInfo.animationClipIdx];
         animator.runtimeAnimatorController = animatorOverrideController;
 
         Debug.Log(currentAttackInfo.currentComboName);
         timingBarManager.SetAttackInfo(currentAttackInfo.children);
+
+        //temp code
+        AttackBase attack = new RangeAttack().init(attackObject);
+        attack.init();
+        attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10);
 
         animator.SetTrigger("Attack");
         timingBarManager.TimerStart();

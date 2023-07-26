@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5062590164538693238}
   - component: {fileID: 8209557976742631891}
   - component: {fileID: 6199981358050766105}
-  - component: {fileID: 3694070817913687722}
   m_Layer: 8
   m_Name: AG_violin_bow
   m_TagString: Instrumnet
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3694070817913687722
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5551317944044571852}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0044582076, y: 0.6440599, z: 0.016134053}
-  m_Center: {x: -0.0022289802, y: -0.002656938, z: -0.006808925}

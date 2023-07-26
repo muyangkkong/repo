@@ -9,8 +9,8 @@ public class CharacterHP : MonoBehaviour
 {
     public float HP;
     
-    public Slider slider; // ui hp °ÔÀÌÁö
-    float currentTime; // ´ê¿´À» ¶§ µ¥¹ÌÁö ´Ù´Â ¼Óµµ Á¶Àý
+    public Slider slider; // ui hp ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    float currentTime; // ï¿½ê¿´ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù´ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
     
     public void getDamage(float damage)
     {
@@ -42,16 +42,16 @@ public class CharacterHP : MonoBehaviour
 
 
     }
-    void OnCollisionEnter(Collision other)
+/*     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            currentTime = 0;// ´©Àû ½Ã°£ ÃÊ±âÈ­
+            currentTime = 0;// ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½Ê±ï¿½È­
             getDamage(5.0f);
         }
        
     }
-    void OnCollisionStay(Collision other) // °è¼Ó ´êÀ» ½Ã
+    void OnCollisionStay(Collision other) // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     {
        
         if (other.gameObject.tag == "Enemy")
@@ -64,7 +64,7 @@ public class CharacterHP : MonoBehaviour
             }     
             }
 
-    }
+    } */
 
     
 }
