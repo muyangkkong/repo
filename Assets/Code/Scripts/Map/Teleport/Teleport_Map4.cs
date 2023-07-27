@@ -8,6 +8,8 @@ public class Teleport_Map4 : MonoBehaviour
     MainCamera cam;
     GameObject maincan;
     CanvasManager can;
+    GameObject targetplayer;
+    PlayerMovement move;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +17,8 @@ public class Teleport_Map4 : MonoBehaviour
         cam = maincam.GetComponent<MainCamera>();
         maincan = GameObject.Find("Canvas");
         can = maincan.GetComponent<CanvasManager>();
+        targetplayer = GameObject.Find("Player");
+        move = targetplayer.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,7 @@ public class Teleport_Map4 : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             can.Setting();
+            move.speed = 0f;
             MapManager.Instance.DestroyMap();
             MapManager.Instance.LoadMap(4);
             MapManager.Instance.BuildMap();

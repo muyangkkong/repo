@@ -8,6 +8,8 @@ public class Teleport_Map2 : MonoBehaviour
     MainCamera cam;
     GameObject maincan;
     CanvasManager can;
+    GameObject targetplayer;
+    PlayerMovement move;
     // Start is called before the first frame update
     void Awake()
     {
@@ -15,7 +17,9 @@ public class Teleport_Map2 : MonoBehaviour
         cam = maincam.GetComponent<MainCamera>();
         maincan = GameObject.Find("Canvas");
         can = maincan.GetComponent<CanvasManager>();
-        
+        targetplayer = GameObject.Find("Player");
+        move = targetplayer.GetComponent<PlayerMovement>();
+
     }
 
 
@@ -30,6 +34,7 @@ public class Teleport_Map2 : MonoBehaviour
         {
 
             can.Setting();
+            move.speed = 0f;
             MapManager.Instance.DestroyMap();
             MapManager.Instance.LoadMap(2);
             MapManager.Instance.BuildMap();
@@ -40,6 +45,7 @@ public class Teleport_Map2 : MonoBehaviour
             can.Activate();
             cam.limitMaxX = 99.5f;
             cam.limitMaxY = 21f;
+            //move.speed = 10.0f;
             //Debug.Log(map.gameObject.GetInstanceID());
         }
 
