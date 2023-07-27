@@ -21,7 +21,7 @@ public class MeleeAttack : AttackBase
         return this;
     }
 
-    public override IEnumerator Attack(Vector3 position, int direction, float power) {
+    public override IEnumerator Attack(Vector3 position, int direction, float power, float yieldGuage) {
         yield return new WaitForSeconds(delay);
         Vector3 center = new Vector3((range.pos1.x + range.pos2.x)/2, (range.pos1.y + range.pos2.y)/2, 0.5f);
         Quaternion rotation = Quaternion.Euler(0, direction * 90 - 90, angle);
@@ -37,6 +37,7 @@ public class MeleeAttack : AttackBase
         foreach(Collider collider in hitColliders) {
             Enemy enemy = collider.GetComponent<Enemy>();
             enemy.Damage(1f * power, 120f);
+            UltimateGuageManager.Instance.AddValue(yieldGuage);
         }
     }
 }
