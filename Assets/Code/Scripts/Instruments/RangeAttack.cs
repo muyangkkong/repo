@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class RangeAttack : AttackBase
 {
-    float height;
-    int projectileNum;
-    float speed;
-    float duration;
+    float height = 0.9f;
+    int projectileNum = 1;
+    float speed = 8f;
+    float duration = 2f;
 
     float angle;
 
@@ -28,11 +28,12 @@ public class RangeAttack : AttackBase
         return this;
     }
 
-    public override IEnumerator Attack(Vector3 position, int direction, float power) {
+    public override IEnumerator Attack(Vector3 position, int direction, float power, float yieldGuage) {
         yield return new WaitForSeconds(delay);
         int leftProjectileNum = projectileNum;
         while(leftProjectileNum > 0) {
-            Projectile projectile = MonoBehaviour.Instantiate(projectileObject, position + Vector3.up * height, Quaternion.Euler(new Vector3(0,-direction * 90 + 180,0))).GetComponent<Projectile>();
+            PlayerProjectile projectile = MonoBehaviour.Instantiate(projectileObject, position + Vector3.up * height, Quaternion.Euler(new Vector3(0,-direction * 90 + 180,0))).GetComponent<PlayerProjectile>();
+            projectile.yieldGuage = yieldGuage;
             projectile.speed = speed;
             //duration set
             projectile.Shot(new Vector3(direction, 0, 0), power * damage);
