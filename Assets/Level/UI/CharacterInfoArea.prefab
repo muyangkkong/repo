@@ -86,6 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3155241887912014838}
   - component: {fileID: 7560770016182039827}
+  - component: {fileID: 6060338736988865872}
   m_Layer: 5
   m_Name: HpInfo (1)
   m_TagString: Untagged
@@ -163,10 +164,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6060338736988865872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943515891407530848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9301c2af2e725264e88b2a5ba843f8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &964128961356211738
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce5d4d59d778324fa5a6cd9e250b0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 5138944175738134564}
 --- !u!222 &816780089984920680
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -240,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -308,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce5d4d59d778324fa5a6cd9e250b0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 1606090783113185251}
 --- !u!222 &492759307994142628
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -330,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -477,6 +490,10 @@ MonoBehaviour:
   RelicRhythmJudge: 0
   RelicMoneyCollect: 0
   RelicSkillObtain: 0
+  RelicFirstAttackDamage: 0
+  RelicSecondAttackDamage: 0
+  RelicThirdAttackDamage: 0
+  RelicFourthAttackDamage: 0
 --- !u!1 &4212697399728819152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,7 +1248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce5d4d59d778324fa5a6cd9e250b0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 3690525090345414326}
 --- !u!222 &2005421084946880551
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1253,7 +1270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1321,7 +1338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce5d4d59d778324fa5a6cd9e250b0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 8109914377083602330}
 --- !u!222 &3391679737302343829
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1411,7 +1428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce5d4d59d778324fa5a6cd9e250b0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 1532616833569019337}
 --- !u!222 &8194265398003053803
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1433,7 +1450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1764706, g: 0.1764706, b: 0.1764706, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1577,7 +1594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce5d4d59d778324fa5a6cd9e250b0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 3581244489842637757}
 --- !u!222 &765820316546259862
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1599,7 +1616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1780,7 +1797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce5d4d59d778324fa5a6cd9e250b0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 1903290624168042654}
 --- !u!222 &2965328370707284008
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1802,7 +1819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

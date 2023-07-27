@@ -1,4 +1,5 @@
 ﻿ID,Name,DamageType,Damage,RangeX1,RangeY1,RangeX2,RangeY2,Delay,Clip,0A,1A,2A,3A,4A,0B,1B,2B,3B,4B,Additional Effect
+4000,InitialState,0,0,0,0,0,0,0,Pistol_Attack1,4001,0,0,0,0,4101,0,0,0,0,
 4001,TrumpetStart,2,0.5f,1.4,1,3f,1.5,0.3f,Pistol_Attack1-1,0,0,4002,0,0,0,0,0,0,0,
 4002,BasicTrumpetAttack1-1,2,0.6f,1.4,1,3f,1.5,0.3f,Pistol_Attack1,0,0,4003,0,4032,0,0,4022,0,0,
 4003,BasicTrumpetAttack1-2,2,0.8f,1.4,1,3f,1.5,0.3f,Pistol_Attack1-1,0,4013,4004,0,0,0,0,0,0,0,
