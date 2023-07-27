@@ -51,11 +51,13 @@ public class test : MonoBehaviour
                 
                 
                     if (Base.total_coin<price){
-                        Debug.Log("돈없음");
+                        Debug.Log("돈없음");//텍스트 띄우기
                     }
                     else if (Base.total_coin>=price){
+                        int number=Base.total_coin-=price;
+                        Base.b=number.ToString();
+                        Base.Total_coin.text=Base.b;
                        
-                        Debug.Log(Base.total_coin-=price);
                         gameObject.SetActive(false);
                         m.SetActive(false);
                     }
@@ -71,4 +73,3 @@ public class test : MonoBehaviour
     
 }
 
-//플레이어 트리거  

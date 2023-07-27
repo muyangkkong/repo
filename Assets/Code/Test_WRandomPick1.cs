@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Rito.Demo
 {
-    public class Test_WRandomPick : MonoBehaviour
+    public class Test_WRandomPick1 : MonoBehaviour
     {
         string a;
         
@@ -22,22 +22,32 @@ namespace Rito.Demo
 
                 
 
-                ("Beer", 80),
-                ("Blue_potion", 80),//일반유물 
-                ("Heart", 80),
-                ("Money_bag", 80),
+                ("note(특수)바이올린1", 80),
+                ("note(특수)바이올린2", 80),
+                ("note(특수)바이올린3", 80),
+                ("note(특수)하프1", 80),
+                ("note(특수)하프2", 80),
+                ("note(특수)하프3", 80),
+                ("note(특수)피아노1", 80),
+                ("note(특수)피아노2", 80),//
+                ("note(특수)피아노3", 80),
+                ("note(특수)트럼펫1", 80),
+                ("note(특수)트럼펫2", 80),
+                ("note(특수)트럼펫3", 80),
+
                 
 
-                ("4clover", 20),
-                ("100_score", 20),
-                ("Clock",20)
+                ("note(희귀)트럼펫", 20),
+                ("note(희귀)하프", 20),
+                ("note(희귀)피아노", 20),
+                ("note(희귀)바이올린", 20)
             );
 
            
             
                 
                 
-                while (relics_random.Count<3){
+                while (relics_random.Count<2){
                     a=wrPicker.GetRandomPick();
                     
                     if(!relics_random.Contains(a)){
