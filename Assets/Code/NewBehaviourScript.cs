@@ -18,9 +18,12 @@ public class NewBehaviourScript : MonoBehaviour
     public Text Total_coin;
     string b;
     public int total_coin;
+
+    public GameObject player;
     
     
     // Start is called before the first frame update
+    
     void Start()
     { 
        for (int i=0;i<Text.Length;i++){

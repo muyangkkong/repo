@@ -7,14 +7,14 @@ public class test : MonoBehaviour
     NewBehaviourScript Base;
     
     Relic objectData;
-    private GameObject M;//전역변수로 어떻게 하지..?
+    private GameObject m;
     // Start is called before the first frame update
     void Start()
     {
         
         Base=GameObject.Find("Canvas").transform.GetComponent<NewBehaviourScript>();
         objectData = ScriptableObject.CreateInstance<Relic>();
-        M=GetComponent<GameObject>();
+        
        
     }
 
@@ -28,9 +28,11 @@ public class test : MonoBehaviour
         if (col.gameObject.tag=="Player"){
             
             foreach (GameObject m in Base.Text){
-                             if (m.name==gameObject.name){
-                                    M=Instantiate(m);
-                                    Debug.Log(M.name);
+                     if (m.name==gameObject.name){
+                            m.SetActive(true);
+                            
+                            m.transform.positon=new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0);
+                                    
                                 }
             }
         }
@@ -38,7 +40,7 @@ public class test : MonoBehaviour
             
     void OnTriggerExit(Collider col){
               if (col.gameObject.tag=="Player"){
-                M.SetActive(false);
+                
                              
                               }
                  
@@ -48,7 +50,7 @@ public class test : MonoBehaviour
         if (col.gameObject.tag=="Player"){
                            
                            
-                           M.SetActive(true);
+                           
                        }
                        
                     

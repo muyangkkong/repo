@@ -477,6 +477,7 @@ MonoBehaviour:
   - {fileID: 5341556615515469178, guid: bfe04377fd0b59149aa3e19125f31c35, type: 3}
   Total_coin: {fileID: 914128627}
   total_coin: 0
+  player: {fileID: 0}
 --- !u!114 &437467335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1893,6 +1894,10 @@ PrefabInstance:
       propertyPath: instrument
       value: 
       objectReference: {fileID: 8911349632589043026, guid: 6909b6698ce920b4a93618b19893ec50, type: 3}
+    - target: {fileID: 4938704649528158558, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8210966074256146660, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_RootOrder
       value: 5
