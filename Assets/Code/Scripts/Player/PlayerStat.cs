@@ -61,7 +61,8 @@ public class PlayerStat : MonoBehaviour
     public float TimerSpeed {
         get {return _TimerSpeed;}
         set {
-            _TimerSpeed = value;
+            if (value > 4.5f) { _TimerSpeed = 4.5f; }
+            else { _TimerSpeed = value; }
             timingBarManager.timerSpeed = _TimerSpeed;
         }
     }
