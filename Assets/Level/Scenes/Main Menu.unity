@@ -688,7 +688,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0e3a18bf14bd5be4fbc96a046d83a19c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6cfeb3dde7cec2748aca2096f050991c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1098,6 +1098,7 @@ GameObject:
   - component: {fileID: 2104307445}
   - component: {fileID: 2104307444}
   - component: {fileID: 2104307448}
+  - component: {fileID: 2104307449}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -1204,3 +1205,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundMusic: {fileID: 1327681749}
+--- !u!114 &2104307449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104307443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b42e5eb5ec67846b9df8fd2ec2b75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: {x: 1.2, y: 1.2, z: 1.2}
+  hoverDuration: 0.2

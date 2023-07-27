@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Instrument : MonoBehaviour
 {
     protected string InstrumentType;
+    public string MType {get {return InstrumentType;}}
 
     protected ComboDictionary comboDictionary = new ComboDictionary();
     protected int rootId;

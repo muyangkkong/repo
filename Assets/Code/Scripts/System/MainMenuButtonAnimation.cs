@@ -19,6 +19,7 @@ public class MainMenuButtonAnimation : MonoBehaviour, IPointerEnterHandler, IPoi
         LeanTween.scale(buttonRectTransform, hoverScale, hoverDuration);
     }
 
+
     public void OnPointerExit(PointerEventData eventData)
     {
         LeanTween.scale(buttonRectTransform, Vector3.one, hoverDuration);
