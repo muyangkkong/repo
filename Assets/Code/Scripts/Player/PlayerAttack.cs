@@ -29,7 +29,7 @@ public class PlayerAttack : MonoBehaviour
         animator.runtimeAnimatorController = animatorOverrideController;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         int attackInput = (Input.GetKeyDown(KeyCode.Z) ? 1 : 0) + (Input.GetKeyDown(KeyCode.X) ? 2 : 0);
 
