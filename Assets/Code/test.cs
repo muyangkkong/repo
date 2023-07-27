@@ -31,7 +31,7 @@ public class test : MonoBehaviour
                      if (m.name==gameObject.name){
                             m.SetActive(true);
                             
-                            m.transform.positon=new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0);
+                            m.transform.localPosition=new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0);
                                     
                                 }
             }
@@ -40,7 +40,7 @@ public class test : MonoBehaviour
             
     void OnTriggerExit(Collider col){
               if (col.gameObject.tag=="Player"){
-                
+                    m.SetActive(false);
                              
                               }
                  
@@ -48,13 +48,7 @@ public class test : MonoBehaviour
          
     void OnTriggerStay(Collider col){
         if (col.gameObject.tag=="Player"){
-                           
-                           
-                           
-                       }
-                       
-                    
-            
+                
             if (Input.GetKeyDown(KeyCode.C)){
                 int j=RelicApply();
                 if (j!=-1){
@@ -64,7 +58,7 @@ public class test : MonoBehaviour
                     else if (Base.total_coin>=objectData.price){
                         Base.total_coin-=objectData.price;
                         gameObject.SetActive(false);
-                        M.SetActive(false);
+                        m.SetActive(false);
                     }
                     
                     
@@ -73,6 +67,7 @@ public class test : MonoBehaviour
                 //
             }
         }
+    }
     
     int RelicApply(){
         string Name=gameObject.name;
