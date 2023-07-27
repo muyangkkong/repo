@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     
     TimingBarManager timingBarManager;
 
-    public float maxAcceptInterval = 0.2f;
+    float maxAcceptInterval = 0.2f;
 
     public GameObject attackObject;
 
@@ -29,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
         animator.runtimeAnimatorController = animatorOverrideController;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         int attackInput = (Input.GetKeyDown(KeyCode.Z) ? 1 : 0) + (Input.GetKeyDown(KeyCode.X) ? 2 : 0);
 
@@ -52,6 +53,8 @@ public class PlayerAttack : MonoBehaviour
         currentAttackInfo = instrument.GetCurrentAttackData();
         timingBarManager.SetAttackInfo(currentAttackInfo.children);
 
+        float yieldGuage = YieldUltimateGuage(timeInterval);
+
         OverrideAnimator();
         animator.SetTrigger("Attack");
 
@@ -60,7 +63,10 @@ public class PlayerAttack : MonoBehaviour
         //temp code
         AttackBase attack = new RangeAttack().init(attackObject);
         attack.init();
-        attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10,10);
+        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage));
+/*         AttackBase attack = new MeleeAttack().init(0, 0, 5, 1.8f);
+        attack.init();
+        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage)); */
     }
 
     bool CheckValidInput(int attackInput) {
@@ -102,5 +108,12 @@ public class PlayerAttack : MonoBehaviour
         timingBarManager.gameObject.SetActive(false);
         yield return new WaitForSeconds(1f);
         timingBarManager.gameObject.SetActive(true);
+    }
+
+    float YieldUltimateGuage(float timeInterval) {
+        float normalizedInterval = timeInterval / maxAcceptInterval;
+        float steppedInterval = ((int)(normalizedInterval * 10)) / 10f;
+        float score = Mathf.Cos(steppedInterval * (Mathf.PI/3));
+        return score * instrument.GetGuageMultiplier();
     }
 }
