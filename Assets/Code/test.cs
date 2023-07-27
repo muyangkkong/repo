@@ -6,17 +6,14 @@ public class test : MonoBehaviour
 {
     NewBehaviourScript Base;
     
-    Relic[] relicobjects;
+    public int price;
     private GameObject m;
     // Start is called before the first frame update
     void Start()
     {
         
         Base=GameObject.Find("Canvas").transform.GetComponent<NewBehaviourScript>();
-        foreach (Relic relic in relicobjects){
-            Debug.Log(relic.RelicName);
-        }
-        
+        Debug.Log(Base.total_coin);
        
     }
 
@@ -43,8 +40,7 @@ public class test : MonoBehaviour
             
     void OnTriggerExit(Collider col){
               if (col.gameObject.tag=="Player"){
-                   m.SetActive(false);
-                             
+                   m.SetActive(false);          
                               }
                  
               }
@@ -52,34 +48,27 @@ public class test : MonoBehaviour
     void OnTriggerStay(Collider col){
         if (col.gameObject.tag=="Player"){ 
             if (Input.GetKeyDown(KeyCode.C)){
-                int j=RelicApply();
-                Debug.Log(objectData.price);
-               
-
-                if (j!=-1){
-                    if (Base.total_coin<objectData.price){
+                
+                
+                    if (Base.total_coin<price){
                         Debug.Log("돈없음");
                     }
-                    else if (Base.total_coin>=objectData.price){
-                        Base.total_coin-=objectData.price;
+                    else if (Base.total_coin>=price){
+                       
+                        Debug.Log(Base.total_coin-=price);
                         gameObject.SetActive(false);
                         m.SetActive(false);
                     }
                     
                     
-                }
+                
                 
                 //
             }
         }
     }
     
-    int RelicApply(){
-        
-            if (gameObject.name==objectData.RelicName){
-                return objectData.price;
-            }
-             return -1;
-    }
+    
 }
 
+//플레이어 트리거  

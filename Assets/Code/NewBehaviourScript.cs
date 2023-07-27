@@ -16,9 +16,9 @@ public class NewBehaviourScript : MonoBehaviour
     Rito.Demo.Test_WRandomPick testrandom;
     BoxCollider boxcollider;
     public Text Total_coin;
-    string b;
+    public string b;
     public int total_coin;
-
+    public Relic relicobjects;
     
     
     
@@ -48,14 +48,12 @@ public class NewBehaviourScript : MonoBehaviour
         testrandom.Test();
         
         Transforming();
-        
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        b=Total_coin.text;
     }
 
     
