@@ -43,7 +43,7 @@ public class Teleport_Map9 : MonoBehaviour
             Minimap.Instance.Init();
             cam.limitMaxX = 99.5f;
             cam.limitMaxY = 21f;
-            move.speed = 10.0f;
+            
             //Debug.Log(map.gameObject.GetInstanceID());
         }
 
