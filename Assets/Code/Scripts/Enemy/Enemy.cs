@@ -144,7 +144,7 @@ public class Enemy : MonoBehaviour
         Invoke("Chase", 0f);
     }
 
-    public void Damage(float amount, float knockback) {
+    public virtual void Damage(float amount, float knockback) {
         StopAllCoroutines();
         CancelInvoke();
         moveTo = 0;
