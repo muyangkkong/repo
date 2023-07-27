@@ -6,7 +6,7 @@ public abstract class Instrument : MonoBehaviour
 {
     protected string InstrumentType;
 
-    protected ComboDictionary attackDictionary = new ComboDictionary();
+    protected ComboDictionary comboDictionary = new ComboDictionary();
     protected int currentAttackId;
 
     public GameObject leftArmed = null;
@@ -24,9 +24,9 @@ public abstract class Instrument : MonoBehaviour
     }
 
     public ComboData GetCurrentAttackData() {
-        return attackDictionary.GetComboData(currentAttackId);
+        return comboDictionary.GetComboData(currentAttackId);
     }
-    public void InitProgress() {
+    public virtual void InitProgress() {
         currentAttackId = 1000;
     }
 }

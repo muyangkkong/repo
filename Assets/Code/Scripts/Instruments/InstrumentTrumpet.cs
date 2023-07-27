@@ -5,11 +5,7 @@ using UnityEngine;
 public class InstrumentTrumpet : Instrument
 {
     public override void Construct() {
-        int[,] children = new int[5,2];
-        children[0,0] = 1001;
-        children[0,1] = 1101;
-        attackDictionary.SetComboData(1000, "Initial State", -1, children);
-
+        int[,] children;
 
         List<Dictionary<string,object>> TrumpetCombo = CSVReader.Read("Trumpet_Combo");
         for (int i=0; i < TrumpetCombo.Count; i++)
@@ -25,11 +21,13 @@ public class InstrumentTrumpet : Instrument
             if ((int)TrumpetCombo[i]["3B"]!=0) { children[3,1] = (int)TrumpetCombo[i]["3B"]; }
             if ((int)TrumpetCombo[i]["4B"]!=0) { children[3,1] = (int)TrumpetCombo[i]["4B"]; }             
 
-            attackDictionary.SetComboData((int)TrumpetCombo[i]["ID"],(string)TrumpetCombo[i]["Name"], 0 , children);
+            comboDictionary.SetComboData((int)TrumpetCombo[i]["ID"],(string)TrumpetCombo[i]["Name"], 0 , children);
         }
     }
 
-
+    public override void InitProgress() {
+        currentAttackId = 4000;
+    }
 
     // Start is called before the first frame update
     public override void Init()

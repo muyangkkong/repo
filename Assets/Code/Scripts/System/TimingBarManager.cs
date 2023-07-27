@@ -63,7 +63,7 @@ public class TimingBarManager : MonoBehaviour
     public void TimerReset() {
         slider.value = 0;
         isTimerOn = false;
-
+        audioSource.Stop();
         SetIndicator();
     }
 

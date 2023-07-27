@@ -18,11 +18,7 @@ public class InstrumentPiano : Instrument
 
     public override void Construct()
     {
-        int[,] children = new int[5,2];
-        children[0,0] = 1001;
-        children[0,1] = 1101;
-        attackDictionary.SetComboData(1000, "Initial State", -1, children);
-
+        int[,] children;
 
         List<Dictionary<string,object>> PianoCombo = CSVReader.Read("Piano_Combo");
         for (int i=0; i < PianoCombo.Count; i++)
@@ -38,7 +34,7 @@ public class InstrumentPiano : Instrument
             if ((int)PianoCombo[i]["3B"]!=0) { children[3,1] = (int)PianoCombo[i]["3B"]; }
             if ((int)PianoCombo[i]["4B"]!=0) { children[3,1] = (int)PianoCombo[i]["4B"]; }             
 
-            attackDictionary.SetComboData((int)PianoCombo[i]["ID"],(string)PianoCombo[i]["Name"], 0 , children);
+            comboDictionary.SetComboData((int)PianoCombo[i]["ID"],(string)PianoCombo[i]["Name"], 0 , children);
         }
         /*
         int[,] children = new int[5, 2];
@@ -116,6 +112,9 @@ public class InstrumentPiano : Instrument
                 root.InsertCombo(root, ComboE, 0); */
     }
 
+    public override void InitProgress() {
+        currentAttackId = 3000;
+    }
 
     public override void Init()
     {
