@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     
     TimingBarManager timingBarManager;
 
-    float maxAcceptInterval = 0.2f;
+    public float maxAcceptInterval = 0.2f;
 
     public GameObject attackObject;
 

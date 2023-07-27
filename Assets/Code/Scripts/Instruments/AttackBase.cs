@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AttackBase/*  : MonoBehaviour */
 {
-    public AnimationClip animationClip;
     protected float damage;
     protected float delay;
 
@@ -13,8 +12,7 @@ public class AttackBase/*  : MonoBehaviour */
         return this;
     }
 
-    public AttackBase SetBaseData(AnimationClip animationClip, float damage, float delay) {
-        this.animationClip = animationClip;
+    public AttackBase SetBaseData(float damage, float delay) {
         this.damage = damage;
         this.delay = delay;
         return this;
