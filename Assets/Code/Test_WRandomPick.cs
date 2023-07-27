@@ -7,20 +7,12 @@ namespace Rito.Demo
     public class Test_WRandomPick : MonoBehaviour
     {
         string a;
-        public bool _flag;
+        
         public List<string> relics_random;
-        private void OnValidate()
-        {
-            if (_flag)
-            {
-               _flag = false;
-                Test();
-               Debug.Log(relics_random.Count);
-                    
-                
-            }
-        }
-
+       
+        
+        
+        
         public void Test()
         {
             var wrPicker = new Rito.WeightedRandomPicker<string>();
@@ -42,23 +34,21 @@ namespace Rito.Demo
             );
 
            
-            for (int i=0;i<10;i++){
-                a=wrPicker.GetRandomPick();
-                if(!relics_random.Contains(a)){
+            
+                
+                
+                while (relics_random.Count<3){
+                    a=wrPicker.GetRandomPick();
+                    
+                    if(!relics_random.Contains(a)){
                     relics_random.Add(a);
-                }
-                if (relics_random.Count==3){
-                        break;
                     }
-                
+                    else{
+                        continue;
+                    }
                     
-                       
-               
-                    
-                
-                    
-                
                 }
+                
                 
 
             
