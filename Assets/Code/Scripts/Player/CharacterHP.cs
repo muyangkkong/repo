@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class CharacterHP : MonoBehaviour
 {
+    PlayerStat playerstat;
     public float maxHp;
     float currentHp;
 
@@ -28,6 +29,7 @@ public class CharacterHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHp = GameObject.Find("Player").GetComponent<PlayerStat>().MaxHp;
         currentHp = maxHp;
         slider.maxValue = maxHp;
         slider.value = maxHp;

@@ -2667,6 +2667,7 @@ GameObject:
   - component: {fileID: 4938704649528158558}
   - component: {fileID: 2905400375159293562}
   - component: {fileID: -3255328902908869750}
+  - component: {fileID: 471231347949870947}
   - component: {fileID: 1941836975775101443}
   - component: {fileID: -8850937559795069355}
   m_Layer: 8
@@ -2774,7 +2775,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e0d098a99fefb429323185f55ce56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movable: 0
+  direction: 1
   speed: 10
+--- !u!114 &471231347949870947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843071342487149150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e77ea231cbaa14e8fbea4cd93cd522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerBasicDamage: 20
+  PlayerBasicMaxHealth: 100
+  RhythmBasicSpeed: 3
+  RhythmBasicJudge: 0.2
+  BasicComboDamage: 1
+  BasicMoneyCollect: 1
+  BasicSkillObtain: 1
+  BasicFirstAttackDamage: 1
+  BasicSecondAttackDamage: 1
+  BasicThirdAttackDamage: 1
+  BasicFourthAttackDamage: 1
+  WeaponRhythmSpeed: 1
+  WeaponFirstAttackDamage: 1
+  WeaponSecondAttackDamage: 1
+  WeaponThirdAttackDamage: 1
+  WeaponFourthAttackDamage: 1
+  ComboDamage: 0
+  MaxHp: 0
+  PlayerDamage: 0
+  MaxAcceptInterval: 0
+  TimerSpeed: 0
+  SkillObtain: 0
+  MoneyCollect: 0
 --- !u!114 &1941836975775101443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2802,3 +2840,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fd7fe9640cd3f4588c06d17c67d8ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackObject: {fileID: 0}

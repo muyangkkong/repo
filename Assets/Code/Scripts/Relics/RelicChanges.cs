@@ -34,6 +34,10 @@ public class RelicChanges : MonoBehaviour
         RelicRhythmJudge = 1f;
         RelicMoneyCollect = 1f;
         RelicSkillObtain = 1f;
+        RelicFirstAttackDamage = 1f;
+        RelicSecondAttackDamage = 1f;
+        RelicThirdAttackDamage = 1f;
+        RelicFourthAttackDamage = 1f;
     }
 
     public void RelicStatus() {
@@ -42,13 +46,17 @@ public class RelicChanges : MonoBehaviour
             Relic TempRelic = relicArea.relicslot[i].relic;
 
             RelicMaxHealth += TempRelic.MaxHealthChanges;
+            
             RelicDamage += TempRelic.DamageChanges;
             RelicComboDamage += TempRelic.ComboDamageChanges;
             RelicNonComboDamage += TempRelic.NonComboDamageChanges;
+            
             RelicRhythmSpeed += TempRelic.RhythmSpeedChanges;
             RelicRhythmJudge += TempRelic.RhythmJudgeChanges;
+            
             RelicMoneyCollect += TempRelic.MoneyCollectChanges;
             RelicSkillObtain += TempRelic.SkillObtainChanges;
+
             RelicFirstAttackDamage += TempRelic.FirstAttackDamageChanges;
             RelicSecondAttackDamage += TempRelic.SecondAttackDamageChanges;
             RelicThirdAttackDamage += TempRelic.ThirdAttackDamageChanges;

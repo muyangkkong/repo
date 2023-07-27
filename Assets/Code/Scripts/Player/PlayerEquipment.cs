@@ -13,7 +13,6 @@ public class PlayerEquipment : MonoBehaviour
     }
 
     void Update() {
-        
     }
 
     void EquipInstrument() {
