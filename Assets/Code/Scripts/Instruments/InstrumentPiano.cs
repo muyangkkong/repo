@@ -18,6 +18,29 @@ public class InstrumentPiano : Instrument
 
     public override void Construct()
     {
+        int[,] children = new int[5,2];
+        children[0,0] = 1001;
+        children[0,1] = 1101;
+        attackDictionary.SetComboData(1000, "Initial State", -1, children);
+
+
+        List<Dictionary<string,object>> PianoCombo = CSVReader.Read("Piano_Combo");
+        for (int i=0; i < PianoCombo.Count; i++)
+        {
+            children = new int[5,2];
+            if ((int)PianoCombo[i]["1A"]!=0) { children[1,0] = (int)PianoCombo[i]["1A"]; } 
+            if ((int)PianoCombo[i]["2A"]!=0) { children[2,0] = (int)PianoCombo[i]["2A"]; } 
+            if ((int)PianoCombo[i]["3A"]!=0) { children[3,0] = (int)PianoCombo[i]["3A"]; }
+            if ((int)PianoCombo[i]["4A"]!=0) { children[4,0] = (int)PianoCombo[i]["4A"]; } 
+
+            if ((int)PianoCombo[i]["1B"]!=0) { children[1,1] = (int)PianoCombo[i]["1B"]; } 
+            if ((int)PianoCombo[i]["2B"]!=0) { children[2,1] = (int)PianoCombo[i]["2B"]; }
+            if ((int)PianoCombo[i]["3B"]!=0) { children[3,1] = (int)PianoCombo[i]["3B"]; }
+            if ((int)PianoCombo[i]["4B"]!=0) { children[3,1] = (int)PianoCombo[i]["4B"]; }             
+
+            attackDictionary.SetComboData((int)PianoCombo[i]["ID"],(string)PianoCombo[i]["Name"], 0 , children);
+        }
+        /*
         int[,] children = new int[5, 2];
         children[0, 0] = 1001;
         attackDictionary.SetAttackData(1000, "Initial State", 10.0f, -1, children);

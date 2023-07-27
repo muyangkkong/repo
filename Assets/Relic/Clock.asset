@@ -13,12 +13,17 @@ MonoBehaviour:
   m_Name: Clock
   m_EditorClassIdentifier: 
   RelicName: Clock
+  Rarity: Unique
   RelicImage: {fileID: 21300000, guid: 0f0a5df928115114186ac1c72f2ceb3d, type: 3}
   MaxHealthChanges: 0
-  DamageChanges: 0.8
+  DamageChanges: -0.2
   ComboDamageChanges: 0
   NonComboDamageChanges: 0
   RhythmSpeedChanges: 1
   RhythmJudgeChanges: 0
   MoneyCollectChanges: 0
   SkillObtainChanges: 0
+  FirstAttackDamageChanges: 0
+  SecondAttackDamageChanges: 0
+  ThirdAttackDamageChanges: 0
+  FourthAttackDamageChanges: 0
