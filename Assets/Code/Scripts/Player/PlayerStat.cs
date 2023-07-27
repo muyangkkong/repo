@@ -29,45 +29,63 @@ public class PlayerStat : MonoBehaviour
     private float WeaponThirdAttackDamage = 1f;
     private float WeaponFourthAttackDamage = 1f;
 
-    public float PlayerDamage;
-    public float ComboDamage;
-    public float MaxHp;
+    private float _PlayerDamage;
+    public float PlayerDamage {
+        get {return _PlayerDamage;}
+        set {
+            _PlayerDamage = value;
+        }
+    }
 
-    public float MaxAcceptInterval;
-    public float TimerSpeed;
+
+    public float ComboDamage;
+
+    private float _MaxHp;
+    public float MaxHp {
+        get {return _MaxHp;}
+        set {
+            _MaxHp = value;
+            characterHP.maxHp = _MaxHp;}
+    }
+
+    private float _MaxAcceptInterval;
+    public float MaxAcceptInterval {
+        get {return _MaxAcceptInterval;}
+        set {
+            _MaxAcceptInterval = value;
+            playerattack.maxAcceptInterval = _MaxAcceptInterval;
+        }
+    }
+
+    private float _TimerSpeed;
+    public float TimerSpeed {
+        get {return _TimerSpeed;}
+        set {
+            _TimerSpeed = value;
+            timingBarManager.timerSpeed = _TimerSpeed;
+        }
+    }
+
     public float SkillObtain;
     public float MoneyCollect;
 
 
-    private void Start() {
+    private void Start(){
         relicChange = GameObject.Find("ItemArea").GetComponent<RelicChanges>();
         playerattack = GameObject.Find("Player").GetComponent<PlayerAttack>();
         characterHP = GameObject.Find("Player").GetComponent<CharacterHP>();
         timingBarManager = GameObject.Find("Timing Bar").GetComponent<TimingBarManager>();
         playerEquipment = GameObject.Find("Player").GetComponent<PlayerEquipment>();
-    
-        MaxHp = PlayerBasicMaxHealth * relicChange.RelicMaxHealth;
-        
-        PlayerDamage = PlayerBasicDamage * relicChange.RelicDamage;
-        ComboDamage = BasicComboDamage * relicChange.RelicComboDamage;
 
-        BasicFirstAttackDamage = relicChange.RelicFirstAttackDamage;
-        BasicSecondAttackDamage = relicChange.RelicSecondAttackDamage;
-        BasicThirdAttackDamage = relicChange.RelicThirdAttackDamage;
-        BasicFourthAttackDamage = relicChange.RelicFourthAttackDamage;
-                
-        TimerSpeed = RhythmBasicSpeed * relicChange.RelicRhythmSpeed;
-        MaxAcceptInterval = RhythmBasicJudge * relicChange.RelicRhythmSpeed;
-
-        SkillObtain = BasicSkillObtain * relicChange.RelicSkillObtain;
-        MoneyCollect = BasicMoneyCollect * relicChange.RelicMoneyCollect;
+        StatApply();
     }
 
     private void update() {
         StatApply();
+        WeaponApply();
     }
 
-    public void StatApply() 
+    public void WeaponApply() 
     {
         if (playerEquipment.instrument.MType == "InstrumentHarp") {
             WeaponRhythmSpeed = 0.7f;
@@ -86,7 +104,9 @@ public class PlayerStat : MonoBehaviour
             WeaponThirdAttackDamage = 1f;
             WeaponFourthAttackDamage = 1f;
         } 
-        
+    }
+
+    public void StatApply(){
         MaxHp = PlayerBasicMaxHealth * relicChange.RelicMaxHealth;
         
         PlayerDamage = PlayerBasicDamage * relicChange.RelicDamage;
@@ -102,8 +122,6 @@ public class PlayerStat : MonoBehaviour
 
         SkillObtain = BasicSkillObtain * relicChange.RelicSkillObtain;
         MoneyCollect = BasicMoneyCollect * relicChange.RelicMoneyCollect;
-
-
     }
 
     public float DamageCalculate(int ComboNumber, float ComboDamageValue)

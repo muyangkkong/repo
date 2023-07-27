@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class PlayerAttack : MonoBehaviour
     
     TimingBarManager timingBarManager;
 
-    float maxAcceptInterval = 0.2f;
+    public float maxAcceptInterval = 0.2f;
 
     public GameObject attackObject;
 
@@ -53,20 +52,15 @@ public class PlayerAttack : MonoBehaviour
         currentAttackInfo = instrument.GetCurrentAttackData();
         timingBarManager.SetAttackInfo(currentAttackInfo.children);
 
-        float yieldGuage = YieldUltimateGuage(timeInterval);
-
         OverrideAnimator();
         animator.SetTrigger("Attack");
 
         timingBarManager.TimerStart();
 
         //temp code
-/*         AttackBase attack = new RangeAttack().init(attackObject);
+        AttackBase attack = new RangeAttack().init(attackObject);
         attack.init();
-        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage)); */
-        AttackBase attack = new MeleeAttack().init(0, 0, 5, 1.8f);
-        attack.init();
-        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage));
+        attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10,10);
     }
 
     bool CheckValidInput(int attackInput) {
@@ -108,12 +102,5 @@ public class PlayerAttack : MonoBehaviour
         timingBarManager.gameObject.SetActive(false);
         yield return new WaitForSeconds(1f);
         timingBarManager.gameObject.SetActive(true);
-    }
-
-    float YieldUltimateGuage(float timeInterval) {
-        float normalizedInterval = timeInterval / maxAcceptInterval;
-        float steppedInterval = ((int)(normalizedInterval * 10)) / 10f;
-        float score = Mathf.Cos(steppedInterval * (Mathf.PI/3));
-        return score * instrument.GetGuageMultiplier();
     }
 }

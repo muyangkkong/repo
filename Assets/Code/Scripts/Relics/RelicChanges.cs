@@ -8,7 +8,6 @@ public class RelicChanges : MonoBehaviour
     public float RelicMaxHealth;
     public float RelicDamage;
     public float RelicComboDamage;
-    public float RelicNonComboDamage;
     public float RelicRhythmSpeed; //콤보 게이지의 이동 속도
     public float RelicRhythmJudge;
     public float RelicMoneyCollect;
@@ -29,7 +28,6 @@ public class RelicChanges : MonoBehaviour
         RelicMaxHealth = 1f;
         RelicDamage = 1f;
         RelicComboDamage = 1f;
-        RelicNonComboDamage = 1f;
         RelicRhythmSpeed = 1f;
         RelicRhythmJudge = 1f;
         RelicMoneyCollect = 1f;
@@ -49,7 +47,6 @@ public class RelicChanges : MonoBehaviour
             
             RelicDamage += TempRelic.DamageChanges;
             RelicComboDamage += TempRelic.ComboDamageChanges;
-            RelicNonComboDamage += TempRelic.NonComboDamageChanges;
             
             RelicRhythmSpeed += TempRelic.RhythmSpeedChanges;
             RelicRhythmJudge += TempRelic.RhythmJudgeChanges;
