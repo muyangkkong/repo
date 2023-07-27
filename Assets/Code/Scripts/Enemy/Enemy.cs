@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected int direction = -1;
 
-    float currentHp;
+    protected float currentHp;
     public float maxHp;
 
     protected float AttackDamage = 10.0f;
@@ -144,7 +144,7 @@ public class Enemy : MonoBehaviour
         Invoke("Chase", 0f);
     }
 
-    public void Damage(float amount, float knockback) {
+    public virtual void Damage(float amount, float knockback) {
         StopAllCoroutines();
         CancelInvoke();
         moveTo = 0;
