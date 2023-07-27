@@ -6,14 +6,16 @@ public class test : MonoBehaviour
 {
     NewBehaviourScript Base;
     
-    Relic objectData;
+    Relic[] relicobjects;
     private GameObject m;
     // Start is called before the first frame update
     void Start()
     {
         
         Base=GameObject.Find("Canvas").transform.GetComponent<NewBehaviourScript>();
-        objectData = ScriptableObject.CreateInstance<Relic>();
+        foreach (Relic relic in relicobjects){
+            Debug.Log(relic.RelicName);
+        }
         
        
     }
@@ -27,11 +29,12 @@ public class test : MonoBehaviour
     void OnTriggerEnter(Collider col){
         if (col.gameObject.tag=="Player"){
             
-            foreach (GameObject m in Base.Text){
-                     if (m.name==gameObject.name){
-                            m.SetActive(true);
-                            
-                            m.transform.positon=new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0);
+            for (int i=0;i<Base.Text.Length;i++){
+                
+                     if (Base.Text[i].name==gameObject.name.Replace("(Clone)","")){
+                            Base.Text[i].SetActive(true);
+                            m=Base.Text[i];
+                            m.transform.localPosition=new Vector3(gameObject.transform.position.x,gameObject.transform.position.y-50,0);
                                     
                                 }
             }
@@ -40,23 +43,19 @@ public class test : MonoBehaviour
             
     void OnTriggerExit(Collider col){
               if (col.gameObject.tag=="Player"){
-                
+                   m.SetActive(false);
                              
                               }
                  
               }
          
     void OnTriggerStay(Collider col){
-        if (col.gameObject.tag=="Player"){
-                           
-                           
-                           
-                       }
-                       
-                    
-            
+        if (col.gameObject.tag=="Player"){ 
             if (Input.GetKeyDown(KeyCode.C)){
                 int j=RelicApply();
+                Debug.Log(objectData.price);
+               
+
                 if (j!=-1){
                     if (Base.total_coin<objectData.price){
                         Debug.Log("돈없음");
@@ -64,7 +63,7 @@ public class test : MonoBehaviour
                     else if (Base.total_coin>=objectData.price){
                         Base.total_coin-=objectData.price;
                         gameObject.SetActive(false);
-                        M.SetActive(false);
+                        m.SetActive(false);
                     }
                     
                     
@@ -73,14 +72,14 @@ public class test : MonoBehaviour
                 //
             }
         }
+    }
     
     int RelicApply(){
-        string Name=gameObject.name;
-                if (objectData.RelicName==Name){
-                    return objectData.price;
-
-                }
-                return -1;
+        
+            if (gameObject.name==objectData.RelicName){
+                return objectData.price;
+            }
+             return -1;
     }
 }
 

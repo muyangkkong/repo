@@ -19,7 +19,7 @@ public class NewBehaviourScript : MonoBehaviour
     string b;
     public int total_coin;
 
-    public GameObject player;
+    
     
     
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class NewBehaviourScript : MonoBehaviour
         Text[i].SetActive(false);
        }
         Text[0]=GameObject.Find("Text").transform.Find("4clover").gameObject;
-        Text[1]=GameObject.Find("Text").transform.Find("100_score").gameObject;
+        Text[1]=GameObject.Find("Text").transform.Find("100_Score").gameObject;
         Text[2]=GameObject.Find("Text").transform.Find("Beer").gameObject;
         Text[3]=GameObject.Find("Text").transform.Find("Blue_potion").gameObject;
         Text[4]=GameObject.Find("Text").transform.Find("Clock").gameObject;

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -7871262347712118973}
   - component: {fileID: -9005103235807469260}
   m_Layer: 0
-  m_Name: 100_score
+  m_Name: 100_Score
   m_TagString: relics
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6317858307059584590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1388839, y: 0.1355318, z: 1}
+  m_LocalPosition: {x: 32.0302, y: 12.8272, z: 0}
+  m_LocalScale: {x: 0.11307927, y: 0.11310129, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,5 +109,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25.6, y: 25.6, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 34.991558, y: 35.344673, z: 0.2}
+  m_Center: {x: 0.2842972, y: -4.8723345, z: 0}
