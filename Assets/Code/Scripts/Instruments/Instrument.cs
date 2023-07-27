@@ -41,7 +41,7 @@ public abstract class Instrument : MonoBehaviour
     public void ParseCSV(string csvName) {
         int[,] children;
 
-        List<Dictionary<string,object>> Combo = CSVReader.Read("Violin_Combo");
+        List<Dictionary<string,object>> Combo = CSVReader.Read(csvName);
         for (int i=0; i < Combo.Count; i++)
         {
             children = new int[5,2];
@@ -55,9 +55,20 @@ public abstract class Instrument : MonoBehaviour
             children[1,1] = (int)Combo[i]["1B"];
             children[2,1] = (int)Combo[i]["2B"];
             children[3,1] = (int)Combo[i]["3B"];
-            children[3,1] = (int)Combo[i]["4B"];          
+            children[4,1] = (int)Combo[i]["4B"];          
 
-            comboDictionary.SetComboData((int)Combo[i]["ID"],(string)Combo[i]["Name"], 0 , children);
+            int animationClipIdx = 0;
+            for(int j = 0; j < animationClips.Length; j++) {
+                //Debug.Log(animationClips[j].ToString() + " " + (string)Combo[i]["Clip"]);
+                if(animationClips[j].name.ToString() == (string)Combo[i]["Clip"]) {
+                    animationClipIdx = j;
+                    Debug.Log(Combo[i]["Clip"]);
+                }
+            }
+            
+
+            comboDictionary.SetComboData((int)Combo[i]["ID"],(string)Combo[i]["Name"], animationClipIdx, children);
+
         }
         rootId = (int)Combo[0]["ID"];
     }
