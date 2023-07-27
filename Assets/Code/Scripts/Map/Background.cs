@@ -9,28 +9,37 @@ public class Background : MonoBehaviour
     // Start is called before the first frame update
     private static Background instance = null;
 
+    public AudioClip backgroundMusicA;
+    public AudioClip backgroundMusicB;
+    public AudioClip backgroundMusicC;
+    public AudioClip backgroundMusicD;
+    public AudioClip backgroundMusicE;
+    public AudioClip backgroundMusicF;
+
+    public AudioSource audioSource;
+
     void Awake()
     {
         if (null == instance)
         {
-            //ÀÌ Å¬·¡½º ÀÎ½ºÅÏ½º°¡ Åº»ıÇßÀ» ¶§ Àü¿ªº¯¼ö instance¿¡ °ÔÀÓ¸Å´ÏÀú ÀÎ½ºÅÏ½º°¡ ´ã°ÜÀÖÁö ¾Ê´Ù¸é, ÀÚ½ÅÀ» ³Ö¾îÁØ´Ù.
+            //ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ Åºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ instanceï¿½ï¿½ ï¿½ï¿½ï¿½Ó¸Å´ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Ù¸ï¿½, ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½Ø´ï¿½.
             instance = this;
 
-            //¾À ÀüÈ¯ÀÌ µÇ´õ¶óµµ ÆÄ±«µÇÁö ¾Ê°Ô ÇÑ´Ù.
-            //gameObject¸¸À¸·Îµµ ÀÌ ½ºÅ©¸³Æ®°¡ ÄÄÆ÷³ÍÆ®·Î¼­ ºÙ¾îÀÖ´Â Hierarchy»óÀÇ °ÔÀÓ¿ÀºêÁ§Æ®¶ó´Â ¶æÀÌÁö¸¸, 
-            //³ª´Â Çò°¥¸² ¹æÁö¸¦ À§ÇØ this¸¦ ºÙ¿©ÁÖ±âµµ ÇÑ´Ù.
+            //ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½Ç´ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½Ñ´ï¿½.
+            //gameObjectï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Î¼ï¿½ ï¿½Ù¾ï¿½ï¿½Ö´ï¿½ Hierarchyï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 
+            //ï¿½ï¿½ï¿½ï¿½ ï¿½ò°¥¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ thisï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½Ö±âµµ ï¿½Ñ´ï¿½.
             DontDestroyOnLoad(this.gameObject);
         }
         else
         {
-            //¸¸¾à ¾À ÀÌµ¿ÀÌ µÇ¾ú´Âµ¥ ±× ¾À¿¡µµ Hierarchy¿¡ GameMgrÀÌ Á¸ÀçÇÒ ¼öµµ ÀÖ´Ù.
-            //±×·² °æ¿ì¿£ ÀÌÀü ¾À¿¡¼­ »ç¿ëÇÏ´ø ÀÎ½ºÅÏ½º¸¦ °è¼Ó »ç¿ëÇØÁÖ´Â °æ¿ì°¡ ¸¹Àº °Í °°´Ù.
-            //±×·¡¼­ ÀÌ¹Ì Àü¿ªº¯¼öÀÎ instance¿¡ ÀÎ½ºÅÏ½º°¡ Á¸ÀçÇÑ´Ù¸é ÀÚ½Å(»õ·Î¿î ¾ÀÀÇ GameMgr)À» »èÁ¦ÇØÁØ´Ù.
+            //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½Âµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Hierarchyï¿½ï¿½ GameMgrï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½.
+            //ï¿½×·ï¿½ ï¿½ï¿½ì¿£ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ì°¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+            //ï¿½×·ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ instanceï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´Ù¸ï¿½ ï¿½Ú½ï¿½(ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ GameMgr)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
             Destroy(this.gameObject);
         }
     }
 
-    //°ÔÀÓ ¸Å´ÏÀú ÀÎ½ºÅÏ½º¿¡ Á¢±ÙÇÒ ¼ö ÀÖ´Â ÇÁ·ÎÆÛÆ¼. staticÀÌ¹Ç·Î ´Ù¸¥ Å¬·¡½º¿¡¼­ ¸¾²¯ È£ÃâÇÒ ¼ö ÀÖ´Ù.
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½Å´ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼. staticï¿½Ì¹Ç·ï¿½ ï¿½Ù¸ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
     public static Background Instance
     {
         get
@@ -42,8 +51,12 @@ public class Background : MonoBehaviour
             return instance;
         }
     }
+
     void Start()
     {
+         // AudioSource ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
+        audioSource = GetComponent<AudioSource>();
+
         clone = new GameObject[back.Length];
         BuildBack(0);
     }
@@ -57,6 +70,53 @@ public class Background : MonoBehaviour
     {
         GameObject buildBack = Instantiate(back[n], transform.position, Quaternion.identity,transform);
         clone[n] = buildBack;
+
+        audioSource.volume=1f;
+
+         audioSource.Stop();
+
+        if (n == 0)
+        {
+            // ë°°ê²½ ìŒì•… Aë¥¼ ì¬ìƒ
+            audioSource.clip = backgroundMusicA;
+            Debug.Log("n="+n);
+        }
+        else if (n == 1)
+        {
+            // ë°°ê²½ ìŒì•… Bë¥¼ ì¬ìƒ
+            audioSource.clip = backgroundMusicB;
+            audioSource.volume=0.3f;
+            Debug.Log("n="+n);
+        }
+         else if (n == 2)
+        {
+            // ë°°ê²½ ìŒì•… Bë¥¼ ì¬ìƒ
+            audioSource.clip = backgroundMusicC;
+            Debug.Log("n="+n);
+        }
+         else if (n == 6)
+        {
+            // ë°°ê²½ ìŒì•… Bë¥¼ ì¬ìƒ
+            audioSource.clip = backgroundMusicD;
+            audioSource.volume=0.3f;
+            Debug.Log("n="+n);
+        }
+         else if (n == 3)
+        {
+            // ë°°ê²½ ìŒì•… Bë¥¼ ì¬ìƒ
+            audioSource.clip = backgroundMusicE;
+            audioSource.volume=0.6f;
+        }
+         else if (n == 4)
+        {
+            // ë°°ê²½ ìŒì•… Bë¥¼ ì¬ìƒ
+            audioSource.clip = backgroundMusicF;
+        }
+
+        audioSource.loop=true;
+
+         audioSource.Play();
+
     }
     public void DestroyBack()
 

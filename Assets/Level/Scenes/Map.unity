@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4988,6 +4988,7 @@ GameObject:
   - component: {fileID: 641106963}
   - component: {fileID: 641106966}
   - component: {fileID: 641106967}
+  - component: {fileID: 641106968}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5100,6 +5101,109 @@ MonoBehaviour:
   - {fileID: 5912773286111361097, guid: e42c134c562e02a40961e1744da906d6, type: 3}
   - {fileID: 7165653988988555641, guid: b3be0b1cf25e0b140beb44303100f873, type: 3}
   - {fileID: 7042672809950804473, guid: 2e4d85b809830d5489d1265a93f242fa, type: 3}
+  backgroundMusicA: {fileID: 8300000, guid: 1b3e5fe697f5a524c9bbf51e9cfc449f, type: 3}
+  backgroundMusicB: {fileID: 8300000, guid: 5be9e11c3113af34b9e2689c14b2a654, type: 3}
+  backgroundMusicC: {fileID: 8300000, guid: 391881056007e514d81bc8fb65c201fa, type: 3}
+  backgroundMusicD: {fileID: 8300000, guid: e46ad023931c62943975d7bc0e604cca, type: 3}
+  backgroundMusicE: {fileID: 8300000, guid: 5c3cbfd9f6bed8f4085947c0650a85ab, type: 3}
+  backgroundMusicF: {fileID: 8300000, guid: 0d32086be29b6e84a9f555d073a4fd35, type: 3}
+  audioSource: {fileID: 0}
+--- !u!82 &641106968
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641106962}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0d32086be29b6e84a9f555d073a4fd35, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!224 &645525474 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5870832540849951291, guid: e363fe276f58e4b478e918d4a801c3f6, type: 3}
