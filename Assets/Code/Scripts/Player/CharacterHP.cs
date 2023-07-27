@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class CharacterHP : MonoBehaviour
 {
+    PlayerStat playerstat;
     public float maxHp;
     float currentHp;
 

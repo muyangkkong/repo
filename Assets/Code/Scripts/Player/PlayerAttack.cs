@@ -12,7 +12,7 @@ public class PlayerAttack : MonoBehaviour
     
     TimingBarManager timingBarManager;
 
-    float maxAcceptInterval = 0.2f;
+    public float maxAcceptInterval = 0.2f;
 
     public GameObject attackObject;
 
@@ -60,7 +60,7 @@ public class PlayerAttack : MonoBehaviour
         //temp code
         AttackBase attack = new RangeAttack().init(attackObject);
         attack.init();
-        attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10);
+        attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10,10);
     }
 
     bool CheckValidInput(int attackInput) {

@@ -12,7 +12,6 @@ public class Relic : ScriptableObject
     public float MaxHealthChanges;
     public float DamageChanges;
     public float ComboDamageChanges;
-    public float NonComboDamageChanges;
     public float RhythmSpeedChanges; //콤보 게이지의 이동 속도
     public float RhythmJudgeChanges;
     public float MoneyCollectChanges;
