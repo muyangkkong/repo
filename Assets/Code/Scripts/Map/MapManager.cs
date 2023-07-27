@@ -51,7 +51,7 @@ public class MapManager : MonoBehaviour
 
     void Start() {
 
-        LoadMap(1);
+        LoadMap(6);
         BuildMap();
         Debug.Log(gameObject.GetInstanceID());
     }
