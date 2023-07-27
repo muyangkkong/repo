@@ -112,6 +112,10 @@ public class Minimap : MonoBehaviour
                         if (newarray[m,n]==0 || newarray[m, n] == 7 || newarray[m, n] == 23 || newarray[m, n] == 24 || newarray[m, n] == 25 || newarray[m, n] == 26 || newarray[m, n] == 27 || newarray[m, n] == 28 || newarray[m, n] == 29 || newarray[m, n] == 30)
                         {
                                 cell.color=Color.black;
+                                Color newColor = cell.color;
+                                newColor.a = 0.3f;
+                                cell.color = newColor;
+                    
                                 
                         }
                         else if (newarray[m,n]==-1) {

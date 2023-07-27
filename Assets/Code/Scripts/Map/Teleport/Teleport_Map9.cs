@@ -6,11 +6,15 @@ public class Teleport_Map9 : MonoBehaviour
 {
     GameObject maincam;
     MainCamera cam;
+    GameObject maincan;
+    CanvasManager can;
     // Start is called before the first frame update
     void Start()
     {
         maincam = GameObject.Find("Main Camera");
         cam = maincam.GetComponent<MainCamera>();
+        maincan = GameObject.Find("Canvas");
+        can = maincan.GetComponent<CanvasManager>();
     }
 
     // Update is called once per frame
@@ -22,9 +26,11 @@ public class Teleport_Map9 : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-          
+            can.Setting();
             MapManager.Instance.DestroyMap();
             MapManager.Instance.LoadMap(9);
+            MapManager.Instance.BuildMap();
+            can.Activate();
             MapManager.Instance.BuildMap();
             Minimap.Instance.LoadMap(9);
             Minimap.Instance.FindingPlayer();
