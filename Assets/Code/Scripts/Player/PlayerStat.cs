@@ -70,10 +70,11 @@ public class PlayerStat : MonoBehaviour
     public float MoneyCollect;
 
 
-    private void Start(){
-        relicChange = GameObject.Find("ItemArea").GetComponent<RelicChanges>();
+    private void Start()
+    {
+        //relicChange = GameObject.Find("ItemArea").GetComponent<RelicChanges>();
         playerattack = GameObject.Find("Player").GetComponent<PlayerAttack>();
-        characterHP = GameObject.Find("Player").GetComponent<CharacterHP>();
+        //characterHP = GameObject.Find("Player").GetComponent<CharacterHP>();
         timingBarManager = GameObject.Find("Timing Bar").GetComponent<TimingBarManager>();
         playerEquipment = GameObject.Find("Player").GetComponent<PlayerEquipment>();
 
@@ -107,7 +108,9 @@ public class PlayerStat : MonoBehaviour
     }
 
     public void StatApply(){
-        MaxHp = PlayerBasicMaxHealth * relicChange.RelicMaxHealth;
+
+        TimerSpeed = 3f;
+        /*MaxHp = PlayerBasicMaxHealth * relicChange.RelicMaxHealth;
         
         PlayerDamage = PlayerBasicDamage * relicChange.RelicDamage;
         ComboDamage = BasicComboDamage * relicChange.RelicComboDamage;
@@ -122,6 +125,7 @@ public class PlayerStat : MonoBehaviour
 
         SkillObtain = BasicSkillObtain * relicChange.RelicSkillObtain;
         MoneyCollect = BasicMoneyCollect * relicChange.RelicMoneyCollect;
+        */
     }
 
     public float DamageCalculate(int ComboNumber, float ComboDamageValue)

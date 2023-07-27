@@ -26,7 +26,7 @@ public class TimingBarManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = soundClip;
         audioSource.volume = 1.0f;
-        audioSource.pitch = timerSpeed / 2.0f;
+        audioSource.pitch = timerSpeed / 3f;
 
         indicator[1,0] = GameObject.Find("Indicator1").transform.Find("IndicatorA").gameObject;
         indicator[1,1] = GameObject.Find("Indicator1").transform.Find("IndicatorB").gameObject;
