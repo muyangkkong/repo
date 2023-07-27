@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected int direction = -1;
 
-    float currentHp;
+    protected float currentHp;
     public float maxHp;
 
     protected float AttackDamage = 10.0f;

@@ -61,12 +61,12 @@ public class PlayerAttack : MonoBehaviour
         timingBarManager.TimerStart();
 
         //temp code
-/*         AttackBase attack = new RangeAttack().init(attackObject);
-        attack.init();
-        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage)); */
-        AttackBase attack = new MeleeAttack().init(0, 0, 5, 1.8f);
+        AttackBase attack = new RangeAttack().init(attackObject);
         attack.init();
         StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage));
+/*         AttackBase attack = new MeleeAttack().init(0, 0, 5, 1.8f);
+        attack.init();
+        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage)); */
     }
 
     bool CheckValidInput(int attackInput) {
