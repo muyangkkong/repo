@@ -36,7 +36,7 @@ public class MeleeAttack : AttackBase
         //temp code
         foreach(Collider collider in hitColliders) {
             Enemy enemy = collider.GetComponent<Enemy>();
-            enemy.Damage(1f * power, 120f);
+            enemy.Damage(damage * power, 120f);
             UltimateGuageManager.Instance.AddValue(yieldGuage);
         }
     }
