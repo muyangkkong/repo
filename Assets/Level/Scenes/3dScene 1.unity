@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -696,6 +696,7 @@ MonoBehaviour:
   instruments: []
   isPlayer: 0
   isSuccess: 0
+  knockbackDuration: 0.3
 --- !u!195 &47918736
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1376,6 +1377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  knockbackDuration: 0.3
 --- !u!4 &104710027
 Transform:
   m_ObjectHideFlags: 0
@@ -2309,6 +2311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  knockbackDuration: 0.3
 --- !u!4 &206845019
 Transform:
   m_ObjectHideFlags: 0
@@ -2451,6 +2454,7 @@ MonoBehaviour:
   instruments: []
   isPlayer: 0
   isSuccess: 0
+  knockbackDuration: 0.3
 --- !u!65 &208811497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2866,6 +2870,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4424193582329855225}
+  smoothSpeed: 3
+  offset: {x: 0, y: 0}
+  limitMinX: 0
+  limitMaxX: 0
+  limitMinY: 0
+  limitMaxY: 0
 --- !u!1001 &248916596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6185,6 +6195,7 @@ MonoBehaviour:
   instruments: []
   isPlayer: 0
   isSuccess: 0
+  knockbackDuration: 0.3
 --- !u!195 &564327944
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8922,6 +8933,7 @@ MonoBehaviour:
   instruments: []
   isPlayer: 0
   isSuccess: 0
+  knockbackDuration: 0.3
 --- !u!195 &991757926
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10049,6 +10061,7 @@ MonoBehaviour:
   instruments: []
   isPlayer: 0
   isSuccess: 0
+  knockbackDuration: 0.3
 --- !u!195 &1057650882
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11409,6 +11422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  knockbackDuration: 0.3
 --- !u!4 &1131793152
 Transform:
   m_ObjectHideFlags: 0
@@ -11480,6 +11494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  knockbackDuration: 0.3
 --- !u!65 &1136034777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11876,6 +11891,7 @@ MonoBehaviour:
   instruments: []
   isPlayer: 0
   isSuccess: 0
+  knockbackDuration: 0.3
 --- !u!65 &1197395641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12643,6 +12659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  knockbackDuration: 0.3
 --- !u!4 &1310357945
 Transform:
   m_ObjectHideFlags: 0
@@ -13360,6 +13377,7 @@ MonoBehaviour:
   instruments: []
   isPlayer: 0
   isSuccess: 0
+  knockbackDuration: 0.3
 --- !u!1 &1430111289
 GameObject:
   m_ObjectHideFlags: 0
@@ -14064,6 +14082,7 @@ MonoBehaviour:
   instruments: []
   isPlayer: 0
   isSuccess: 0
+  knockbackDuration: 0.3
 --- !u!65 &1511170097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16995,6 +17014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  knockbackDuration: 0.3
 --- !u!4 &1823263916
 Transform:
   m_ObjectHideFlags: 0
@@ -19832,7 +19852,7 @@ PrefabInstance:
     - target: {fileID: 1941836975775101443, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: instrument
       value: 
-      objectReference: {fileID: -2727164753387646227, guid: 30ef2ee3d4bc53f44ae88baa7166080f, type: 3}
+      objectReference: {fileID: 8911349632589043026, guid: 3b53de1b892a28741bdf7aa051f56721, type: 3}
     - target: {fileID: 2105138891624174320, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_Layer
       value: 8

@@ -449,7 +449,9 @@ MonoBehaviour:
   - {fileID: 1746016078}
   - {fileID: 629236179}
   - {fileID: 1706656442}
-  nextSceneName: MapBuildTestScene
+
+  nextSceneName: Map
+
 --- !u!4 &204119391
 Transform:
   m_ObjectHideFlags: 0

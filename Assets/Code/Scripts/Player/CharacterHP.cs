@@ -7,64 +7,31 @@ using UnityEngine.UI;
 
 public class CharacterHP : MonoBehaviour
 {
-    public float HP;
-    
-    public Slider slider; // ui hp 게이지
-    float currentTime; // 닿였을 때 데미지 다는 속도 조절
+    PlayerStat playerstat;
+    public float maxHp;
+    float currentHp;
+
+    public Slider slider;
+    float currentTime;
     
     public void getDamage(float damage)
     {
-        HP -= damage;
-        if (HP > 0)
-            slider.value = HP/100;
+        currentHp -= damage;
+        if (currentHp > 0)
+            slider.value = currentHp;
         else
         {
-            slider.value = 1;
-            HP = 100f;
+            slider.value = maxHp;
+            currentHp = maxHp;
         }
     }
-
-
 
     // Start is called before the first frame update
     void Start()
     {
-       // slider = GetComponentInChildren<Slider>();
-        HP = 100f;
-        slider.value = 1;
+        currentHp = maxHp;
+        slider.maxValue = maxHp;
+        slider.value = maxHp;
         currentTime = 0;
     }
-
-     void Update()
-    {
-
-        
-
-
-    }
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            currentTime = 0;// 누적 시간 초기화
-            getDamage(5.0f);
-        }
-       
-    }
-    void OnCollisionStay(Collision other) // 계속 닿을 시
-    {
-       
-        if (other.gameObject.tag == "Enemy")
-        {
-            currentTime+= Time.deltaTime;
-            if (currentTime > 1)
-            {
-                currentTime = 0;
-                getDamage(5.0f);
-            }     
-            }
-
-    }
-
-    
 }

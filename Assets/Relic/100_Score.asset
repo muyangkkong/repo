@@ -13,12 +13,17 @@ MonoBehaviour:
   m_Name: 100_Score
   m_EditorClassIdentifier: 
   RelicName: 100_Score
+  Rarity: Unique
   RelicImage: {fileID: 21300000, guid: 4efe8bf52011dff4d8739a240ccf8a87, type: 3}
   MaxHealthChanges: 0
   DamageChanges: 0
-  ComboDamageChanges: 1
+  ComboDamageChanges: 0.8
   NonComboDamageChanges: -0.5
   RhythmSpeedChanges: 0
   RhythmJudgeChanges: 0
   MoneyCollectChanges: 0
   SkillObtainChanges: 0
+  FirstAttackDamageChanges: 0
+  SecondAttackDamageChanges: 0
+  ThirdAttackDamageChanges: 0
+  FourthAttackDamageChanges: 0

@@ -5,9 +5,13 @@ using UnityEngine;
 public abstract class Instrument : MonoBehaviour
 {
     protected string InstrumentType;
+    public string MType {get {return InstrumentType;}}
 
-    protected ComboDictionary attackDictionary = new ComboDictionary();
+    protected ComboDictionary comboDictionary = new ComboDictionary();
+    protected int rootId;
     protected int currentAttackId;
+    protected int attackDepth;
+    protected int currentComboLength;
 
     public GameObject leftArmed = null;
     public GameObject rightArmed = null;
@@ -17,17 +21,60 @@ public abstract class Instrument : MonoBehaviour
     public abstract void Construct();
     public abstract void Init();
     
-    public ComboData Attack(int timing, int type) {
+    public ComboData AttackProgress(int timing, int type) {
         if(GetCurrentAttackData().children[timing,type] == 0) return null;
         currentAttackId = GetCurrentAttackData().children[timing,type];
+        attackDepth += 1;
+        currentComboLength += timing;
         return GetCurrentAttackData();
     }
 
     public ComboData GetCurrentAttackData() {
-        return attackDictionary.GetAttackData(currentAttackId);
+        return comboDictionary.GetComboData(currentAttackId);
     }
     public void InitProgress() {
-        currentAttackId = 1000;
+        currentAttackId = rootId;
+        attackDepth = 0;
+        currentComboLength = 0;
+    }
+
+    public void ParseCSV(string csvName) {
+        int[,] children;
+
+        List<Dictionary<string,object>> Combo = CSVReader.Read(csvName);
+        for (int i=0; i < Combo.Count; i++)
+        {
+            children = new int[5,2];
+            children[0,0] = (int)Combo[i]["0A"];
+            children[1,0] = (int)Combo[i]["1A"];
+            children[2,0] = (int)Combo[i]["2A"];
+            children[3,0] = (int)Combo[i]["3A"];
+            children[4,0] = (int)Combo[i]["4A"];
+
+            children[0,1] = (int)Combo[i]["0B"];
+            children[1,1] = (int)Combo[i]["1B"];
+            children[2,1] = (int)Combo[i]["2B"];
+            children[3,1] = (int)Combo[i]["3B"];
+            children[4,1] = (int)Combo[i]["4B"];          
+
+            int animationClipIdx = 0;
+            for(int j = 0; j < animationClips.Length; j++) {
+                //Debug.Log(animationClips[j].ToString() + " " + (string)Combo[i]["Clip"]);
+                if(animationClips[j].name.ToString() == (string)Combo[i]["Clip"]) {
+                    animationClipIdx = j;
+                    Debug.Log(Combo[i]["Clip"]);
+                }
+            }
+            
+
+            comboDictionary.SetComboData((int)Combo[i]["ID"],(string)Combo[i]["Name"], animationClipIdx, children);
+
+        }
+        rootId = (int)Combo[0]["ID"];
+    }
+
+    public float GetGuageMultiplier() {
+        return currentComboLength;
     }
 }
 
