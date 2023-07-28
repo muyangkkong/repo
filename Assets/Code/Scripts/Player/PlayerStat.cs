@@ -29,18 +29,19 @@ public class PlayerStat : MonoBehaviour
     private float WeaponThirdAttackDamage = 1f;
     private float WeaponFourthAttackDamage = 1f;
 
-    private float _PlayerDamage;
+    private float _PlayerDamage = 10;
     public float PlayerDamage {
         get {return _PlayerDamage;}
         set {
             _PlayerDamage = value;
+            playerattack.power = _PlayerDamage;
         }
     }
 
 
     public float ComboDamage;
 
-    private float _MaxHp;
+    private float _MaxHp = 200;
     public float MaxHp {
         get {return _MaxHp;}
         set {
@@ -48,7 +49,7 @@ public class PlayerStat : MonoBehaviour
             characterHP.maxHp = _MaxHp;}
     }
 
-    private float _MaxAcceptInterval;
+    private float _MaxAcceptInterval = 0.2f;
     public float MaxAcceptInterval {
         get {return _MaxAcceptInterval;}
         set {
@@ -57,7 +58,7 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
-    private float _TimerSpeed;
+    private float _TimerSpeed = 3;
     public float TimerSpeed {
         get {return _TimerSpeed;}
         set {
@@ -69,17 +70,15 @@ public class PlayerStat : MonoBehaviour
     public float SkillObtain;
     public float MoneyCollect;
 
-/*
+
     private void Start(){
         relicChange = GameObject.Find("ItemArea").GetComponent<RelicChanges>();
         playerattack = GameObject.Find("Player").GetComponent<PlayerAttack>();
         characterHP = GameObject.Find("Player").GetComponent<CharacterHP>();
         timingBarManager = GameObject.Find("Timing Bar").GetComponent<TimingBarManager>();
         playerEquipment = GameObject.Find("Player").GetComponent<PlayerEquipment>();
-
-        StatApply();
     }
-
+/*
     private void update() {
         StatApply();
         WeaponApply();

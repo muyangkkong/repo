@@ -37,16 +37,23 @@ public class Enemy : MonoBehaviour
     protected float currentHp;
     public float maxHp;
 
-    protected float AttackDamage = 10.0f;
+    public float AttackDamage = 10.0f;
+
+    public Color baseColor = Color.white;
+    public Color hitColor = Color.black;
+
+    Material material;
 
     void Awake() {
         rigid = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        material = GetComponentInChildren<Renderer>().material;
     }
 
     void Start() {
         Invoke("Wander", Random.Range(0.5f, 5f));
         currentHp = maxHp;
+        material.color = baseColor;
     }
     
     void FixedUpdate()
@@ -171,17 +178,17 @@ public class Enemy : MonoBehaviour
 
     public virtual IEnumerator OnDamage() {
         animator.SetTrigger("Hit");
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         
 
         if(currentHp <= 0) {
