@@ -17,6 +17,8 @@ public class PlayerAttack : MonoBehaviour
 
     public GameObject attackObject;
 
+    public float power;
+
     void Start()
     {
         instrument = GetComponent<PlayerEquipment>().instrument;
@@ -59,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
         timingBarManager.TimerStart();
         
         float yieldGuage = YieldUltimateGuage(timeInterval);
-        StartCoroutine(currentAttackInfo.attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage));
+        StartCoroutine(currentAttackInfo.attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, power, yieldGuage));
 
         //temp code
 /*         AttackBase attack = new RangeAttack().init(attackObject);

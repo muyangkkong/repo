@@ -298,9 +298,9 @@ GameObject:
   - component: {fileID: 2930959192929217383}
   - component: {fileID: 2930959192929217385}
   - component: {fileID: 2930959192929217384}
-  - component: {fileID: -8212246226263040667}
+  - component: {fileID: 2930959192929217387}
   m_Layer: 7
-  m_Name: 1001_sixteenth_note_dotted
+  m_Name: 1000_16dot_range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,7 +374,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.47, z: 0}
---- !u!114 &-8212246226263040667
+--- !u!114 &2930959192929217387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -383,16 +383,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2930959192929217386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab4cf80e3907bcc40a79f44f5e41869a, type: 3}
+  m_Script: {fileID: 11500000, guid: ce83a19c2ccb7d94abbc835d80ae1eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseRangeMin: 1.5
-  chaseRangeMax: 6
-  unchaseRadius: 8
+  chaseRangeMin: 6
+  chaseRangeMax: 8
+  unchaseRadius: 10
   speed: 2
   _moveTo: 0
   direction: -1
-  maxHp: 25
+  maxHp: 20
+  hitsound: {fileID: 8300000, guid: 993b90169f855274fb07391bf42773f5, type: 3}
+  projectileObject: {fileID: 885739400119816328, guid: 56795e1f6f4d36d46b40bff220781f9c, type: 3}
 --- !u!1 &2930959193014624028
 GameObject:
   m_ObjectHideFlags: 0
