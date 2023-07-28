@@ -48,25 +48,33 @@ public class PlayerAttack : MonoBehaviour
             StartCoroutine(MissAttack());
             return;
         }
-
+        
         instrument.AttackProgress(timeIndex, attackInput-1);
         currentAttackInfo = instrument.GetCurrentAttackData();
         timingBarManager.SetAttackInfo(currentAttackInfo.children);
-
-        float yieldGuage = YieldUltimateGuage(timeInterval);
 
         OverrideAnimator();
         animator.SetTrigger("Attack");
 
         timingBarManager.TimerStart();
+        
+        float yieldGuage = YieldUltimateGuage(timeInterval);
+        StartCoroutine(currentAttackInfo.attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage));
 
         //temp code
-        AttackBase attack = new RangeAttack().init(attackObject);
-        attack.init();
-        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage));
-/*         AttackBase attack = new MeleeAttack().init(0, 0, 5, 1.8f);
-        attack.init();
+/*         AttackBase attack = new RangeAttack().init(attackObject);
+        attack.init(
+            0.9f,1,4f,2
+        );
+        attack.SetBaseData(1f, 0.5f);
         StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage)); */
+/*         AttackBase attack = new MeleeAttack();
+        attack.init(
+            0, 0, 5, 1.8f
+        );
+        attack.SetBaseData(1f, 0.5f);
+        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage)); */
+
     }
 
     bool CheckValidInput(int attackInput) {
