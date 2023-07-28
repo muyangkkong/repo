@@ -13,6 +13,8 @@ public class CharacterHP : MonoBehaviour
 
     public Slider slider;
     float currentTime;
+
+    public AudioSource audioSource;
     
     public void getDamage(float damage)
     {
@@ -23,6 +25,10 @@ public class CharacterHP : MonoBehaviour
         {
             slider.value = maxHp;
             currentHp = maxHp;
+        }
+         if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.PlayOneShot(audioSource.clip);
         }
     }
 
