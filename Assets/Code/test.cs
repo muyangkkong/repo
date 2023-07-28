@@ -47,7 +47,7 @@ public class test : MonoBehaviour
               }
          
     void OnTriggerStay(Collider col){
-        if (col.gameObject.tag=="Player"){
+/*         if (col.gameObject.tag=="Player"){
                 
             if (Input.GetKeyDown(KeyCode.C)){
                 int j=RelicApply();
@@ -66,16 +66,16 @@ public class test : MonoBehaviour
                 
                 //
             }
-        }
+        } */
     }
     
-    int RelicApply(){
+/*     int RelicApply(){
         string Name=gameObject.name;
                 if (objectData.RelicName==Name){
                     return objectData.price;
 
                 }
                 return -1;
-    }
+    } */
 }
 
