@@ -13,7 +13,8 @@ public class Minimap : MonoBehaviour
      int [,] newarray;
     int mapHeight=14;
     int mapWidth=14;
-    int previous;
+    int previous1;
+    int previous2;
     public GameObject player;
  
     
@@ -91,7 +92,8 @@ public class Minimap : MonoBehaviour
             Playermove();
             FindingPlayer();
             UpdateMiniMap();
-            mapData[height-a-1,b]=previous;
+            mapData[height-a-1,b]=previous1;
+            mapData[height-a-2,b]=previous2;
             player.transform.hasChanged = false;
         }
 
@@ -219,11 +221,13 @@ public class Minimap : MonoBehaviour
     { 
         
         posi=player.transform.position;        
-        b = Mathf.FloorToInt(posi.x);//(23
-        a = Mathf.FloorToInt(posi.y);//8  mapData[j 12,i 23]
+        b = Mathf.FloorToInt(posi.x+0.5f);//(23
+        a = Mathf.FloorToInt(posi.y+0.1f)-1;//8  mapData[j 12,i 23]
         //파일 열고 다시 쓰기
-        previous = mapData[height - a - 1, b];
+        previous1 = mapData[height - a - 1, b];
+        previous2 = mapData[height - a - 2, b];
         mapData[height-a-1,b]=-1;
+        mapData[height-a-2,b]=-1;
         
         
         
