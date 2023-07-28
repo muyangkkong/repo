@@ -6,14 +6,15 @@ public class test : MonoBehaviour
 {
     NewBehaviourScript Base;
     
-    public int price;
+    Relic objectData;
     private GameObject m;
     // Start is called before the first frame update
     void Start()
     {
         
         Base=GameObject.Find("Canvas").transform.GetComponent<NewBehaviourScript>();
-        Debug.Log(Base.total_coin);
+        objectData = ScriptableObject.CreateInstance<Relic>();
+        
        
     }
 
@@ -26,12 +27,11 @@ public class test : MonoBehaviour
     void OnTriggerEnter(Collider col){
         if (col.gameObject.tag=="Player"){
             
-            for (int i=0;i<Base.Text.Length;i++){
-                
-                     if (Base.Text[i].name==gameObject.name.Replace("(Clone)","")){
-                            Base.Text[i].SetActive(true);
-                            m=Base.Text[i];
-                            m.transform.localPosition=new Vector3(gameObject.transform.position.x,gameObject.transform.position.y-50,0);
+            foreach (GameObject m in Base.Text){
+                     if (m.name==gameObject.name){
+                            m.SetActive(true);
+                            
+                            m.transform.localPosition=new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0);
                                     
                                 }
             }
@@ -40,36 +40,42 @@ public class test : MonoBehaviour
             
     void OnTriggerExit(Collider col){
               if (col.gameObject.tag=="Player"){
-                   m.SetActive(false);          
+                    m.SetActive(false);
+                             
                               }
                  
               }
          
     void OnTriggerStay(Collider col){
-        if (col.gameObject.tag=="Player"){ 
+/*         if (col.gameObject.tag=="Player"){
+                
             if (Input.GetKeyDown(KeyCode.C)){
-                
-                
-                    if (Base.total_coin<price){
-                        Debug.Log("돈없음");//텍스트 띄우기
+                int j=RelicApply();
+                if (j!=-1){
+                    if (Base.total_coin<objectData.price){
+                        Debug.Log("돈없음");
                     }
-                    else if (Base.total_coin>=price){
-                        int number=Base.total_coin-=price;
-                        Base.b=number.ToString();
-                        Base.Total_coin.text=Base.b;
-                       
+                    else if (Base.total_coin>=objectData.price){
+                        Base.total_coin-=objectData.price;
                         gameObject.SetActive(false);
                         m.SetActive(false);
                     }
                     
                     
-                
+                }
                 
                 //
             }
-        }
+        } */
     }
     
-    
+/*     int RelicApply(){
+        string Name=gameObject.name;
+                if (objectData.RelicName==Name){
+                    return objectData.price;
+
+                }
+                return -1;
+    } */
 }
 
