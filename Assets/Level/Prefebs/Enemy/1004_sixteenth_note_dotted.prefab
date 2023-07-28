@@ -413,7 +413,7 @@ MonoBehaviour:
   _moveTo: 0
   direction: -1
   maxHp: 30
-  projectileObject: {fileID: 885739400119816328, guid: 56795e1f6f4d36d46b40bff220781f9c, type: 3}
+  projectileObject: {fileID: 885739400119816328, guid: 5ffac89fa91a1fe45a45589f9e512e0f, type: 3}
 --- !u!1 &3542539606982632927
 GameObject:
   m_ObjectHideFlags: 0

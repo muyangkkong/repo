@@ -13,6 +13,7 @@ public class MapManager : MonoBehaviour
     int tileSize = 1;
     int[,] mapData;
     private static MapManager instance = null;
+    BossStage bossStage;
 
     void Awake()
     {
@@ -52,9 +53,11 @@ public class MapManager : MonoBehaviour
 
     void Start() {
 
-        LoadMap(9);
+        LoadMap(1);
         BuildMap();
         Debug.Log(gameObject.GetInstanceID());
+        bossStage = GetComponent<BossStage>();
+        bossStage.enabled = false;
     }
     
 
@@ -117,5 +120,9 @@ public class MapManager : MonoBehaviour
                 if(childList[i] != transform) Destroy(childList[i].gameObject);
             }
         }
+    }
+
+    public void BossStageStart() {
+        bossStage.enabled = true;
     }
 }
