@@ -37,8 +37,13 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
-
-    public float ComboDamage;
+    private float _ComboDamage;
+    public float ComboDamage {
+        get {return _ComboDamage;}
+        set {
+            _ComboDamage = value;
+        }
+    }
 
     private float _MaxHp;
     public float MaxHp {
@@ -67,6 +72,7 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
+    
     public float SkillObtain;
     public float MoneyCollect;
 

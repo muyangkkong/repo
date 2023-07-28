@@ -77,7 +77,7 @@ public abstract class Instrument : MonoBehaviour
                 break;
             }
 
-            Debug.Log(float.Parse(Combo[i]["Damage"]));
+            //Debug.Log(float.Parse(Combo[i]["Damage"]));
             attack.init(
                 float.Parse(Combo[i]["RangeX1"]),
                 float.Parse(Combo[i]["RangeY1"]),

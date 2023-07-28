@@ -14112,7 +14112,7 @@ PrefabInstance:
     - target: {fileID: 1941836975775101443, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: instrument
       value: 
-      objectReference: {fileID: -2727164753387646227, guid: 30ef2ee3d4bc53f44ae88baa7166080f, type: 3}
+      objectReference: {fileID: 1753299672169412472, guid: 6909b6698ce920b4a93618b19893ec50, type: 3}
     - target: {fileID: 8210966074256146660, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_RootOrder
       value: 3
