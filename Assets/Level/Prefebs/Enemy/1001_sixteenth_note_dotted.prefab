@@ -298,7 +298,6 @@ GameObject:
   - component: {fileID: 2930959192929217383}
   - component: {fileID: 2930959192929217385}
   - component: {fileID: 2930959192929217384}
-  - component: {fileID: 2930959192929217387}
   - component: {fileID: -8212246226263040667}
   m_Layer: 7
   m_Name: 1001_sixteenth_note_dotted
@@ -375,26 +374,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.47, z: 0}
---- !u!114 &2930959192929217387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2930959192929217386}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce83a19c2ccb7d94abbc835d80ae1eaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseRangeMin: 6
-  chaseRangeMax: 8
-  unchaseRadius: 10
-  speed: 2
-  _moveTo: 0
-  direction: -1
-  maxHp: 20
-  projectileObject: {fileID: 885739400119816328, guid: 56795e1f6f4d36d46b40bff220781f9c, type: 3}
 --- !u!114 &-8212246226263040667
 MonoBehaviour:
   m_ObjectHideFlags: 0
