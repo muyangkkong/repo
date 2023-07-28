@@ -26,7 +26,7 @@ public class TimingBarManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = soundClip;
         audioSource.volume = 1.0f;
-        audioSource.pitch = timerSpeed / 2.0f;
+        audioSource.pitch = timerSpeed / 3f;
 
         indicator[1,0] = GameObject.Find("Indicator1").transform.Find("IndicatorA").gameObject;
         indicator[1,1] = GameObject.Find("Indicator1").transform.Find("IndicatorB").gameObject;
@@ -53,16 +53,32 @@ public class TimingBarManager : MonoBehaviour
     }
 
     public void TimerStart() {
+        if(CheckFinal()) {
+            TimerReset();
+            return;
+        }
         slider.value = 0;
         isTimerOn = true;
         audioSource.Play();
 
+        SetIndicator();
+    }
+
+    public void TimerReset() {
+        slider.value = 0;
+        isTimerOn = false;
+        audioSource.Stop();
+        SetIndicator();
+    }
+
+    public void SetIndicator() {
         for(int i = 1; i <= 4; i++) {
             for(int j = 0; j < 2; j++) {
                 indicator[i,j].SetActive(nextAttackInfo[i,j] != 0);
             }
         }
     }
+
     public bool GetTimerState() {
         return isTimerOn;
     }
@@ -73,5 +89,17 @@ public class TimingBarManager : MonoBehaviour
     
     public void SetAttackInfo(int[,] attackInfo) {
         nextAttackInfo = attackInfo;
+    }
+
+    public bool CheckFinal() {
+        bool isFinal = true;
+
+        for(int i = 0; i < 5; i++) {
+            for(int j = 0; j < 2; j++) {
+                if(nextAttackInfo[i,j] != 0) isFinal = false;
+            }
+        }
+
+        return isFinal;
     }
 }
