@@ -39,9 +39,20 @@ public class Enemy : MonoBehaviour
 
     protected float AttackDamage = 10.0f;
 
+    protected AudioSource audiosource;
+    public AudioClip hitsound;
+
+
     void Awake() {
         rigid = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        audiosource = GetComponent<AudioSource>();
+
+        if (audiosource == null)
+        {
+            audiosource = gameObject.AddComponent<AudioSource>();
+        }
+
     }
 
     void Start() {
@@ -153,6 +164,12 @@ public class Enemy : MonoBehaviour
         currentHp -= amount;
         StartCoroutine(Knockback(knockback));
         StartCoroutine(OnDamage());
+
+        if (audiosource != null && hitsound != null)
+        {
+            audiosource.pitch = 5f;
+            audiosource.PlayOneShot(hitsound);
+        }
     }
 
     IEnumerator Knockback(float knockback) {

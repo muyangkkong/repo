@@ -393,6 +393,7 @@ MonoBehaviour:
   _moveTo: 0
   direction: -1
   maxHp: 25
+  hitsound: {fileID: 8300000, guid: 993b90169f855274fb07391bf42773f5, type: 3}
 --- !u!1 &2930959193014624028
 GameObject:
   m_ObjectHideFlags: 0
