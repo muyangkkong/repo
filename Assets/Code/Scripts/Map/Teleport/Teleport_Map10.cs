@@ -35,7 +35,6 @@ public class Teleport_Map10 : MonoBehaviour
             MapManager.Instance.DestroyMap();
             MapManager.Instance.LoadMap(10);
             MapManager.Instance.BuildMap();
-            MapManager.Instance.BuildMap();
             Minimap.Instance.LoadMap(10);
             Minimap.Instance.FindingPlayer();
             Minimap.Instance.UpdateMiniMap();
