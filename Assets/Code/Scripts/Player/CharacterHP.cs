@@ -9,7 +9,7 @@ public class CharacterHP : MonoBehaviour
 {
     PlayerStat playerstat;
     public float maxHp;
-    float currentHp;
+    public float currentHp;
 
     public Slider slider;
     float currentTime;
@@ -23,8 +23,8 @@ public class CharacterHP : MonoBehaviour
             slider.value = currentHp;
         else
         {
-            slider.value = maxHp;
-            currentHp = maxHp;
+            slider.value = 0;
+            currentHp = 0;
         }
          if (audioSource != null && audioSource.clip != null)
         {
