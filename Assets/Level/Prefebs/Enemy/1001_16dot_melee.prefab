@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 2930959192929217384}
   - component: {fileID: -8212246226263040667}
   m_Layer: 7
-  m_Name: 1001_sixteenth_note_dotted
+  m_Name: 1001_16dot_melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
