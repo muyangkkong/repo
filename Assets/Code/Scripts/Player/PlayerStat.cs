@@ -37,13 +37,8 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
-    private float _ComboDamage;
-    public float ComboDamage {
-        get {return _ComboDamage;}
-        set {
-            _ComboDamage = value;
-        }
-    }
+
+    public float ComboDamage;
 
     private float _MaxHp;
     public float MaxHp {
@@ -66,22 +61,19 @@ public class PlayerStat : MonoBehaviour
     public float TimerSpeed {
         get {return _TimerSpeed;}
         set {
-            if (value > 4.5f) { _TimerSpeed = 4.5f; }
-            else { _TimerSpeed = value; }
+            _TimerSpeed = value;
             timingBarManager.timerSpeed = _TimerSpeed;
         }
     }
 
-    
     public float SkillObtain;
     public float MoneyCollect;
 
-
-    private void Start()
-    {
-        //relicChange = GameObject.Find("ItemArea").GetComponent<RelicChanges>();
+/*
+    private void Start(){
+        relicChange = GameObject.Find("ItemArea").GetComponent<RelicChanges>();
         playerattack = GameObject.Find("Player").GetComponent<PlayerAttack>();
-        //characterHP = GameObject.Find("Player").GetComponent<CharacterHP>();
+        characterHP = GameObject.Find("Player").GetComponent<CharacterHP>();
         timingBarManager = GameObject.Find("Timing Bar").GetComponent<TimingBarManager>();
         playerEquipment = GameObject.Find("Player").GetComponent<PlayerEquipment>();
 
@@ -115,9 +107,7 @@ public class PlayerStat : MonoBehaviour
     }
 
     public void StatApply(){
-
-        TimerSpeed = 3f;
-        /*MaxHp = PlayerBasicMaxHealth * relicChange.RelicMaxHealth;
+        MaxHp = PlayerBasicMaxHealth * relicChange.RelicMaxHealth;
         
         PlayerDamage = PlayerBasicDamage * relicChange.RelicDamage;
         ComboDamage = BasicComboDamage * relicChange.RelicComboDamage;
@@ -132,7 +122,6 @@ public class PlayerStat : MonoBehaviour
 
         SkillObtain = BasicSkillObtain * relicChange.RelicSkillObtain;
         MoneyCollect = BasicMoneyCollect * relicChange.RelicMoneyCollect;
-        */
     }
 
     public float DamageCalculate(int ComboNumber, float ComboDamageValue)
@@ -146,5 +135,5 @@ public class PlayerStat : MonoBehaviour
         
         return PlayerDamage * AttackValue * ComboDamageValue;
 
-    }
+    }*/
 }

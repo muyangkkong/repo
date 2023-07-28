@@ -7,6 +7,7 @@ public class MapManager : MonoBehaviour
 {
     public GameObject[] tiles;
     public GameObject Player;
+    public GameObject[] enemies;
     int width;
     int height;
     int tileSize = 1;
@@ -94,8 +95,14 @@ public class MapManager : MonoBehaviour
                     //Player.transform.position = new Vector3(i * tileSize, (height - j) * tileSize, 0);
                     GameObject.FindWithTag("Player").transform.position = new Vector3(i * tileSize, (height - j) * tileSize, 0);
                 }
-                if(mapData[j,i] > 0) {
-                    Instantiate(tiles[mapData[j,i]], new Vector3(i * tileSize, (height - j) * tileSize, 0), Quaternion.identity).transform.SetParent(this.transform);
+                if (mapData[j, i] > 0 && mapData[j, i] < 50)
+                {
+                    Instantiate(tiles[mapData[j, i]], new Vector3(i * tileSize, (height - j) * tileSize, 0), Quaternion.identity).transform.SetParent(this.transform);
+                }
+                if (mapData[j, i] >= 1000)
+                {
+                    Instantiate(enemies[mapData[j, i] % 1000], new Vector3(i * tileSize, (height - j) * tileSize, 0), Quaternion.identity).transform.SetParent(this.transform);
+                // %1000 = 0,1...
                 }
             }
         }
