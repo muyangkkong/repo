@@ -412,7 +412,7 @@ MonoBehaviour:
   speed: 2
   _moveTo: 0
   direction: -1
-  maxHp: 0
+  maxHp: 40
   maxMutiplier: 2
   baseAttackDamage: 10
 --- !u!1 &3542539606982632927

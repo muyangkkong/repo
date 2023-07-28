@@ -17,6 +17,8 @@ public class PlayerAttack : MonoBehaviour
 
     public GameObject attackObject;
 
+    public float power;
+
     void Start()
     {
         instrument = GetComponent<PlayerEquipment>().instrument;

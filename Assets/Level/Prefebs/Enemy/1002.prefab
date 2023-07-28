@@ -318,9 +318,8 @@ GameObject:
   - component: {fileID: 3542539606863666993}
   - component: {fileID: 3542539606863666992}
   - component: {fileID: 3542539606863667006}
-  - component: {fileID: -6263913587161343436}
   m_Layer: 7
-  m_Name: EliteCrescendo
+  m_Name: 1002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,7 +401,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3542539606863666994}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99d09bd12cb38914a947f8810158400d, type: 3}
   m_Name: 
@@ -414,27 +413,9 @@ MonoBehaviour:
   _moveTo: 0
   direction: -1
   maxHp: 30
---- !u!114 &-6263913587161343436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3542539606863666994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd30cfdcf4b3568489bf5d2620ca7706, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseRangeMin: 1.5
-  chaseRangeMax: 6
-  unchaseRadius: 8
-  speed: 2
-  _moveTo: 0
-  direction: -1
-  maxHp: 0
-  maxMutiplier: 2
-  baseAttackDamage: 10
+  AttackDamage: 10
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  hitColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &3542539606982632927
 GameObject:
   m_ObjectHideFlags: 0
