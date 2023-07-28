@@ -34,6 +34,7 @@ public class PlayerStat : MonoBehaviour
         get {return _PlayerDamage;}
         set {
             _PlayerDamage = value;
+            playerattack.power = _PlayerDamage;
         }
     }
 
@@ -69,17 +70,15 @@ public class PlayerStat : MonoBehaviour
     public float SkillObtain;
     public float MoneyCollect;
 
-/*
+
     private void Start(){
         relicChange = GameObject.Find("ItemArea").GetComponent<RelicChanges>();
         playerattack = GameObject.Find("Player").GetComponent<PlayerAttack>();
         characterHP = GameObject.Find("Player").GetComponent<CharacterHP>();
         timingBarManager = GameObject.Find("Timing Bar").GetComponent<TimingBarManager>();
         playerEquipment = GameObject.Find("Player").GetComponent<PlayerEquipment>();
-
-        StatApply();
     }
-
+/*
     private void update() {
         StatApply();
         WeaponApply();
