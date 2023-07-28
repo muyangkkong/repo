@@ -18,6 +18,8 @@ public abstract class Instrument : MonoBehaviour
 
     public AnimationClip[] animationClips;
 
+    public GameObject projectile;
+
     public abstract void Construct();
     public abstract void Init();
     
@@ -41,36 +43,52 @@ public abstract class Instrument : MonoBehaviour
     public void ParseCSV(string csvName) {
         int[,] children;
 
-        List<Dictionary<string,object>> Combo = CSVReader.Read(csvName);
+        List<Dictionary<string,string>> Combo = CSVReader.Read(csvName);
         for (int i=0; i < Combo.Count; i++)
         {
             children = new int[5,2];
-            children[0,0] = (int)Combo[i]["0A"];
-            children[1,0] = (int)Combo[i]["1A"];
-            children[2,0] = (int)Combo[i]["2A"];
-            children[3,0] = (int)Combo[i]["3A"];
-            children[4,0] = (int)Combo[i]["4A"];
+            children[0,0] = int.Parse(Combo[i]["0A"]);
+            children[1,0] = int.Parse(Combo[i]["1A"]);
+            children[2,0] = int.Parse(Combo[i]["2A"]);
+            children[3,0] = int.Parse(Combo[i]["3A"]);
+            children[4,0] = int.Parse(Combo[i]["4A"]);
 
-            children[0,1] = (int)Combo[i]["0B"];
-            children[1,1] = (int)Combo[i]["1B"];
-            children[2,1] = (int)Combo[i]["2B"];
-            children[3,1] = (int)Combo[i]["3B"];
-            children[4,1] = (int)Combo[i]["4B"];          
+            children[0,1] = int.Parse(Combo[i]["0B"]);
+            children[1,1] = int.Parse(Combo[i]["1B"]);
+            children[2,1] = int.Parse(Combo[i]["2B"]);
+            children[3,1] = int.Parse(Combo[i]["3B"]);
+            children[4,1] = int.Parse(Combo[i]["4B"]);          
 
             int animationClipIdx = 0;
             for(int j = 0; j < animationClips.Length; j++) {
-                //Debug.Log(animationClips[j].ToString() + " " + (string)Combo[i]["Clip"]);
-                if(animationClips[j].name.ToString() == (string)Combo[i]["Clip"]) {
+                if(animationClips[j].name.ToString() == Combo[i]["Clip"]) {
                     animationClipIdx = j;
-                    Debug.Log(Combo[i]["Clip"]);
                 }
             }
-            
 
-            comboDictionary.SetComboData((int)Combo[i]["ID"],(string)Combo[i]["Name"], animationClipIdx, children);
+            AttackBase attack = new AttackBase();
+            switch(int.Parse(Combo[i]["DamageType"])) {
+            case 0:
+                attack = new MeleeAttack();
+                break;
+            case 1:
+            case 2:
+                attack = new RangeAttack().init(projectile);
+                break;
+            }
+
+            //Debug.Log(float.Parse(Combo[i]["Damage"]));
+            attack.init(
+                float.Parse(Combo[i]["RangeX1"]),
+                float.Parse(Combo[i]["RangeY1"]),
+                float.Parse(Combo[i]["RangeX2"]),
+                float.Parse(Combo[i]["RangeY2"])
+            );
+            attack.SetBaseData(float.Parse(Combo[i]["Damage"]), float.Parse(Combo[i]["Delay"]));
+            comboDictionary.SetComboData(int.Parse(Combo[i]["ID"]), Combo[i]["Name"], animationClipIdx, attack, children);
 
         }
-        rootId = (int)Combo[0]["ID"];
+        rootId = int.Parse(Combo[0]["ID"]);
     }
 
     public float GetGuageMultiplier() {

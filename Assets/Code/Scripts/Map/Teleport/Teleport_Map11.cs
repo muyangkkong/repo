@@ -44,7 +44,7 @@ public class Teleport_Map11 : MonoBehaviour
             can.Activate();
             cam.limitMaxX = 49.5f;
             cam.limitMaxY = 21f;
-            
+            MapManager.Instance.BossStageStart();
             //Debug.Log(map.gameObject.GetInstanceID());
         }
 
