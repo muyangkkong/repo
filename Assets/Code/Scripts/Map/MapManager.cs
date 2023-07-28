@@ -52,7 +52,7 @@ public class MapManager : MonoBehaviour
 
     void Start() {
 
-        LoadMap(1);
+        LoadMap(9);
         BuildMap();
         Debug.Log(gameObject.GetInstanceID());
     }

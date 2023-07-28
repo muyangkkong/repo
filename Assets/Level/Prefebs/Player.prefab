@@ -2791,7 +2791,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movable: 0
+
   direction: 1
+
   speed: 10
 --- !u!114 &471231347949870947
 MonoBehaviour:

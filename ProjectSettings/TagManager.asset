@@ -11,6 +11,8 @@ TagManager:
   - Wall
   - Floor
   - Instrumnet
+  - relics
+  - text
   layers:
   - Default
   - TransparentFX
