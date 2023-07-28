@@ -14237,7 +14237,7 @@ PrefabInstance:
       objectReference: {fileID: -2727164753387646227, guid: 30ef2ee3d4bc53f44ae88baa7166080f, type: 3}
     - target: {fileID: 2291667496676544143, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: maxHp
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2291667496676544143, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: slider
