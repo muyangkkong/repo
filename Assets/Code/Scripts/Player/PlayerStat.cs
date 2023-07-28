@@ -69,7 +69,7 @@ public class PlayerStat : MonoBehaviour
     public float SkillObtain;
     public float MoneyCollect;
 
-
+/*
     private void Start(){
         relicChange = GameObject.Find("ItemArea").GetComponent<RelicChanges>();
         playerattack = GameObject.Find("Player").GetComponent<PlayerAttack>();
@@ -135,5 +135,5 @@ public class PlayerStat : MonoBehaviour
         
         return PlayerDamage * AttackValue * ComboDamageValue;
 
-    }
+    }*/
 }
