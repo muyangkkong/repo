@@ -65,6 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 1, g: 0.83921576, b: 0.3803922, a: 1}
   speed: 8
+  duration: 3
 --- !u!136 &1493806567569904718
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -162,3 +162,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0.42659646, g: 0.3803922, b: 1, a: 1}
   speed: 8
+  duration: 1
+  yieldGuage: 0

@@ -19,12 +19,21 @@ public class RangeAttack : AttackBase
         return this;
     }
 
-    public override AttackBase init(float height, float projectileNum, float speed, float duration)
+/*     public override AttackBase init(float height, float projectileNum, float speed, float duration)
     {
         this.height = height;
         this.projectileNum = (int)(projectileNum + 0.5);
         this.speed = speed;
         this.duration = duration;
+        return this;
+    } */
+
+    public override AttackBase init(float x1, float y1, float x2, float y2)
+    {
+        this.height = x1;
+        this.projectileNum = (int)(y1 + 0.5);
+        this.speed = x2;
+        this.duration = y2;
         return this;
     }
 

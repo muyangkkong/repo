@@ -12,6 +12,8 @@ public class Projectile : MonoBehaviour
     protected float damage;
     public Color color;
     public float speed;
+    public float duration;
+    float currentTime;
 
     Transform childTransform;
 
@@ -25,9 +27,15 @@ public class Projectile : MonoBehaviour
         meshRenderer.material.color = color;
     }
 
-    void Update() {
-        rigid.velocity = direction * speed;
-        childTransform.Rotate(0, Time.deltaTime * 100f * speed, 0);
+    void FixedUpdate() {
+        if(isShot) {
+            rigid.velocity = direction * speed;
+            childTransform.Rotate(0, Time.deltaTime * 100f * speed, 0);
+            currentTime += Time.deltaTime;
+            if(currentTime >= duration) {
+                Destroy(this.gameObject);
+            }
+        }
     }
     public void Shot(Vector3 direction, float damage) {
         this.direction = direction;
