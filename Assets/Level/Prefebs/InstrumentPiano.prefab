@@ -56,8 +56,3 @@ MonoBehaviour:
   - {fileID: 1827226128182048838, guid: 165054ceca2112249bf2d4143de0f4b6, type: 3}
   - {fileID: 1827226128182048838, guid: 3963e995fd5e1914ebefa9040795666a, type: 3}
   - {fileID: 7400000, guid: a662ec3622809624381a7b87a786234e, type: 3}
-  - {fileID: 7400000, guid: 718bc90b4585c9c449425bb9430ac145, type: 3}
-  - {fileID: 7400000, guid: dc3d87e4621b27947833a86c24fab47a, type: 3}
-  - {fileID: 7400000, guid: 8fa39fda745737542b735fef4cba2851, type: 3}
-  - {fileID: 1827226128182048838, guid: 832bb0a2c742cd24da9ab3b28d3cc531, type: 3}
-  projectile: {fileID: 0}
