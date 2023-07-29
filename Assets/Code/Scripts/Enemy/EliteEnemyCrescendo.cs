@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class EliteEnemyCrescendo : MeleeEnemy
 {
-    float attackMultiplier;
+    float attackMultiplier = 1;
     public float maxMutiplier;
     public float baseAttackDamage;
+
     public override IEnumerator Attack() {
         attackMultiplier += maxMutiplier / 5f;
-        if(attackMultiplier > maxMutiplier + 1) attackMultiplier = maxMutiplier;
+        if(attackMultiplier > maxMutiplier + 1) attackMultiplier = maxMutiplier + 1;
+        this.transform.localScale = attackMultiplier * Vector3.one;
         AttackDamage = attackMultiplier * baseAttackDamage;
         yield return StartCoroutine(base.Attack());
     }

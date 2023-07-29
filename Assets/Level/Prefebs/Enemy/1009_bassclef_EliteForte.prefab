@@ -101,14 +101,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a335115d919d341b93f09f771074f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseRangeMin: 1.5
-  chaseRangeMax: 6
-  unchaseRadius: 8
+  chaseRangeMin: 6
+  chaseRangeMax: 8
+  unchaseRadius: 10
   speed: 2
   _moveTo: 0
   direction: -1
   maxHp: 30
   hitsound: {fileID: 8300000, guid: 993b90169f855274fb07391bf42773f5, type: 3}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  hitColor: {r: 0, g: 0, b: 0, a: 1}
   projectileObject: {fileID: 885739400119816328, guid: 5ffac89fa91a1fe45a45589f9e512e0f, type: 3}
 --- !u!1 &1031116293708201081
 GameObject:

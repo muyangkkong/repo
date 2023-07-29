@@ -11,8 +11,7 @@ public class EliteEnemySegno : MeleeEnemy
 
     public override void Damage(float amount, float knockback)
     {
-        //if(!isSaved)
-        setSegno();
+        if(!isSaved) setSegno();
         base.Damage(amount, knockback);
     }
 

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EliteEnemyForte : RangeEnemy
+public class EliteEnemyForte : Enemy
 {
+    public GameObject projectileObject;
     public override IEnumerator Attack() {
     currentState = State.attack;
     //attack animation start

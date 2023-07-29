@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8911349632589043027}
-  - component: {fileID: -2727164753387646227}
+  - component: {fileID: 1753299672169412472}
   m_Layer: 0
-  m_Name: InstrumentHarp
+  m_Name: InstrumentTrumpet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-2727164753387646227
+--- !u!114 &1753299672169412472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,20 +41,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8911349632589043025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88bcb1bdede6374b8516803b24b3564, type: 3}
+  m_Script: {fileID: 11500000, guid: 17bb1e41f93c74a45adb823a93da651e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftArmed: {fileID: 4478083975733876567, guid: 92cc6a2c7b9eaa4438ee49bc46b059a1, type: 3}
-  rightArmed: {fileID: 0}
+  leftArmed: {fileID: 0}
+  rightArmed: {fileID: 671283944972862753, guid: 2fe04923dfecb354d94d2f2aaa9c5e23, type: 3}
+  thumbnail: {fileID: 861163408298366171, guid: f0bd8980e1c421e4ab40691fb2374099, type: 3}
   animationClips:
-  - {fileID: 7400000, guid: ccfffad18a3bfdd4fa5819550797d768, type: 3}
-  - {fileID: 1827226128182048838, guid: 29ce5a04d7ebed74e98f982c86602911, type: 3}
-  - {fileID: 1827226128182048838, guid: 6867c79103200ae47a38ca4d64dff196, type: 3}
-  - {fileID: 1827226128182048838, guid: b128809f84425c546af7aa5d273f715e, type: 3}
-  - {fileID: 1827226128182048838, guid: a0acdc8a1163a624a8ca610b2070daa2, type: 3}
-  - {fileID: 7400000, guid: 430c8862edf032f49ad83e72481519f0, type: 3}
-  - {fileID: 7400000, guid: 36c0e8b494597fd46b93621fd4a48b25, type: 3}
-  - {fileID: 7400000, guid: 092169fbdc748b94ba33b2a0bbf5bd71, type: 3}
-  - {fileID: 1827226128182048838, guid: 438e5940386903948aac23f227449368, type: 3}
-  - {fileID: 1827226128182048838, guid: ee1cb228ac4c1ad48b770e8662b50881, type: 3}
+  - {fileID: 7400008, guid: dd7d5523a6af25c4aa7ea071bfce6032, type: 3}
+  - {fileID: 7400000, guid: d16438c7c5ae5924aac4072d845d9169, type: 3}
+  - {fileID: 7400000, guid: 5393ed4c3c550bc42ac6c1ca776f60dc, type: 3}
+  - {fileID: 7400000, guid: c64109b2ee83db448a1643d5387177cd, type: 3}
+  - {fileID: 7400000, guid: 14f1db392071a0c4895576ec6c62b9c9, type: 3}
+  - {fileID: 1827226128182048838, guid: 787d4e2b72d63024a979da536b3d8594, type: 3}
+  - {fileID: 7400000, guid: 698c4a5547b66de4daf6c3139c4eb8d2, type: 3}
+  - {fileID: 1827226128182048838, guid: 311075fc6b6835f4c8d8da2046d47c13, type: 3}
+  - {fileID: 7400000, guid: 76252bf706c8e9445857e0c6ebde6479, type: 3}
   projectile: {fileID: 5764672803649153873, guid: 6603485e8a511f24595867e1e83c880e, type: 3}

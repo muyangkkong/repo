@@ -15,6 +15,7 @@ public abstract class Instrument : MonoBehaviour
 
     public GameObject leftArmed = null;
     public GameObject rightArmed = null;
+    public GameObject thumbnail = null;
 
     public AnimationClip[] animationClips;
 

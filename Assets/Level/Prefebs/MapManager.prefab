@@ -80,10 +80,15 @@ MonoBehaviour:
   Player: {fileID: 8843071342487149150, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
   enemies:
   - {fileID: 2930959192929217386, guid: 12293edff0156ab4e80bf5c1a71cd83e, type: 3}
-  - {fileID: 2930959192929217386, guid: 639beec82d820314ea137e4a79601bd7, type: 3}
-  - {fileID: 3542539606863666994, guid: 324d11f9f0ad41d4bb6f9cfb49e137e3, type: 3}
-  - {fileID: 3542539606863666994, guid: 268179317e87d9c4a983394e95ce6dca, type: 3}
+  - {fileID: 100020, guid: 61a8eab65100d1541a3684ae9dcf21a7, type: 3}
+  - {fileID: 100020, guid: 5f674df238e172145ae3228ea18f31b3, type: 3}
+  - {fileID: 100020, guid: a5196194c873a1549b6fe381513d0efa, type: 3}
   - {fileID: 3542539606863666994, guid: d96e53aaf5291704fa59a7aab91431a6, type: 3}
+  - {fileID: 1031116293708187663, guid: b2f5915d2b6496343ad18547e55b239b, type: 3}
+  - {fileID: 1031116293708187663, guid: 571787f6a8e31a449b5610bf43b8ba78, type: 3}
+  - {fileID: 1031116293708187663, guid: 0fda65b5a08ec1740bba8123f88cd243, type: 3}
+  - {fileID: 1031116293708187663, guid: e3445afe77551714f987d341452a5a7c, type: 3}
+  - {fileID: 1031116293708187663, guid: a33b4b26d2ed4fb4d9b3da646e3be270, type: 3}
 --- !u!114 &4453270943147876645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,10 +96,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2978492929269254280}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f6f21168722d5b43ad5f1f796630c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stage: 0
-  stageEnemySet: []
+  stageEnemySet:
+  - {fileID: 7300187239216332723, guid: aa8ef14fd30c7c4479d1de3d0033d9ba, type: 3}
+  - {fileID: 5854113712655867481, guid: 8611a5a141702bb49ad567dd409d17f9, type: 3}
+  - {fileID: 7065603445744750373, guid: 7179b0cf05110d64eaf0670483653a5f, type: 3}
+  - {fileID: 150626713573441362, guid: 8e85a0f64a9219946926759eb6c0aa2c, type: 3}

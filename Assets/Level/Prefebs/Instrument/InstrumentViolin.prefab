@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftArmed: {fileID: 7079853515279284839, guid: 0140fdbdd29dc2f4a92b22978378dcaf, type: 3}
   rightArmed: {fileID: 5551317944044571852, guid: 40c926368b96c8f4f8e96bab113a7e90, type: 3}
+  thumbnail: {fileID: 5926248678090076412, guid: 150188a875c27b549ab137eae0cda663, type: 3}
   animationClips:
   - {fileID: 7400000, guid: 4f4c06eca5287b64393bddc26087385a, type: 3}
   - {fileID: 7400000, guid: eb3de5a559f1a134999a02aac7ca2ab8, type: 3}

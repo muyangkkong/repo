@@ -4404,6 +4404,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6610505515774381793, guid: fcba7c7dfaa8f074b9cd3db0049d3d79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6610505516302726960, guid: fcba7c7dfaa8f074b9cd3db0049d3d79, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4486,6 +4490,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6610505516302726960, guid: fcba7c7dfaa8f074b9cd3db0049d3d79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610505516561810402, guid: fcba7c7dfaa8f074b9cd3db0049d3d79, type: 3}
+      propertyPath: m_Name
+      value: PianoThumbnail_
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610505516561810402, guid: fcba7c7dfaa8f074b9cd3db0049d3d79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610505516683474947, guid: fcba7c7dfaa8f074b9cd3db0049d3d79, type: 3}
+      propertyPath: m_Name
+      value: ViolinThumbnail
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610505517103869032, guid: fcba7c7dfaa8f074b9cd3db0049d3d79, type: 3}
+      propertyPath: m_Name
+      value: HarpThumbnail
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610505517103869032, guid: fcba7c7dfaa8f074b9cd3db0049d3d79, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6610505517374035397, guid: fcba7c7dfaa8f074b9cd3db0049d3d79, type: 3}
@@ -14230,7 +14254,7 @@ PrefabInstance:
     - target: {fileID: 1941836975775101443, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: instrument
       value: 
-      objectReference: {fileID: -2727164753387646227, guid: 30ef2ee3d4bc53f44ae88baa7166080f, type: 3}
+      objectReference: {fileID: 1753299672169412472, guid: 6909b6698ce920b4a93618b19893ec50, type: 3}
     - target: {fileID: 2291667496676544143, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: maxHp
       value: 200
@@ -14243,6 +14267,14 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1984474879}
+    - target: {fileID: 7595167547666835605, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595167547666835605, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8210966074256146660, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -16824,30 +16856,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2978492929408250858, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: enemies.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2978492929408250858, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: enemies.Array.data[5]
-      value: 
-      objectReference: {fileID: 1031116293708187663, guid: b2f5915d2b6496343ad18547e55b239b, type: 3}
-    - target: {fileID: 2978492929408250858, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: enemies.Array.data[6]
-      value: 
-      objectReference: {fileID: 1031116293708187663, guid: 571787f6a8e31a449b5610bf43b8ba78, type: 3}
-    - target: {fileID: 2978492929408250858, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: enemies.Array.data[7]
-      value: 
-      objectReference: {fileID: 1031116293708187663, guid: 0fda65b5a08ec1740bba8123f88cd243, type: 3}
-    - target: {fileID: 2978492929408250858, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: enemies.Array.data[8]
-      value: 
-      objectReference: {fileID: 1031116293708187663, guid: e3445afe77551714f987d341452a5a7c, type: 3}
-    - target: {fileID: 2978492929408250858, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: enemies.Array.data[9]
-      value: 
-      objectReference: {fileID: 1031116293708187663, guid: a33b4b26d2ed4fb4d9b3da646e3be270, type: 3}
     - target: {fileID: 2978492929408250859, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -16892,17 +16900,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4453270943147876645, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4453270943147876645, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: stageEnemySet.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4453270943147876645, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: stageEnemySet.Array.data[0]
-      value: 
-      objectReference: {fileID: 198093092246326783, guid: 2292f8060e3561748962d30429000d64, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}

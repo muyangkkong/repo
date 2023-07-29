@@ -42,6 +42,8 @@ public class _Enemy : MonoBehaviour
     protected AudioSource audiosource;
     public AudioClip hitsound;
 
+    public Color baseColor = Color.white;
+    public Color hitColor = Color.black;
 
     void Awake() {
         rigid = GetComponent<Rigidbody>();
@@ -188,17 +190,17 @@ public class _Enemy : MonoBehaviour
 
     public virtual IEnumerator OnDamage() {
         animator.SetTrigger("Hit");
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        GetComponentInChildren<Renderer>().material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        GetComponentInChildren<Renderer>().material.color = baseColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        GetComponentInChildren<Renderer>().material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        GetComponentInChildren<Renderer>().material.color = baseColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        GetComponentInChildren<Renderer>().material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        GetComponentInChildren<Renderer>().material.color = baseColor;
         
 
         if(currentHp <= 0) {

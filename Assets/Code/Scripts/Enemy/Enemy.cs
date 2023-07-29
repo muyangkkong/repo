@@ -42,6 +42,9 @@ public class Enemy : MonoBehaviour
     protected AudioSource audiosource;
     public AudioClip hitsound;
 
+    Material material;
+    public Color baseColor = Color.white;
+    public Color hitColor = Color.black;
 
     void Awake() {
         rigid = GetComponent<Rigidbody>();
@@ -58,6 +61,8 @@ public class Enemy : MonoBehaviour
     void Start() {
         Invoke("Wander", Random.Range(0.5f, 5f));
         currentHp = maxHp;
+        material = GetComponentInChildren<Renderer>().material;
+        material.color = baseColor;
     }
     
     void FixedUpdate()
@@ -188,17 +193,17 @@ public class Enemy : MonoBehaviour
 
     public virtual IEnumerator OnDamage() {
         animator.SetTrigger("Hit");
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         
 
         if(currentHp <= 0) {
