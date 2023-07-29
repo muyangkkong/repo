@@ -4,47 +4,30 @@ using UnityEngine.UI;
 public class TextMoving1 : TutorialBase
 {
     [SerializeField]
-    public GameObject groupobject;
-    
-
-    Button myButton;
+   
+    public GameObject target;
+  
+   private bool start;
     private bool isCompleted = false;
-    
-    void Start()
-    {
-        groupobject.SetActive(false);
+    void Start(){
+        target.SetActive(false);
     }
+    
     public override void Enter()
     {
-        groupobject.SetActive(true);
+        Debug.Log("start");
+        target.SetActive(true);
     }
 
     public override void Execute(TutorialController controller)
     {
-        if (Input.GetButtonDown("Piano"))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            groupobject.SetActive(false);
             
-            isCompleted= true;
+             target.SetActive(false);
+             isCompleted=true;
         }
-        else if (Input.GetButtonDown("Violin"))
-        {
-            groupobject.SetActive(false);
-            
-            isCompleted= true;
-        }
-        else if (Input.GetButtonDown("Trumpet"))
-        {
-            groupobject.SetActive(false);
-            
-            isCompleted= true;
-        }
-        else if (Input.GetButtonDown("Harp"))
-        {
-            groupobject.SetActive(false);
-            
-            isCompleted= true;
-        }
+        
         if (isCompleted==true)
         {
             controller.SetNextTutorial();
