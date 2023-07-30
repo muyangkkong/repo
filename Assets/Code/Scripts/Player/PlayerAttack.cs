@@ -34,6 +34,13 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        BaseAttack();
+
+        Ultimate();
+
+    }
+
+    void BaseAttack() {
         int attackInput = (Input.GetKeyDown(KeyCode.Z) ? 1 : 0) + (Input.GetKeyDown(KeyCode.X) ? 2 : 0);
 
         if(!CheckValidInput(attackInput)) return;
@@ -62,20 +69,9 @@ public class PlayerAttack : MonoBehaviour
         
         float yieldGuage = YieldUltimateGuage(timeInterval);
         StartCoroutine(currentAttackInfo.attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, power, yieldGuage));
+    }
 
-        //temp code
-/*         AttackBase attack = new RangeAttack().init(attackObject);
-        attack.init(
-            0.9f,1,4f,2
-        );
-        attack.SetBaseData(1f, 0.5f);
-        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage)); */
-/*         AttackBase attack = new MeleeAttack();
-        attack.init(
-            0, 0, 5, 1.8f
-        );
-        attack.SetBaseData(1f, 0.5f);
-        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage)); */
+    void Ultimate() {
 
     }
 
