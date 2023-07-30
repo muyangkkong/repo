@@ -21,7 +21,7 @@ public class MapManager1 : MonoBehaviour
     
 
     public void LoadMap() {
-        FileStream fs = new FileStream("Assets\\Map\\7", FileMode.Open, FileAccess.Read);
+        FileStream fs = new FileStream("Assets\\Map\\4", FileMode.Open, FileAccess.Read);
         StreamReader sr = new StreamReader(fs);
 
         string[] s = sr.ReadLine().Split(" ", System.StringSplitOptions.None);
