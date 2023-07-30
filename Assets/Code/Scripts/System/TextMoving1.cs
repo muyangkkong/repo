@@ -1,30 +1,40 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class TextMoving1 : TutorialBase
 {
     [SerializeField]
-   
+   public GameObject groupobject;
     public GameObject target;
+     public GameObject letter;
+
   
-   private bool start;
+   
     private bool isCompleted = false;
     void Start(){
+        groupobject.SetActive(false);
         target.SetActive(false);
+        letter.SetActive(false);
+        
+
     }
     
     public override void Enter()
     {
-        Debug.Log("start");
-        target.SetActive(true);
+        Invoke("appear",5f);
+       
+        groupobject.SetActive(true);
+        letter.SetActive(true);
     }
 
     public override void Execute(TutorialController controller)
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            
+             groupobject.SetActive(false);
              target.SetActive(false);
+             letter.SetActive(false);
              isCompleted=true;
         }
         
@@ -40,4 +50,12 @@ public class TextMoving1 : TutorialBase
     {
         
     }
+
+    void appear(){
+       
+        target.SetActive(true);
+        letter.SetActive(false);
+
+    }
+    
 }
