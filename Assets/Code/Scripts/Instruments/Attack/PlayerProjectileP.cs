@@ -11,7 +11,7 @@ public class PlayerProjectileP : Projectile
             UltimateGuageManager.Instance.AddValue(yieldGuage);
         }
         if(other.gameObject.layer == LayerMask.NameToLayer("Platform")) {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 }

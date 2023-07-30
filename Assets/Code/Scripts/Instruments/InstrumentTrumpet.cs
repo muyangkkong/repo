@@ -10,6 +10,8 @@ public class InstrumentTrumpet : Instrument
 
     public override void Init()
     {
-        
+        UltimateTrumpet ultimateTrumpet = new UltimateTrumpet();
+        ultimateTrumpet.projectileObject = this.projectileP;
+        this.ultimate = ultimateTrumpet;
     }
 }

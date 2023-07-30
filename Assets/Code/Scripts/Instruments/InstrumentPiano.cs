@@ -10,6 +10,6 @@ public class InstrumentPiano : Instrument
 
     public override void Init()
     {
-
+        this.ultimate = new UltimatePiano();
     }
 }

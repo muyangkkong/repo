@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    MeshRenderer meshRenderer;
+    protected MeshRenderer meshRenderer;
     Rigidbody rigid;
 
-    bool isShot = false;
-    Vector3 direction;
+    protected bool isShot = false;
+    protected Vector3 direction;
     protected float damage;
     public Color color;
     public float speed;
@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
             }
         }
     }
-    public void Shot(Vector3 direction, float damage) {
+    public virtual void Shot(Vector3 direction, float damage) {
         this.direction = direction;
         this.damage = damage;
         isShot = true;

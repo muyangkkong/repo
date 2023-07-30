@@ -72,7 +72,13 @@ public class PlayerAttack : MonoBehaviour
     }
 
     void Ultimate() {
-
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsTag("Attackable")) return;
+        if(Input.GetKeyDown(KeyCode.V)) {
+            animatorOverrideController["Attack"] = instrument.ultimateAnimationClip;
+            animator.runtimeAnimatorController = animatorOverrideController;
+            StartCoroutine(instrument.ultimate.Attack(transform.position, GetComponent<PlayerMovement>().direction, power, 0));
+            animator.SetTrigger("Attack");
+        }
     }
 
     bool CheckValidInput(int attackInput) {

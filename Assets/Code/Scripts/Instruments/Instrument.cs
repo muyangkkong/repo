@@ -18,9 +18,12 @@ public abstract class Instrument : MonoBehaviour
     public GameObject thumbnail = null;
 
     public AnimationClip[] animationClips;
-
+    public AnimationClip ultimateAnimationClip;
+    
     public GameObject projectile;
     public GameObject projectileP;
+
+    public Ultimate ultimate;
 
     public abstract void Construct();
     public abstract void Init();
