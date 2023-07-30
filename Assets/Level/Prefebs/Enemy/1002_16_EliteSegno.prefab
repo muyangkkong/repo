@@ -467,9 +467,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.2
-  m_Height: 1
+  m_Height: 1.4
   m_Direction: 1
-  m_Center: {x: 0, y: 0.47, z: 0}
+  m_Center: {x: 0, y: 0.67, z: 0}
 --- !u!114 &8724137547865028132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
   direction: -1
   maxHp: 30
   hitsound: {fileID: 8300000, guid: 993b90169f855274fb07391bf42773f5, type: 3}
-  baseColor: {r: 0.54901963, g: 0.4627451, b: 0.59607846, a: 1}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
   hitColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1001 &5922393610135594398
 PrefabInstance:

@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5256243088234327959}
   - component: {fileID: -4638272775678751430}
   m_Layer: 0
-  m_Name: pro89
+  m_Name: PlayerProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

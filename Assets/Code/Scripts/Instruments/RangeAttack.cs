@@ -13,9 +13,16 @@ public class RangeAttack : AttackBase
 
     public GameObject projectileObject;
 
-    public AttackBase init(GameObject projectileObject) {
+    bool penetration = false;
+
+    public RangeAttack init(GameObject projectileObject) {
         this.init();
         this.projectileObject = projectileObject;
+        return this;
+    }
+
+    public RangeAttack setPenetration() {
+        penetration = true;
         return this;
     }
 
@@ -41,11 +48,21 @@ public class RangeAttack : AttackBase
         yield return new WaitForSeconds(delay);
         int leftProjectileNum = projectileNum;
         while(leftProjectileNum > 0) {
-            PlayerProjectile projectile = MonoBehaviour.Instantiate(projectileObject, position + Vector3.up * height, Quaternion.Euler(new Vector3(0,-direction * 90 + 180,0))).GetComponent<PlayerProjectile>();
-            projectile.yieldGuage = yieldGuage;
-            projectile.speed = speed;
-            //duration set
-            projectile.Shot(new Vector3(direction, 0, 0), power * damage);
+            if(!penetration) {
+                PlayerProjectile projectile = MonoBehaviour.Instantiate(projectileObject, position + Vector3.up * height, Quaternion.Euler(new Vector3(0,-direction * 90 + 180,0))).GetComponent<PlayerProjectile>();
+                projectile.yieldGuage = yieldGuage;
+                projectile.speed = speed;
+                //duration set
+                projectile.Shot(new Vector3(direction, 0, 0), power * damage);
+            }
+            else {
+                PlayerProjectileP projectile = MonoBehaviour.Instantiate(projectileObject, position + Vector3.up * height, Quaternion.Euler(new Vector3(0,-direction * 90 + 180,0))).GetComponent<PlayerProjectileP>();
+                projectile.yieldGuage = yieldGuage;
+                projectile.speed = speed;
+                //duration set
+                projectile.Shot(new Vector3(direction, 0, 0), power * damage);
+            }
+
             yield return new WaitForSeconds(0.05f);
             leftProjectileNum -= 1;
         }

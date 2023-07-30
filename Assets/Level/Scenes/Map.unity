@@ -4406,7 +4406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6610505515774381793, guid: fcba7c7dfaa8f074b9cd3db0049d3d79, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6610505516302726960, guid: fcba7c7dfaa8f074b9cd3db0049d3d79, type: 3}
       propertyPath: m_Pivot.x
@@ -14254,7 +14254,7 @@ PrefabInstance:
     - target: {fileID: 1941836975775101443, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: instrument
       value: 
-      objectReference: {fileID: 1753299672169412472, guid: 6909b6698ce920b4a93618b19893ec50, type: 3}
+      objectReference: {fileID: 8911349632589043026, guid: 3b53de1b892a28741bdf7aa051f56721, type: 3}
     - target: {fileID: 2291667496676544143, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: maxHp
       value: 200
@@ -16900,5 +16900,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4453270943147876645, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
+      propertyPath: stageEnemySet.Array.data[0]
+      value: 
+      objectReference: {fileID: 8390587793034919488, guid: 6328c4a1aae2a43419bb9c6669434d38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}

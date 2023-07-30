@@ -25,6 +25,7 @@ public class EliteEnemySegno : MeleeEnemy
             if(collider.gameObject == this.gameObject) continue;
             savedEnemy.Add(collider.gameObject);
             GameObject temp = Instantiate(collider.gameObject, collider.transform.position, collider.transform.rotation);
+            temp.transform.SetParent(gameObject.transform.parent.transform);
             temp.SetActive(false);
             reviveList.Add(temp);
         }

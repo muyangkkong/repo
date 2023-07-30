@@ -20,6 +20,7 @@ public abstract class Instrument : MonoBehaviour
     public AnimationClip[] animationClips;
 
     public GameObject projectile;
+    public GameObject projectileP;
 
     public abstract void Construct();
     public abstract void Init();
@@ -73,8 +74,10 @@ public abstract class Instrument : MonoBehaviour
                 attack = new MeleeAttack();
                 break;
             case 1:
-            case 2:
                 attack = new RangeAttack().init(projectile);
+                break;
+            case 2:
+                attack = new RangeAttack().init(projectileP).setPenetration();
                 break;
             }
 

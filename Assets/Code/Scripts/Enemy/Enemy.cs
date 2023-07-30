@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     }
 
     Rigidbody rigid;
-    Animator animator;
+    protected Animator animator;
 
     protected State currentState;
 
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
     protected float currentHp;
     public float maxHp;
 
-    protected float AttackDamage = 10.0f;
+    public float AttackDamage = 10.0f;
 
     protected AudioSource audiosource;
     public AudioClip hitsound;
@@ -140,7 +140,6 @@ public class Enemy : MonoBehaviour
         if(Physics.Raycast(transform.position, Vector3.right * moveTo, out hit, chaseRangeMin, LayerMask.GetMask("Player"))) {
             //Chase to Attack
             if(animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) return;
-            animator.SetTrigger("Attack");
             CancelInvoke("Chase");
             moveTo = 0;
             StartCoroutine(Attack());
