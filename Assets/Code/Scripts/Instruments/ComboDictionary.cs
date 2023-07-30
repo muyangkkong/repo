@@ -24,11 +24,12 @@ public class ComboDictionary
         attackData.id = id;
         dictionary[id] = attackData;
     }
-    public void SetComboData(int id, string currentComboName, int animationClipIdx, int[,] children) {
+    public void SetComboData(int id, string currentComboName, int animationClipIdx, AttackBase attack, int[,] children) {
         ComboData attackData = new ComboData();
         attackData.id = id;
         attackData.currentComboName = currentComboName;
         attackData.animationClipIdx = animationClipIdx;
+        attackData.attack = attack;
         attackData.children = children;
         dictionary[id] = attackData;
     }

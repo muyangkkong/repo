@@ -13,7 +13,6 @@ public class PlayerEquipment : MonoBehaviour
     }
 
     void Update() {
-        
     }
 
     void EquipInstrument() {
@@ -21,5 +20,7 @@ public class PlayerEquipment : MonoBehaviour
             Instantiate(instrument.leftArmed).transform.SetParent(lefthand.transform, false);
         if(instrument.rightArmed != null)
             Instantiate(instrument.rightArmed).transform.SetParent(righthand.transform, false);
+
+        Instantiate(instrument.thumbnail).transform.SetParent(GameObject.Find("InstrumentInfo").transform, false);
     }
 }

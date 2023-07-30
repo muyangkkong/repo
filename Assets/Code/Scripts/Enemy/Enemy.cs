@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     }
 
     Rigidbody rigid;
-    Animator animator;
+    protected Animator animator;
 
     protected State currentState;
 
@@ -34,19 +34,35 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected int direction = -1;
 
-    float currentHp;
+    protected float currentHp;
     public float maxHp;
 
-    protected float AttackDamage = 10.0f;
+    public float AttackDamage = 10.0f;
+
+    protected AudioSource audiosource;
+    public AudioClip hitsound;
+
+    Material material;
+    public Color baseColor = Color.white;
+    public Color hitColor = Color.black;
 
     void Awake() {
         rigid = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        audiosource = GetComponent<AudioSource>();
+
+        if (audiosource == null)
+        {
+            audiosource = gameObject.AddComponent<AudioSource>();
+        }
+
     }
 
     void Start() {
         Invoke("Wander", Random.Range(0.5f, 5f));
         currentHp = maxHp;
+        material = GetComponentInChildren<Renderer>().material;
+        material.color = baseColor;
     }
     
     void FixedUpdate()
@@ -124,7 +140,6 @@ public class Enemy : MonoBehaviour
         if(Physics.Raycast(transform.position, Vector3.right * moveTo, out hit, chaseRangeMin, LayerMask.GetMask("Player"))) {
             //Chase to Attack
             if(animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) return;
-            animator.SetTrigger("Attack");
             CancelInvoke("Chase");
             moveTo = 0;
             StartCoroutine(Attack());
@@ -144,7 +159,7 @@ public class Enemy : MonoBehaviour
         Invoke("Chase", 0f);
     }
 
-    public void Damage(float amount, float knockback) {
+    public virtual void Damage(float amount, float knockback) {
         StopAllCoroutines();
         CancelInvoke();
         moveTo = 0;
@@ -153,6 +168,12 @@ public class Enemy : MonoBehaviour
         currentHp -= amount;
         StartCoroutine(Knockback(knockback));
         StartCoroutine(OnDamage());
+
+        if (audiosource != null && hitsound != null)
+        {
+            audiosource.pitch = 5f;
+            audiosource.PlayOneShot(hitsound);
+        }
     }
 
     IEnumerator Knockback(float knockback) {
@@ -171,17 +192,17 @@ public class Enemy : MonoBehaviour
 
     public virtual IEnumerator OnDamage() {
         animator.SetTrigger("Hit");
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         
 
         if(currentHp <= 0) {

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8911349632589043025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8911349632589043027}
+  - component: {fileID: 1753299672169412472}
+  m_Layer: 0
+  m_Name: InstrumentTrumpet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8911349632589043027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911349632589043025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1753299672169412472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911349632589043025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb1e41f93c74a45adb823a93da651e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftArmed: {fileID: 0}
+  rightArmed: {fileID: 671283944972862753, guid: 2fe04923dfecb354d94d2f2aaa9c5e23, type: 3}
+  thumbnail: {fileID: 861163408298366171, guid: f0bd8980e1c421e4ab40691fb2374099, type: 3}
+  animationClips:
+  - {fileID: 7400008, guid: dd7d5523a6af25c4aa7ea071bfce6032, type: 3}
+  - {fileID: 7400000, guid: d16438c7c5ae5924aac4072d845d9169, type: 3}
+  - {fileID: 7400000, guid: 5393ed4c3c550bc42ac6c1ca776f60dc, type: 3}
+  - {fileID: 7400000, guid: c64109b2ee83db448a1643d5387177cd, type: 3}
+  - {fileID: 7400000, guid: 14f1db392071a0c4895576ec6c62b9c9, type: 3}
+  - {fileID: 1827226128182048838, guid: 787d4e2b72d63024a979da536b3d8594, type: 3}
+  - {fileID: 7400000, guid: 698c4a5547b66de4daf6c3139c4eb8d2, type: 3}
+  - {fileID: 1827226128182048838, guid: 311075fc6b6835f4c8d8da2046d47c13, type: 3}
+  - {fileID: 7400000, guid: 76252bf706c8e9445857e0c6ebde6479, type: 3}
+  projectile: {fileID: 5764672803649153873, guid: 6603485e8a511f24595867e1e83c880e, type: 3}
+  projectileP: {fileID: 5764672803649153873, guid: dfe6c8e7b5f32ef42b5304b9726de0d7, type: 3}

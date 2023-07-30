@@ -9,5 +9,8 @@ public class EnemyProjectile : Projectile
             other.GetComponent<CharacterHP>().getDamage(damage);
             Destroy(this.gameObject);
         }
+        if(other.gameObject.layer == LayerMask.NameToLayer("Platform")) {
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -13,9 +13,11 @@ public class PlayerAttack : MonoBehaviour
     
     TimingBarManager timingBarManager;
 
-    float maxAcceptInterval = 0.2f;
+    public float maxAcceptInterval = 0.2f;
 
     public GameObject attackObject;
+
+    public float power;
 
     void Start()
     {
@@ -32,6 +34,13 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        BaseAttack();
+
+        Ultimate();
+
+    }
+
+    void BaseAttack() {
         int attackInput = (Input.GetKeyDown(KeyCode.Z) ? 1 : 0) + (Input.GetKeyDown(KeyCode.X) ? 2 : 0);
 
         if(!CheckValidInput(attackInput)) return;
@@ -48,25 +57,22 @@ public class PlayerAttack : MonoBehaviour
             StartCoroutine(MissAttack());
             return;
         }
-
+        
         instrument.AttackProgress(timeIndex, attackInput-1);
         currentAttackInfo = instrument.GetCurrentAttackData();
         timingBarManager.SetAttackInfo(currentAttackInfo.children);
-
-        float yieldGuage = YieldUltimateGuage(timeInterval);
 
         OverrideAnimator();
         animator.SetTrigger("Attack");
 
         timingBarManager.TimerStart();
+        
+        float yieldGuage = YieldUltimateGuage(timeInterval);
+        StartCoroutine(currentAttackInfo.attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, power, yieldGuage));
+    }
 
-        //temp code
-/*         AttackBase attack = new RangeAttack().init(attackObject);
-        attack.init();
-        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage)); */
-        AttackBase attack = new MeleeAttack().init(0, 0, 5, 1.8f);
-        attack.init();
-        StartCoroutine(attack.Attack(transform.position, GetComponent<PlayerMovement>().direction, 10, yieldGuage));
+    void Ultimate() {
+
     }
 
     bool CheckValidInput(int attackInput) {

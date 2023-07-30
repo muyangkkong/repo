@@ -7,7 +7,7 @@ public class TextMoving : TutorialBase
     public GameObject groupobject;
     
 
-    
+     
     private bool isCompleted = false;
     
     void Start()
@@ -17,6 +17,7 @@ public class TextMoving : TutorialBase
     public override void Enter()
     {
         groupobject.SetActive(true);
+  
     }
 
     public override void Execute(TutorialController controller)
@@ -25,6 +26,7 @@ public class TextMoving : TutorialBase
         if (Input.GetKeyDown(KeyCode.Return))
         {
             groupobject.SetActive(false);
+      
             isCompleted= true;
         }
         if (isCompleted==true)
