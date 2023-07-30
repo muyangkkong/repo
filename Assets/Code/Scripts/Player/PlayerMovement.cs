@@ -12,9 +12,17 @@ public class PlayerMovement : MonoBehaviour
     public int direction = 1;
     public float speed = 5f;
 
+    public AudioClip walkingSound1;
+    public AudioClip walkingSound2;
+    private AudioSource audioSource;
+    private bool isWalking = false;
+
+     private int currentWalkingSoundIndex = 0;
+
     void Start(){
         animator = GetComponent<Animator>();
         characterRigidbody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
     
     void FixedUpdate(){
@@ -42,8 +50,24 @@ public class PlayerMovement : MonoBehaviour
         rotation.y = -direction * 90 + 180;
         characterRigidbody.rotation = Quaternion.Euler(rotation);
 
-        if (onGround && inputX != 0) animator.SetBool("Run", true);
-        else animator.SetBool("Run", false);
+        if (onGround && inputX != 0)
+    {
+        animator.SetBool("Run", true);
+        if (!isWalking)
+        {
+            isWalking = true;
+            PlayFootstepSound();
+        }
+    }
+    else
+    {
+        animator.SetBool("Run", false);
+        if (isWalking)
+        {
+            isWalking = false;
+            CancelInvoke("PlayFootstepSound");
+        }
+    }
     }
 
     void Jump() {
@@ -83,4 +107,25 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
 
     }
+
+    void PlayFootstepSound()
+{
+    if (!audioSource.isPlaying)
+    {
+        if (currentWalkingSoundIndex == 0)
+        {
+            audioSource.PlayOneShot(walkingSound1);
+            currentWalkingSoundIndex = 1;
+        }
+        else
+        {
+            audioSource.PlayOneShot(walkingSound2);
+            currentWalkingSoundIndex = 0;
+        }
+    }
+
+    // 발자국 소리 사이에 겹치지 않도록 딜레이를 설정합니다.
+    float footstepDelay = 0.2f; // 필요에 따라 이 값을 조정하세요
+    Invoke("PlayFootstepSound", footstepDelay);
+}
 }
