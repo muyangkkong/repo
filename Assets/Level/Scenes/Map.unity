@@ -16904,5 +16904,9 @@ PrefabInstance:
       propertyPath: stageEnemySet.Array.data[0]
       value: 
       objectReference: {fileID: 8390587793034919488, guid: 6328c4a1aae2a43419bb9c6669434d38, type: 3}
+    - target: {fileID: 4453270943147876645, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
+      propertyPath: stageEnemySet.Array.data[1]
+      value: 
+      objectReference: {fileID: 5849574571894928127, guid: 9f7b8bcdc36995947985bcb8d0f491b5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
