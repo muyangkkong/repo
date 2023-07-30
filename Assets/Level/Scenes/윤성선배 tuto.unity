@@ -1482,6 +1482,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3255328902908869750, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -3255328902908869750, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: walkingSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: d32dfbd4f07072a42a4d14cf04f65a83, type: 3}
+    - target: {fileID: -3255328902908869750, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: walkingSound2
+      value: 
+      objectReference: {fileID: 8300000, guid: b1275e9aba97b0b4384fb75851c851e7, type: 3}
     - target: {fileID: 1941836975775101443, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: instrument
       value: 
