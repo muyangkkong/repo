@@ -16627,22 +16627,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4453270943147876645, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: stageEnemySet.Array.data[0]
-      value: 
-      objectReference: {fileID: 8390587793034919488, guid: 6328c4a1aae2a43419bb9c6669434d38, type: 3}
-    - target: {fileID: 4453270943147876645, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: stageEnemySet.Array.data[1]
-      value: 
-      objectReference: {fileID: 5849574571894928127, guid: 9f7b8bcdc36995947985bcb8d0f491b5, type: 3}
-    - target: {fileID: 4453270943147876645, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: stageEnemySet.Array.data[2]
-      value: 
-      objectReference: {fileID: 8548121496891067010, guid: 892662498e1603c4ba580023533710b5, type: 3}
-    - target: {fileID: 4453270943147876645, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
-      propertyPath: stageEnemySet.Array.data[3]
-      value: 
-      objectReference: {fileID: 7180738257177797742, guid: d7720186214977e4a913bdd4e80eeb46, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
 --- !u!1001 &4608361613630892654
