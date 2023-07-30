@@ -51,8 +51,14 @@ public class ESC : MonoBehaviour
 
     public void OnClickMainMenu()
     {
-        Debug.Log("몌인 몌뉴");
-        Loading.LoadScene("Main Menu");
+        Time.timeScale = 1f;
+        Background backgroundInstance = GameObject.FindObjectOfType<Background>();
+        if (backgroundInstance != null)
+            Destroy(backgroundInstance.gameObject);
+
+        SceneManager.UnloadSceneAsync("Map");
+        Destroy(MapManager.Instance.gameObject);
+        SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
         
     }
 
