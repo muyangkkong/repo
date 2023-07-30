@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Level/Scenes/Map.unity
     guid: 34177cf068e593542b99458efff0b01e
   - enabled: 1
+    path: Assets/Level/Scenes/Tutorial.unity
+    guid: 7e5a1fa46d03ebd45ae8e4583b11602c
+  - enabled: 1
     path: "Assets/Level/Scenes/\uC724\uC131\uC120\uBC30 tuto.unity"
     guid: a2613e2f53eee4447b34c90029b2bef1
   m_configObjects: {}

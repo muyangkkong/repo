@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
   
     public void OnClickNewGame()
     {
-        Loading.LoadScene("Map");
+        Loading.LoadScene("Tutorial");
     }
 
     public void OnclickOptions(){
