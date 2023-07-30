@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: 0
   stageEnemySet:
-  - {fileID: 7300187239216332723, guid: aa8ef14fd30c7c4479d1de3d0033d9ba, type: 3}
-  - {fileID: 5854113712655867481, guid: 8611a5a141702bb49ad567dd409d17f9, type: 3}
-  - {fileID: 7065603445744750373, guid: 7179b0cf05110d64eaf0670483653a5f, type: 3}
-  - {fileID: 150626713573441362, guid: 8e85a0f64a9219946926759eb6c0aa2c, type: 3}
+  - {fileID: 8390587793034919488, guid: 6328c4a1aae2a43419bb9c6669434d38, type: 3}
+  - {fileID: 5849574571894928127, guid: 9f7b8bcdc36995947985bcb8d0f491b5, type: 3}
+  - {fileID: 8548121496891067010, guid: 892662498e1603c4ba580023533710b5, type: 3}
+  - {fileID: 7180738257177797742, guid: d7720186214977e4a913bdd4e80eeb46, type: 3}
