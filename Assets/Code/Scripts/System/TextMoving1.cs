@@ -1,50 +1,43 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class TextMoving1 : TutorialBase
 {
     [SerializeField]
-    public GameObject groupobject;
-    
+   public GameObject groupobject;
+    public GameObject target;
+     public GameObject letter;
 
-    Button myButton;
+  
+   
     private bool isCompleted = false;
-    
-    void Start()
-    {
+    void Start(){
         groupobject.SetActive(false);
+        target.SetActive(false);
+        letter.SetActive(false);
+        
+
     }
+    
     public override void Enter()
     {
+        Invoke("appear",4.5f);
+       
         groupobject.SetActive(true);
+        letter.SetActive(true);
     }
 
     public override void Execute(TutorialController controller)
     {
-        if (Input.GetButtonDown("Piano"))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            groupobject.SetActive(false);
-            
-            isCompleted= true;
+             groupobject.SetActive(false);
+             target.SetActive(false);
+             letter.SetActive(false);
+             isCompleted=true;
         }
-        else if (Input.GetButtonDown("Violin"))
-        {
-            groupobject.SetActive(false);
-            
-            isCompleted= true;
-        }
-        else if (Input.GetButtonDown("Trumpet"))
-        {
-            groupobject.SetActive(false);
-            
-            isCompleted= true;
-        }
-        else if (Input.GetButtonDown("Harp"))
-        {
-            groupobject.SetActive(false);
-            
-            isCompleted= true;
-        }
+        
         if (isCompleted==true)
         {
             controller.SetNextTutorial();
@@ -57,4 +50,12 @@ public class TextMoving1 : TutorialBase
     {
         
     }
+
+    void appear(){
+       
+        target.SetActive(true);
+        letter.SetActive(false);
+
+    }
+    
 }

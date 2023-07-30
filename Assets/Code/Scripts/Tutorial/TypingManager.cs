@@ -17,10 +17,12 @@ public class TypingManager : MonoBehaviour
         StartCoroutine(_typing());
     }
     IEnumerator _typing(){
+        Debug.Log("start");
         for (int i=0;i<=m_Message.Length;i++){
             m_TypingText.text=m_Message.Substring(0,i);
             yield return new WaitForSeconds(m_Speed);
         }
+        
 
     }
     // Update is called once per frame

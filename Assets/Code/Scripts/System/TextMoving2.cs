@@ -1,10 +1,11 @@
 
 using UnityEngine;
 using UnityEngine.UI;
-public class TextMoving : TutorialBase
+public class TextMoving2 : TutorialBase
 {
     [SerializeField]
     public GameObject groupobject;
+    public GameObject block;
     
 
      
@@ -13,10 +14,12 @@ public class TextMoving : TutorialBase
     void Start()
     {
         groupobject.SetActive(false);
+        block.SetActive(false);
     }
     public override void Enter()
     {
         groupobject.SetActive(true);
+        block.SetActive(true);
   
     }
 
@@ -26,6 +29,7 @@ public class TextMoving : TutorialBase
         if (Input.GetKeyDown(KeyCode.Return))
         {
             groupobject.SetActive(false);
+            block.SetActive(false);
       
             isCompleted= true;
         }

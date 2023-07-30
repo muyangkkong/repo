@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
+    public GameObject[] pp;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pp=GameObject.FindGameObjectsWithTag("Player");
+        for (int i=1;i<pp.Length;i++){
+            pp[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
