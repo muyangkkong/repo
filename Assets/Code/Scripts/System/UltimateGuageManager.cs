@@ -36,4 +36,19 @@ public class UltimateGuageManager : MonoBehaviour
     public void AddValue(float yieldGuage) {
         slider.value += yieldGuage;
     }
+
+    public float GetValue() {
+        return slider.value;
+    }
+    public void SetValue(float value) {
+        slider.value = value;
+    }
+
+    public float GetMaxValue() {
+        return slider.maxValue;
+    }
+
+    public bool CheckFull() {
+        return slider.value >= slider.maxValue;
+    }
 }
