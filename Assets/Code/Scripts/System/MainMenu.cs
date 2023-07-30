@@ -16,6 +16,9 @@ public class MainMenu : MonoBehaviour
   
     public void OnClickNewGame()
     {
+        Background backgroundInstance = FindObjectOfType<Background>();
+        if (backgroundInstance != null)
+            Destroy(backgroundInstance.gameObject);
         Loading.LoadScene("Map");
     }
 

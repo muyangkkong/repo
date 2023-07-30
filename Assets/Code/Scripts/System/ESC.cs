@@ -8,6 +8,7 @@ public class ESC : MonoBehaviour
     [SerializeField] public GameObject go_BaseUI; // 일시 정지 UI 패널
 
     public static bool isPause;
+    private Background backgroundInstance;
 
     private void Awake() {
         go_BaseUI.SetActive(false);
@@ -51,8 +52,12 @@ public class ESC : MonoBehaviour
 
     public void OnClickMainMenu()
     {
-        Debug.Log("몌인 몌뉴");
-        Loading.LoadScene("Main Menu");
+        Debug.Log("메인 몌뉴");
+         backgroundInstance = GameObject.FindObjectOfType<Background>();
+        if (backgroundInstance != null)
+            Destroy(backgroundInstance.gameObject);
+        SceneManager.UnloadSceneAsync("Map");
+        SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
         
     }
 
