@@ -11,7 +11,7 @@ public class CharacterHP : MonoBehaviour
     public float maxHp;
     public float currentHp;
 
-    public Slider slider;
+    Slider slider;
     float currentTime;
 
     public AudioSource audioSource;
@@ -35,6 +35,8 @@ public class CharacterHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(GameObject.Find("HpInfo"));
+        slider = GameObject.Find("HpInfo").GetComponent<Slider>();
         currentHp = maxHp;
         slider.maxValue = maxHp;
         slider.value = maxHp;

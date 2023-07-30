@@ -6,6 +6,8 @@ public class RangeEnemy : Enemy
 {
     public GameObject projectileObject;
     public override IEnumerator Attack() {
+        yield return new WaitForSeconds(0.8f);
+        animator.SetTrigger("Attack");
         currentState = State.attack;
         //attack animation start
         yield return new WaitForSeconds(0.4f);

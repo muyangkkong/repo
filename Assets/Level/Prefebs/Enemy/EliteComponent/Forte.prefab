@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2969901753961580837}
   - component: {fileID: 5614830499579088850}
+  - component: {fileID: 461578411011513408}
   m_Layer: 0
   m_Name: Forte
   m_TagString: Untagged
@@ -84,3 +85,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &461578411011513408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306780163495385126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e315f8c41e9b184b98a5fd116ed708b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

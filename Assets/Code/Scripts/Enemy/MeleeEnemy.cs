@@ -5,6 +5,7 @@ using UnityEngine;
 public class MeleeEnemy : Enemy
 {
     public override IEnumerator Attack() {
+        animator.SetTrigger("Attack");
         currentState = State.attack;
         //attack animation start
         yield return new WaitForSeconds(0.6f);

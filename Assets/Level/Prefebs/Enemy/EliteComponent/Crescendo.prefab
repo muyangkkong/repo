@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1407499981947467404}
   - component: {fileID: 5653144143500024994}
+  - component: {fileID: -7725106514905343216}
   m_Layer: 0
   m_Name: Crescendo
   m_TagString: Untagged
@@ -84,3 +85,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7725106514905343216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000874087839678762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e315f8c41e9b184b98a5fd116ed708b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

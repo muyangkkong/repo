@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1031116293708187663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1031116293708541669}
   - {fileID: 1031116293708530865}
@@ -86,9 +86,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.2
-  m_Height: 1
+  m_Height: 1.4
   m_Direction: 1
-  m_Center: {x: 0, y: 0.47, z: 0}
+  m_Center: {x: 0, y: 0.67, z: 0}
 --- !u!114 &-823271899983713481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,14 +101,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a335115d919d341b93f09f771074f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseRangeMin: 1.5
-  chaseRangeMax: 6
-  unchaseRadius: 8
+  chaseRangeMin: 6
+  chaseRangeMax: 8
+  unchaseRadius: 10
   speed: 2
   _moveTo: 0
   direction: -1
   maxHp: 30
   hitsound: {fileID: 8300000, guid: 993b90169f855274fb07391bf42773f5, type: 3}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  hitColor: {r: 0, g: 0, b: 0, a: 1}
   projectileObject: {fileID: 885739400119816328, guid: 5ffac89fa91a1fe45a45589f9e512e0f, type: 3}
 --- !u!1 &1031116293708201081
 GameObject:

@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     }
 
     Rigidbody rigid;
-    Animator animator;
+    protected Animator animator;
 
     protected State currentState;
 
@@ -37,11 +37,14 @@ public class Enemy : MonoBehaviour
     protected float currentHp;
     public float maxHp;
 
-    protected float AttackDamage = 10.0f;
+    public float AttackDamage = 10.0f;
 
     protected AudioSource audiosource;
     public AudioClip hitsound;
 
+    Material material;
+    public Color baseColor = Color.white;
+    public Color hitColor = Color.black;
 
     void Awake() {
         rigid = GetComponent<Rigidbody>();
@@ -58,6 +61,8 @@ public class Enemy : MonoBehaviour
     void Start() {
         Invoke("Wander", Random.Range(0.5f, 5f));
         currentHp = maxHp;
+        material = GetComponentInChildren<Renderer>().material;
+        material.color = baseColor;
     }
     
     void FixedUpdate()
@@ -135,7 +140,6 @@ public class Enemy : MonoBehaviour
         if(Physics.Raycast(transform.position, Vector3.right * moveTo, out hit, chaseRangeMin, LayerMask.GetMask("Player"))) {
             //Chase to Attack
             if(animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) return;
-            animator.SetTrigger("Attack");
             CancelInvoke("Chase");
             moveTo = 0;
             StartCoroutine(Attack());
@@ -188,17 +192,17 @@ public class Enemy : MonoBehaviour
 
     public virtual IEnumerator OnDamage() {
         animator.SetTrigger("Hit");
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = new Color(1f, 0.274f, 0.27f);
+        material.color = hitColor;
         yield return new WaitForSeconds(0.06f);
-        GetComponentInChildren<Renderer>().material.color = Color.black;
+        material.color = baseColor;
         
 
         if(currentHp <= 0) {
