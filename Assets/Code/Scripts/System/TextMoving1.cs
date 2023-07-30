@@ -8,9 +8,9 @@ public class TextMoving1 : TutorialBase
    public GameObject groupobject;
     public GameObject target;
      public GameObject letter;
-
+    
   
-   
+    private bool secondenter= false;
     private bool isCompleted = false;
     void Start(){
         groupobject.SetActive(false);
@@ -22,7 +22,7 @@ public class TextMoving1 : TutorialBase
     
     public override void Enter()
     {
-        Invoke("appear",4.5f);
+       
        
         groupobject.SetActive(true);
         letter.SetActive(true);
@@ -32,10 +32,14 @@ public class TextMoving1 : TutorialBase
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-             groupobject.SetActive(false);
-             target.SetActive(false);
-             letter.SetActive(false);
-             isCompleted=true;
+             if (!secondenter){
+                firstenter();
+                secondenter=true;
+             }
+             else{
+                  second_enter();
+                  isCompleted=true;
+             }
         }
         
         if (isCompleted==true)
@@ -51,10 +55,16 @@ public class TextMoving1 : TutorialBase
         
     }
 
-    void appear(){
+    void firstenter(){
        
         target.SetActive(true);
         letter.SetActive(false);
+
+    }
+    void second_enter(){
+          groupobject.SetActive(false);
+          letter.SetActive(false);
+          target.SetActive(false);
 
     }
     
