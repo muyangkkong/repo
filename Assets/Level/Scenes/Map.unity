@@ -14098,6 +14098,14 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 6610505515692245648}
+    - target: {fileID: 2905400375159293562, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: m_Size.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905400375159293562, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: m_Size.z
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8210966074256146660, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_RootOrder
       value: 3
