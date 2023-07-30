@@ -5,10 +5,7 @@ using UnityEngine;
 public class ViolinSelect : MonoBehaviour
 {
     public GameObject player;
-     void Start(){
-       player.SetActive(true);
-    }
-    
+     
     public void Holding()
     {
        Debug.Log("click");

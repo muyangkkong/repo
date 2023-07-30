@@ -9,7 +9,7 @@ public class ButtonManager : MonoBehaviour
     void Start()
     {
         pp=GameObject.FindGameObjectsWithTag("Player");
-        for (int i=0;i<pp.Length;i++){
+        for (int i=1;i<pp.Length;i++){
             pp[i].SetActive(false);
         }
     }

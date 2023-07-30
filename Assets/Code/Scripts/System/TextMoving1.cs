@@ -22,7 +22,7 @@ public class TextMoving1 : TutorialBase
     
     public override void Enter()
     {
-        Invoke("appear",5f);
+        Invoke("appear",4.5f);
        
         groupobject.SetActive(true);
         letter.SetActive(true);
