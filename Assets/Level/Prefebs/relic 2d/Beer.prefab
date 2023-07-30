@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcf7037c33439743abc7b4fcc7deb60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 7600
+  relic: {fileID: 11400000, guid: 9bf82a3f61c20ec41a043af4af47e176, type: 2}
 --- !u!65 &-5237236599191787514
 BoxCollider:
   m_ObjectHideFlags: 0

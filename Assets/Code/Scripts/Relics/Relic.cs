@@ -8,6 +8,7 @@ public class Relic : ScriptableObject
 {
     public string RelicName;
     public string Rarity;
+    public string Info;
     public Sprite RelicImage;
     public float MaxHealthChanges;
     public float DamageChanges;
