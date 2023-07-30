@@ -22,7 +22,9 @@ public class TextMoving1 : TutorialBase
     
     public override void Enter()
     {
-        Invoke("appear",4.5f);
+        TypingManager typingManager = groupobject.GetComponent<TypingManager>();
+
+        Invoke("appear",typingManager.m_Message.Length * 0.03f);
        
         groupobject.SetActive(true);
         letter.SetActive(true);
