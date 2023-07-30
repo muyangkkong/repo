@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class TextMoving1 : TutorialBase
 {
     [SerializeField]
-   public GameObject groupobject;
+    public GameObject groupobject;
     public GameObject target;
-     public GameObject letter;
+    public GameObject letter;
 
-  
+    private bool secondenter=false;
    
     private bool isCompleted = false;
     void Start(){
@@ -24,7 +24,7 @@ public class TextMoving1 : TutorialBase
     {
         TypingManager typingManager = groupobject.GetComponent<TypingManager>();
 
-        Invoke("appear",typingManager.m_Message.Length * 0.03f);
+       
        
         groupobject.SetActive(true);
         letter.SetActive(true);
@@ -34,11 +34,19 @@ public class TextMoving1 : TutorialBase
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-             groupobject.SetActive(false);
-             target.SetActive(false);
-             letter.SetActive(false);
-             isCompleted=true;
+            if(!secondenter){
+                first_enter();
+                Debug.Log("1");
+                secondenter=true;
+            }
+            else{
+                second_enter();
+                Debug.Log("2");
+            }
+             
+            
         }
+        
         
         if (isCompleted==true)
         {
@@ -53,11 +61,16 @@ public class TextMoving1 : TutorialBase
         
     }
 
-    void appear(){
-       
+    void first_enter(){
         target.SetActive(true);
         letter.SetActive(false);
 
+    }
+    void second_enter(){
+        groupobject.SetActive(false);
+        target.SetActive(false);
+        letter.SetActive(false);
+        isCompleted=true;
     }
     
 }
