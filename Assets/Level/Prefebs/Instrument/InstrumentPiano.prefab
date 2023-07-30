@@ -57,4 +57,6 @@ MonoBehaviour:
   - {fileID: 1827226128182048838, guid: 165054ceca2112249bf2d4143de0f4b6, type: 3}
   - {fileID: 1827226128182048838, guid: 3963e995fd5e1914ebefa9040795666a, type: 3}
   - {fileID: 7400000, guid: a662ec3622809624381a7b87a786234e, type: 3}
+  ultimateAnimationClip: {fileID: 7400000, guid: 56796018ba27d9d43b0a5269494fad41, type: 2}
   projectile: {fileID: 0}
+  projectileP: {fileID: 0}

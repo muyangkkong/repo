@@ -10,5 +10,9 @@ public class InstrumentViolin : Instrument
 
     public override void Init()
     {
+        UltimateViolin ultimateViolin = new UltimateViolin();
+        ultimateViolin.violinObject = this.leftArmed;
+        this.ultimate = ultimateViolin;
+
     }
 }
