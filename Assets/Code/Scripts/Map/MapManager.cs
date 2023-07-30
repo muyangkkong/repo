@@ -53,7 +53,7 @@ public class MapManager : MonoBehaviour
 
     void Start() {
 
-        LoadMap(1);
+        LoadMap(2);
         BuildMap();
         Debug.Log(gameObject.GetInstanceID());
         bossStage = GetComponent<BossStage>();

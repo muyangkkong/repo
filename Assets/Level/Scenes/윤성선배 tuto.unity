@@ -1105,6 +1105,10 @@ PrefabInstance:
       propertyPath: instrument
       value: 
       objectReference: {fileID: -2727164753387646227, guid: 30ef2ee3d4bc53f44ae88baa7166080f, type: 3}
+    - target: {fileID: 2291667496676544143, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7595167547666835605, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -2088,6 +2092,7 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+
     - target: {fileID: 7633014883076792435, guid: a8679b6a70581eb4c83d63ca55fbb5ba, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -2111,6 +2116,7 @@ PrefabInstance:
     - target: {fileID: 7741048325889653267, guid: a8679b6a70581eb4c83d63ca55fbb5ba, type: 3}
       propertyPath: m_Color.r
       value: 1
+
       objectReference: {fileID: 0}
     - target: {fileID: 8967102634743741245, guid: a8679b6a70581eb4c83d63ca55fbb5ba, type: 3}
       propertyPath: m_Name
