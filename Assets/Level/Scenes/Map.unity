@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -738,6 +738,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 369132626}
     m_Modifications:
+    - target: {fileID: 3924850563824909937, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 195.0831
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924850563824909937, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 45.8635
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924850563824909937, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924850563824909937, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -33.8914
+      objectReference: {fileID: 0}
     - target: {fileID: 3924850563824909942, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -841,6 +857,22 @@ PrefabInstance:
     - target: {fileID: 3924850564542357539, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924850565703337499, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 216.2981
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924850565703337499, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 48.5197
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924850565703337499, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924850565703337499, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 56.7313
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
@@ -14447,6 +14479,10 @@ PrefabInstance:
     - target: {fileID: 8210966074256146660, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815926098748319593, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8843071342487149150, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_Name
