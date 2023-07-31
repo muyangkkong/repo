@@ -31,7 +31,18 @@ public class CharacterHP : MonoBehaviour
             audioSource.PlayOneShot(audioSource.clip);
         }
     }
-
+    public void getHeal(float damage)
+    {
+        if (currentHp + damage >= maxHp)
+        {
+            currentHp = maxHp;
+        }
+        else
+        {
+            currentHp += damage;
+        }
+        slider.value = currentHp;
+    }
     // Start is called before the first frame update
     void Start()
     {
