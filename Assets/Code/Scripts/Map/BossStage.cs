@@ -22,7 +22,7 @@ public class BossStage : MonoBehaviour
             if (stage == stageEnemySet.Length)
             {
 
-                StartCoroutine(LoadThanksSceneAfterDelay(1f));
+                StartCoroutine(LoadThanksSceneAfterDelay(2f));
                 return;
             }
             currentStageEnemySet = Instantiate<GameObject>(stageEnemySet[stage]);
