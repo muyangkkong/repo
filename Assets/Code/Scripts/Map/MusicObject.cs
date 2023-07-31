@@ -24,10 +24,11 @@ public class MusicObject : MonoBehaviour
     {
 
        
-        // Ãæµ¹ÇÑ °´Ã¼°¡ ÇÃ·¹ÀÌ¾îÀÎÁö È®ÀÎ
+        // ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         if (other.gameObject.tag == "Player")
         {
-            // ¼Ò¸® Àç»ý
+            // ï¿½Ò¸ï¿½ ï¿½ï¿½ï¿½
+            audioSource.volume = 0.5f;
             audioSource.Play();
             
            

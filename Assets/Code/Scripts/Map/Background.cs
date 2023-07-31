@@ -105,9 +105,9 @@ public class Background : MonoBehaviour
         {
             // 배경 음악 B를 재생
             audioSource.clip = backgroundMusicE;
-            audioSource.volume=0.6f;
+            audioSource.volume=0.3f;
         }
-         else if (n == 4)
+         else
         {
             // 배경 음악 B를 재생
             audioSource.clip = backgroundMusicF;
