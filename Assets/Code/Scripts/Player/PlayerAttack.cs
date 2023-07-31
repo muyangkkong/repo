@@ -23,9 +23,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        instrument = GetComponent<PlayerEquipment>().instrument;
-        instrument.Construct();
-        instrument.Init();
+        ChangeInstrument();
         timingBarManager = GameObject.Find("Timing Bar").GetComponent<TimingBarManager>();
 
         animator = GetComponent<Animator>();
@@ -142,5 +140,11 @@ public class PlayerAttack : MonoBehaviour
         float steppedInterval = ((int)(normalizedInterval * 10)) / 10f;
         float score = Mathf.Cos(steppedInterval * (Mathf.PI/3));
         return score * instrument.GetGuageMultiplier();
+    }
+
+    public void ChangeInstrument() {
+        instrument = GetComponent<PlayerEquipment>().instrument;
+        instrument.Construct();
+        instrument.Init();
     }
 }

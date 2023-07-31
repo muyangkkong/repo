@@ -8,9 +8,9 @@ public class PlayerEquipment : MonoBehaviour
     public GameObject righthand;
     public Instrument instrument;
     
-    public GameObject leftArmed;
-    public GameObject rightArmed;
-    public GameObject thumbnail;
+    GameObject leftArmed;
+    GameObject rightArmed;
+    GameObject thumbnail;
 
     void Start() {
         EquipInstrument();
@@ -35,5 +35,7 @@ public class PlayerEquipment : MonoBehaviour
 
         thumbnail = Instantiate(instrument.thumbnail);
         thumbnail.transform.SetParent(GameObject.Find("InstrumentInfo").transform, false);
+
+        gameObject.GetComponent<PlayerAttack>().ChangeInstrument();
     }
 }

@@ -12,6 +12,7 @@ public class GameOver : MonoBehaviour
     public static bool isOver = false;
 
      void Awake() {
+        isOver = false;
         go_BaseUI.SetActive(false);
         targetplayer = GameObject.Find("Player");
         hp = targetplayer.GetComponent<CharacterHP>();
@@ -55,7 +56,6 @@ public class GameOver : MonoBehaviour
         Background backgroundInstance = GameObject.FindObjectOfType<Background>();
         if (backgroundInstance != null)
             Destroy(backgroundInstance.gameObject);
-
         SceneManager.UnloadSceneAsync("Map");
         Destroy(MapManager.Instance.gameObject);
         SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
