@@ -56,6 +56,7 @@ public class tutotest1 : MonoBehaviour
     void Destroy(){
          if (Input.GetKeyDown(KeyCode.Return)){
             gameObject.SetActive(false);
+            explain.SetActive(false);
     }
 
     }
