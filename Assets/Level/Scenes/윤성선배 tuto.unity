@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 795019682530296574, guid: abbdbea9927621049848d5adf72f960c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1653873461654349433, guid: abbdbea9927621049848d5adf72f960c, type: 3}
       propertyPath: m_Name
@@ -236,15 +236,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1653873462944527125, guid: abbdbea9927621049848d5adf72f960c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1653873462944527125, guid: abbdbea9927621049848d5adf72f960c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1653873462944527125, guid: abbdbea9927621049848d5adf72f960c, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1653873463246537306, guid: abbdbea9927621049848d5adf72f960c, type: 3}
       propertyPath: m_Sprite
@@ -280,6 +280,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7639821021465839304, guid: abbdbea9927621049848d5adf72f960c, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852952938693376775, guid: abbdbea9927621049848d5adf72f960c, type: 3}
+      propertyPath: slots.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -538,7 +542,7 @@ PrefabInstance:
     - target: {fileID: 1941836975775101443, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: instrument
       value: 
-      objectReference: {fileID: 8879253659752185330, guid: 46a9019990c12bc40b557fd5f2c986fb, type: 3}
+      objectReference: {fileID: 8879253659752185330, guid: df066b6e818142a4290716e126af64cb, type: 3}
     - target: {fileID: 7595167547666835605, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -676,7 +680,7 @@ PrefabInstance:
     - target: {fileID: 1941836975775101443, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: instrument
       value: 
-      objectReference: {fileID: 1753299672169412472, guid: 6909b6698ce920b4a93618b19893ec50, type: 3}
+      objectReference: {fileID: 1753299672169412472, guid: 557febe490ebe034d9f052676555d873, type: 3}
     - target: {fileID: 7595167547666835605, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -1441,7 +1445,7 @@ PrefabInstance:
     - target: {fileID: 1941836975775101443, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: instrument
       value: 
-      objectReference: {fileID: -2727164753387646227, guid: 30ef2ee3d4bc53f44ae88baa7166080f, type: 3}
+      objectReference: {fileID: -2727164753387646227, guid: 3131c2439b1be0346a33e9a375b2f067, type: 3}
     - target: {fileID: 7595167547666835605, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -1891,7 +1895,7 @@ PrefabInstance:
     - target: {fileID: 1941836975775101443, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: instrument
       value: 
-      objectReference: {fileID: 8911349632589043026, guid: 3b53de1b892a28741bdf7aa051f56721, type: 3}
+      objectReference: {fileID: 8911349632589043026, guid: 3e51ccf9aba985a4d9a087a13c26ab93, type: 3}
     - target: {fileID: 7595167547666835605, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -2373,7 +2377,7 @@ PrefabInstance:
     - target: {fileID: 233031078, guid: a8679b6a70581eb4c83d63ca55fbb5ba, type: 3}
       propertyPath: block
       value: 
-      objectReference: {fileID: 1035000147}
+      objectReference: {fileID: 5919211966212942587, guid: e604b1eeef3a9ce43ac3bf668d0621c4, type: 3}
     - target: {fileID: 1854933258, guid: a8679b6a70581eb4c83d63ca55fbb5ba, type: 3}
       propertyPath: block
       value: 
