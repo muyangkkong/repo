@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4591078341771505634}
   - component: {fileID: 4307362944192907543}
-  - component: {fileID: -2682086616164437458}
   - component: {fileID: 5387342943370642325}
+  - component: {fileID: 589683367860741123}
   m_Layer: 0
   m_Name: Green_potion
   m_TagString: relics
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2682086616164437458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5386889165333173098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebcf7037c33439743abc7b4fcc7deb60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &5387342943370642325
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,3 +99,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.24, y: 10.24, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &589683367860741123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5386889165333173098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebcf7037c33439743abc7b4fcc7deb60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

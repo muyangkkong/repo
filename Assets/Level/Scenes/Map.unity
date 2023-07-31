@@ -16925,6 +16925,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2978492929408250858, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
+      propertyPath: tiles.Array.size
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978492929408250858, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
+      propertyPath: tiles.Array.data[31]
+      value: 
+      objectReference: {fileID: 6552111766781921416, guid: 5a503966396300745b1827efcd372625, type: 3}
+    - target: {fileID: 2978492929408250858, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
+      propertyPath: tiles.Array.data[32]
+      value: 
+      objectReference: {fileID: 5386889165333173098, guid: ad7573d27f369ec45b5a88eefc0b85e4, type: 3}
     - target: {fileID: 2978492929408250859, guid: ebaf9268bc9103447beb8efd041ed639, type: 3}
       propertyPath: m_RootOrder
       value: 2
