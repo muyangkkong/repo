@@ -67,8 +67,11 @@ public class MapManager : MonoBehaviour
     
 
     public void LoadMap(int id) {
-        FileStream fs = new FileStream("Assets\\Map\\"+id, FileMode.Open, FileAccess.Read);
-        StreamReader sr = new StreamReader(fs);
+
+        //FileStream fs = new FileStream(Resources.Load("Map\\"+id) as TextAsset, FileMode.Open, FileAccess.Read);
+        TextAsset asset = Resources.Load("Map\\"+id) as TextAsset;
+        Stream st = new MemoryStream(asset.bytes);
+        StreamReader sr = new StreamReader(st);
 
         string[] s = sr.ReadLine().Split(" ", System.StringSplitOptions.None);
         if(s.Length != 2) {
@@ -93,7 +96,7 @@ public class MapManager : MonoBehaviour
         }
 
         sr.Close();
-        fs.Close();
+        st.Close();
     }
     
     public void BuildMap() {
