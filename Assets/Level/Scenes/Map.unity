@@ -738,6 +738,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 369132626}
     m_Modifications:
+    - target: {fileID: 3924850563824909942, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1000440194}
+    - target: {fileID: 3924850563824909942, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickExit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924850563824909942, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameOver, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3924850564542357536, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -825,6 +837,10 @@ PrefabInstance:
     - target: {fileID: 3924850564542357539, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
       propertyPath: m_Name
       value: Gameover Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924850564542357539, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
@@ -7607,6 +7623,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3924850564542357536, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
   m_PrefabInstance: {fileID: 77430084}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1000440194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1952711607, guid: ea2586a763ec6324cab32865a3fc6762, type: 3}
+  m_PrefabInstance: {fileID: 77430084}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45b1eb1e73d10a46b774d0f8fc1db1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1003322673
 GameObject:
   m_ObjectHideFlags: 0
@@ -8322,8 +8349,36 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e9168cb6eb139fa4492f5850e3094df8, type: 3}
+    - target: {fileID: 1716338320927272859, guid: abbdbea9927621049848d5adf72f960c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442212134165908403, guid: abbdbea9927621049848d5adf72f960c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848174152368356999, guid: abbdbea9927621049848d5adf72f960c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423900468910891075, guid: abbdbea9927621049848d5adf72f960c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984045838494856555, guid: abbdbea9927621049848d5adf72f960c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7016490633120643410, guid: abbdbea9927621049848d5adf72f960c, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504969590955172814, guid: abbdbea9927621049848d5adf72f960c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639821021465839304, guid: abbdbea9927621049848d5adf72f960c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -14333,6 +14388,10 @@ PrefabInstance:
       propertyPath: instrument
       value: 
       objectReference: {fileID: -2727164753387646227, guid: 30ef2ee3d4bc53f44ae88baa7166080f, type: 3}
+    - target: {fileID: 2291667496676544143, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2291667496676544143, guid: 5e934e11a3d08774fbf1e48f4b1e9204, type: 3}
       propertyPath: slider
       value: 

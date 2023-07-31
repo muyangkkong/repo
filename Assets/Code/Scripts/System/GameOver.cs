@@ -9,7 +9,7 @@ public class GameOver : MonoBehaviour
     [SerializeField] public GameObject go_BaseUI; // 일시 정지 UI 패널
     GameObject targetplayer;
     CharacterHP hp;
-    public static bool isOver;
+    public static bool isOver = false;
 
      void Awake() {
         go_BaseUI.SetActive(false);
@@ -21,10 +21,13 @@ public class GameOver : MonoBehaviour
 
     void Update()
     {
-        if (hp.currentHp <= 0)
+        if (!isOver)
         {
-           
-            CallMenu();
+            if (hp.currentHp <= 0)
+            {
+                isOver= true;
+                CallMenu();
+            }
         }
     }
 
@@ -41,10 +44,20 @@ public class GameOver : MonoBehaviour
 
     public void OnClickExit()
     {
+        /*
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #else
         Application.Quit();
         #endif
+        */
+        Time.timeScale = 1f;
+        Background backgroundInstance = GameObject.FindObjectOfType<Background>();
+        if (backgroundInstance != null)
+            Destroy(backgroundInstance.gameObject);
+
+        SceneManager.UnloadSceneAsync("Map");
+        Destroy(MapManager.Instance.gameObject);
+        SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
     }
 }
