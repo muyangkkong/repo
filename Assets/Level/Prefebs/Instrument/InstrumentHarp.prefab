@@ -67,4 +67,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dd399f4abbf81f8409373f80f430152b, type: 3}
   - {fileID: 8300000, guid: e718fd84cb506fd4fb3640eac728c0d5, type: 3}
   miss: {fileID: 8300000, guid: eb3a2ccfa09adc24fae0673f2e55d3ab, type: 3}
+  ultimateClip: {fileID: 8300000, guid: fcb7fa5f2d807794fbac495a3a98f5ee, type: 3}
   projectileU: {fileID: 5764672803649153873, guid: ab611bc6172e50e4d9cfe8759a21a674, type: 3}

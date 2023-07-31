@@ -66,3 +66,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1f5688e908746e2488973c967f809fdf, type: 3}
   - {fileID: 8300000, guid: d05a4b6270bc5e4468f7b9bc26bfc2f9, type: 3}
   miss: {fileID: 8300000, guid: 2be78099c62358340974be039b945bf6, type: 3}
+  ultimateClip: {fileID: 8300000, guid: 88d4cd5145fb09942a3f4ed36e44b647, type: 3}

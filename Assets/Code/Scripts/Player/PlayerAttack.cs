@@ -20,6 +20,7 @@ public class PlayerAttack : MonoBehaviour
     public float power;
 
     AudioSource audioSource;
+    AudioSource ultAudioSource;
 
     void Start()
     {
@@ -34,6 +35,10 @@ public class PlayerAttack : MonoBehaviour
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        if (ultAudioSource == null)
+        {
+            ultAudioSource = gameObject.AddComponent<AudioSource>();
         }
     }
 
@@ -82,6 +87,8 @@ public class PlayerAttack : MonoBehaviour
         if(!animator.GetCurrentAnimatorStateInfo(0).IsTag("Attackable")) return;
         if(Input.GetKeyDown(KeyCode.V)) {
             if(!UltimateGuageManager.Instance.CheckFull()) return;
+            ultAudioSource.clip = instrument.ultimateClip;
+            ultAudioSource.Play();
             animatorOverrideController["Attack"] = instrument.ultimateAnimationClip;
             animator.runtimeAnimatorController = animatorOverrideController;
             StartCoroutine(instrument.ultimate.Attack(transform.position, GetComponent<PlayerMovement>().direction, power, 0));
