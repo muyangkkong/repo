@@ -172,6 +172,7 @@ public class Enemy : MonoBehaviour
         if (audiosource != null && hitsound != null)
         {
             audiosource.pitch = 5f;
+            audiosource.volume = 0.5f;
             audiosource.PlayOneShot(hitsound);
         }
     }
