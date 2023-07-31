@@ -58,6 +58,11 @@ public class MapManager : MonoBehaviour
         Debug.Log(gameObject.GetInstanceID());
         bossStage = GetComponent<BossStage>();
         bossStage.enabled = false;
+
+        PlayerEquipment playerEquipment = GameObject.FindWithTag("Player").GetComponent<PlayerEquipment>();
+        if(SelectDiliver.Instance?.Select != null)
+            playerEquipment.instrument = SelectDiliver.Instance.Select;
+        playerEquipment.EquipInstrument();
     }
     
 

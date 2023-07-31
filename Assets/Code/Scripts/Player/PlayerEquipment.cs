@@ -8,6 +8,10 @@ public class PlayerEquipment : MonoBehaviour
     public GameObject righthand;
     public Instrument instrument;
     
+    public GameObject leftArmed;
+    public GameObject rightArmed;
+    public GameObject thumbnail;
+
     void Start() {
         EquipInstrument();
     }
@@ -15,12 +19,21 @@ public class PlayerEquipment : MonoBehaviour
     void Update() {
     }
 
-    void EquipInstrument() {
-        if(instrument.leftArmed != null)
-            Instantiate(instrument.leftArmed).transform.SetParent(lefthand.transform, false);
-        if(instrument.rightArmed != null)
-            Instantiate(instrument.rightArmed).transform.SetParent(righthand.transform, false);
+    public void EquipInstrument() {
+        Destroy(leftArmed);
+        Destroy(rightArmed);
+        Destroy(thumbnail);
 
-        Instantiate(instrument.thumbnail).transform.SetParent(GameObject.Find("InstrumentInfo").transform, false);
+        if(instrument.leftArmed != null) {
+            leftArmed = Instantiate(instrument.leftArmed);
+            leftArmed.transform.SetParent(lefthand.transform, false);
+        }
+        if(instrument.rightArmed != null) {
+            rightArmed = Instantiate(instrument.rightArmed);
+            rightArmed.transform.SetParent(righthand.transform, false);
+        }
+
+        thumbnail = Instantiate(instrument.thumbnail);
+        thumbnail.transform.SetParent(GameObject.Find("InstrumentInfo").transform, false);
     }
 }
