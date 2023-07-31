@@ -19,6 +19,8 @@ public class PlayerAttack : MonoBehaviour
 
     public float power;
 
+    AudioSource audioSource;
+
     void Start()
     {
         instrument = GetComponent<PlayerEquipment>().instrument;
@@ -30,6 +32,11 @@ public class PlayerAttack : MonoBehaviour
 
         animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
         animator.runtimeAnimatorController = animatorOverrideController;
+
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -54,6 +61,7 @@ public class PlayerAttack : MonoBehaviour
         int timeIndex = getTimeIndex();
         float timeInterval = getTimeInterval();
         if(timeInterval > maxAcceptInterval || !CheckValidIndex(timeIndex, attackInput-1)) {
+            RunSound(instrument.miss);
             StartCoroutine(MissAttack());
             return;
         }
@@ -64,7 +72,7 @@ public class PlayerAttack : MonoBehaviour
 
         OverrideAnimator();
         animator.SetTrigger("Attack");
-
+        RunSound(instrument.audioClips[Random.Range(0, instrument.audioClips.Length)]);
         timingBarManager.TimerStart();
         
         float yieldGuage = YieldUltimateGuage(timeInterval);
@@ -110,6 +118,10 @@ public class PlayerAttack : MonoBehaviour
         if(currentAttackInfo.children[timeIndex,attackType] == 0) return false;
 
         return true;
+    }
+
+    void RunSound(AudioClip clip) {
+        audioSource.PlayOneShot(clip);
     }
 
     IEnumerator MissAttack() {

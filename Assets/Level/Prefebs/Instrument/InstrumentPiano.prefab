@@ -60,3 +60,9 @@ MonoBehaviour:
   ultimateAnimationClip: {fileID: 7400000, guid: 56796018ba27d9d43b0a5269494fad41, type: 2}
   projectile: {fileID: 0}
   projectileP: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 37a84d505a5e88b4da789e3dac429008, type: 3}
+  - {fileID: 8300000, guid: 4b36dbb100f47fb448eebe13755ae93f, type: 3}
+  - {fileID: 8300000, guid: f52bfffb9563b7547b95e4bffdaaa21b, type: 3}
+  - {fileID: 8300000, guid: 8a296e1e27503ca4aa882cc871ec9fc6, type: 3}
+  miss: {fileID: 8300000, guid: 42f5c8306c114ed4392030b482eb75df, type: 3}

@@ -25,6 +25,9 @@ public abstract class Instrument : MonoBehaviour
 
     public Ultimate ultimate;
 
+    public AudioClip[] audioClips;
+    public AudioClip miss;
+
     public abstract void Construct();
     public abstract void Init();
     
