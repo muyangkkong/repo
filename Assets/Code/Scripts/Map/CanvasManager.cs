@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.WSA;
+using UnityEngine.XR.WSA;
 
 public class CanvasManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject[] uiObject; // 활성화 또는 비활성화할 UI 오브젝트
+    public GameObject[] uiObject;
     GameObject targetplayer;
     PlayerMovement move;
      void Awake()
@@ -15,7 +15,6 @@ public class CanvasManager : MonoBehaviour
         targetplayer = GameObject.Find("Player");
         move = targetplayer.GetComponent<PlayerMovement>();
     }
-    // UI를 활성화하는 함수
 
     IEnumerator ActivateAndDeactivateUI()
     {
@@ -33,12 +32,6 @@ public class CanvasManager : MonoBehaviour
         move.speed = 10.0f;
 
     }
-
-    // 코루틴 실행을 시작하는 함수
-  
-
-
-
 
     void Start()
     {
