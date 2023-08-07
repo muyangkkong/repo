@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcf7037c33439743abc7b4fcc7deb60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 8400
+  Message: ooooooooooo
+  objectprice: 6666
 --- !u!65 &-342123519161300724
 BoxCollider:
   m_ObjectHideFlags: 0

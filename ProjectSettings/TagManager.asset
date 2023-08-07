@@ -13,6 +13,10 @@ TagManager:
   - Instrumnet
   - relics
   - text
+  - Trumpet
+  - Harp
+  - Piano
+  - Violin
   layers:
   - Default
   - TransparentFX

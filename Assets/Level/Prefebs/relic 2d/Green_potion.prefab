@@ -111,3 +111,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcf7037c33439743abc7b4fcc7deb60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Message: yyyyyyyyy
+  objectprice: 4444

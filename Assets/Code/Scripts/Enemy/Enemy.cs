@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public enum State {
@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour
     Material material;
     public Color baseColor = Color.white;
     public Color hitColor = Color.black;
+    public int enemycoin;
 
     void Awake() {
         rigid = GetComponent<Rigidbody>();
@@ -216,6 +217,9 @@ public class Enemy : MonoBehaviour
     }
 
     public virtual void Die() {
+        Text texttotalcoin=GameObject.Find("textcoin").GetComponent<Text>();
+        string b=texttotalcoin.text;
+        texttotalcoin.text=(int.Parse(b)+enemycoin).ToString();
         animator.SetTrigger("Die");
     }
 }

@@ -108,9 +108,11 @@ MonoBehaviour:
   _moveTo: 0
   direction: -1
   maxHp: 30
+  AttackDamage: 10
   hitsound: {fileID: 8300000, guid: 993b90169f855274fb07391bf42773f5, type: 3}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   hitColor: {r: 0, g: 0, b: 0, a: 1}
+  enemycoin: 12121
   projectileObject: {fileID: 885739400119816328, guid: 5ffac89fa91a1fe45a45589f9e512e0f, type: 3}
 --- !u!1 &1031116293708201081
 GameObject:
