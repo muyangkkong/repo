@@ -18,7 +18,6 @@ public class test : MonoBehaviour
     void Start()
     {
         
-        objectData = ScriptableObject.CreateInstance<Relic>();
     }
 
     // Update is called once per frame

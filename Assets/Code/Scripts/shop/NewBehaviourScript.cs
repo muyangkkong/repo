@@ -11,43 +11,40 @@ public class NewBehaviourScript : MonoBehaviour
    
     
     
-     GameObject[] relics;
-    GameObject[] music_note;
-    
-    // Start is called before the first frame update
+    public GameObject[] relics;
+    public GameObject[] music_note;
     
     public void St()
     { 
-
         GameObject[] relics= Resources.LoadAll<GameObject>("relic2d/");
         GameObject[] music_note= Resources.LoadAll<GameObject>("score/");
+
         Rito.Demo.Test_WRandomPick testrandom = GetComponent<Rito.Demo.Test_WRandomPick>();
         Rito.Demo.Test_WRandomPick1 testrandom1 = GetComponent<Rito.Demo.Test_WRandomPick1>();
         
         testrandom.relics_random=new List<string>();
         testrandom1.relics_random=new List<string>();
-        Debug.Log("됨1");
+        
         testrandom.Test();
         testrandom1.Test();
-        Debug.Log("됨2");
+        
         foreach (GameObject j in relics){
             
             
             if(j.name==testrandom.relics_random[0]){
+                Debug.Log(testrandom.relics_random[0]);
                 GameObject instantiatedrelics = Instantiate(j);
                 instantiatedrelics.transform.position=new Vector3(7,15,0);
-                
-                
             }
             else if (j.name==testrandom.relics_random[1]){
+                Debug.Log(testrandom.relics_random[1]);
                 GameObject instantiatedrelics = Instantiate(j);
                 instantiatedrelics.transform.position=new Vector3(17,10,0);
-                
             }
             else if (j.name==testrandom.relics_random[2]){
+                Debug.Log(testrandom.relics_random[2]);
                 GameObject instantiatedrelics = Instantiate(j);
                 instantiatedrelics.transform.position=new Vector3(26,15,0);
-                
             }
             else if (j.name =="Red_potion"){
                 GameObject instantiatedrelics = Instantiate(j);
@@ -84,53 +81,9 @@ public class NewBehaviourScript : MonoBehaviour
 
     
     
-    public void Transforming(){
-        
-        foreach (GameObject j in relics){
-            
-            
-            if(j.name==testrandom.relics_random[0]){
-                GameObject instantiatedrelics = Instantiate(j);
-                instantiatedrelics.transform.position=new Vector3(7,15,0);
-                
-                
-            }
-            else if (j.name==testrandom.relics_random[1]){
-                GameObject instantiatedrelics = Instantiate(j);
-                instantiatedrelics.transform.position=new Vector3(17,10,0);
-                
-            }
-            else if (j.name==testrandom.relics_random[2]){
-                GameObject instantiatedrelics = Instantiate(j);
-                instantiatedrelics.transform.position=new Vector3(26,15,0);
-                
-            }
-            else if (j.name =="Red_potion"){
-                GameObject instantiatedrelics = Instantiate(j);
-                instantiatedrelics.transform.position=new Vector3(26,7,0);
-            }
-            else if (j.name =="Green_potion"){
-                GameObject instantiatedrelics = Instantiate(j);
-                instantiatedrelics.transform.position=new Vector3(8,7,0);
-            }
-            
-            
-        }
+    
     
        
     }
-    public void Transforming_music(){
-        foreach (GameObject j in music_note){
-            if(j.name==testrandom1.relics_random[0]){
-                GameObject instantiatedrelics = Instantiate(j);
-                instantiatedrelics.transform.position=new Vector3(36,13,0);
-             }
-        }
-        foreach (GameObject j in music_note){
-            if(j.name==testrandom1.relics_random[1]){
-                GameObject instantiatedrelics = Instantiate(j);
-                instantiatedrelics.transform.position=new Vector3(39,8,0);
-             }
-        }
-    }
-}
+   
+

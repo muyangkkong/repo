@@ -21,7 +21,7 @@ public class Teleport_Map2 : MonoBehaviour
         can = maincan.GetComponent<CanvasManager>();
         targetplayer = GameObject.Find("Player");
         move = targetplayer.GetComponent<PlayerMovement>();
-        PlayerPrefs.SetInt("time",0);
+        
 
     }
 
@@ -38,6 +38,7 @@ public class Teleport_Map2 : MonoBehaviour
 
             can.Setting();
             move.speed = 0f;
+            
             MapManager.Instance.DestroyMap();
             MapManager.Instance.LoadMap(2);
             MapManager.Instance.BuildMap();

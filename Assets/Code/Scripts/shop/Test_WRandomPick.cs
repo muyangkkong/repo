@@ -29,7 +29,7 @@ namespace Rito.Demo
                 
 
                 ("4clover", 20),
-                ("100_score", 20),
+                ("100_Score", 20),
                 ("Clock",20)
             );
 

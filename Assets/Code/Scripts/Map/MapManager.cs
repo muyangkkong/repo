@@ -14,6 +14,7 @@ public class MapManager : MonoBehaviour
     int[,] mapData;
     private static MapManager instance = null;
     BossStage bossStage;
+    NewBehaviourScript Base;
 
     void Awake()
     {
@@ -54,15 +55,16 @@ public class MapManager : MonoBehaviour
     void Start() {
 
         LoadMap(1);
+        PlayerPrefs.SetInt("time",0);
         BuildMap();
         Debug.Log(gameObject.GetInstanceID());
         bossStage = GetComponent<BossStage>();
         bossStage.enabled = false;
-
         PlayerEquipment playerEquipment = GameObject.FindWithTag("Player").GetComponent<PlayerEquipment>();
         if(SelectDiliver.Instance?.Select != null)
             playerEquipment.instrument = SelectDiliver.Instance.Select;
         playerEquipment.EquipInstrument();
+        
     }
     
 
@@ -121,6 +123,20 @@ public class MapManager : MonoBehaviour
 
     public void DestroyMap() {
         Transform[] childList = GetComponentsInChildren<Transform>();
+        GameObject[] all1=GameObject.FindGameObjectsWithTag("relics");
+        GameObject[] all2=GameObject.FindGameObjectsWithTag("teleport");
+        GameObject[] all3=GameObject.FindGameObjectsWithTag("note");
+        for (int i=0;i<all1.Length;i++){
+            Destroy(all1[i]);
+        }
+        for (int i=0;i<all2.Length;i++){
+            Destroy(all2[i]);
+        }
+        
+        for (int i=0;i<all3.Length;i++){
+            Destroy(all3[i]);
+        }
+        
         Debug.Log("destroy\n");
         if(childList != null){
             Debug.Log("Children is not Null");
@@ -128,6 +144,7 @@ public class MapManager : MonoBehaviour
                 if(childList[i] != transform) Destroy(childList[i].gameObject);
             }
         }
+        
     }
 
     public void BossStageStart() {

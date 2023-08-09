@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3466934552229126944}
   m_Layer: 0
   m_Name: "note(\uD76C\uADC0)\uD2B8\uB7FC\uD3AB"
-  m_TagString: Trumpet
+  m_TagString: note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,3 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Message: ddddddd
+  objectprice: 0

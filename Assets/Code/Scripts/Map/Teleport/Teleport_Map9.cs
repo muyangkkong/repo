@@ -19,7 +19,7 @@ public class Teleport_Map9 : MonoBehaviour
         can = maincan.GetComponent<CanvasManager>();
         targetplayer = GameObject.Find("Player");
         move = targetplayer.GetComponent<PlayerMovement>();
-        PlayerPrefs.SetInt("time",9);
+        
 
     }
 
@@ -44,7 +44,7 @@ public class Teleport_Map9 : MonoBehaviour
             Minimap.Instance.Init();
             cam.limitMaxX = 99.5f;
             cam.limitMaxY = 21f;
-            
+            PlayerPrefs.SetInt("time",9);
             //Debug.Log(map.gameObject.GetInstanceID());
         }
 

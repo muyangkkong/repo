@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -582726938361589746}
   m_Layer: 9
   m_Name: 20_Build10
-  m_TagString: Untagged
+  m_TagString: teleport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

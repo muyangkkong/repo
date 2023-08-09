@@ -11,6 +11,8 @@ public class Teleport_Map7 : MonoBehaviour
     GameObject targetplayer;
     PlayerMovement move;
     NewBehaviourScript Base;
+    public int time;
+    MapManager managing;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class Teleport_Map7 : MonoBehaviour
         targetplayer = GameObject.Find("Player");
         move = targetplayer.GetComponent<PlayerMovement>();
         Base=GameObject.Find("Canvas").GetComponent<NewBehaviourScript>();
+        managing=GameObject.Find("MapManager").GetComponent<MapManager>();
     }
 
     // Update is called once per frame
@@ -47,8 +50,11 @@ public class Teleport_Map7 : MonoBehaviour
             cam.limitMaxX = 49.5f;
             cam.limitMaxY = 21f;
             Base.St();
-            
+            time=PlayerPrefs.GetInt("time");
+            Debug.Log("time"+time);
+            Instantiate(managing.tiles[9+time],new Vector3(49,4,0),Quaternion.identity);
             //Debug.Log(map.gameObject.GetInstanceID());
+            PlayerPrefs.SetInt("time",0);
         }
 
     }

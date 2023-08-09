@@ -19,7 +19,7 @@ public class Teleport_Map10 : MonoBehaviour
         can = maincan.GetComponent<CanvasManager>();
         targetplayer = GameObject.Find("Player");
         move = targetplayer.GetComponent<PlayerMovement>();
-        PlayerPrefs.SetInt("time",10);
+        
 
     }
 
@@ -46,6 +46,7 @@ public class Teleport_Map10 : MonoBehaviour
             can.Activate();
             cam.limitMaxX = 99.5f;
             cam.limitMaxY = 21f;
+            PlayerPrefs.SetInt("time",10);
             //Debug.Log(map.gameObject.GetInstanceID());
         }
 
