@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5172777931285681062}
   - component: {fileID: 2027120102241553428}
   - component: {fileID: -7654495909156428887}
+  - component: {fileID: 2462974049282238454}
   m_Layer: 0
   m_Name: Red_potion
   m_TagString: relics
@@ -113,3 +114,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Message: pppppppppppp
   objectprice: 7777
+--- !u!114 &2462974049282238454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6552111766781921416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab812615166b8844b212e5268de53af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 0}

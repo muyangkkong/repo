@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3546671526510742881}
   - component: {fileID: -7871262347712118973}
   - component: {fileID: -9005103235807469260}
+  - component: {fileID: 5359772710006942025}
   m_Layer: 0
   m_Name: 100_Score
   m_TagString: relics
@@ -113,3 +114,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 44.66491, y: 41.977776, z: 0.2}
   m_Center: {x: -1.7582934, y: -1.555772, z: 0}
+--- !u!114 &5359772710006942025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6317858307059584590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab812615166b8844b212e5268de53af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 11400000, guid: 5b1bd21026451df46bef6dd95dc74d52, type: 2}

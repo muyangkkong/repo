@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2502502524191672762}
   - component: {fileID: 2311525975111552288}
   - component: {fileID: 5778900990202391662}
+  - component: {fileID: -2754174301960979631}
   m_Layer: 0
   m_Name: Heart
   m_TagString: relics
@@ -113,3 +114,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 18.246971, y: 15.564725, z: 0.36894262}
   m_Center: {x: 0.277492, y: 0.9407346, z: 0.084471315}
+--- !u!114 &-2754174301960979631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2502502524191672773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab812615166b8844b212e5268de53af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 11400000, guid: ed76394cf28b7d344aef0d6cd2ebd243, type: 2}

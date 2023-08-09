@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4868397327245891373}
   - component: {fileID: -5179763986228364111}
   - component: {fileID: -2953341173353177668}
+  - component: {fileID: 2012512139621070679}
   m_Layer: 0
   m_Name: Clock
   m_TagString: relics
@@ -113,3 +114,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 18.807673, y: 15.1635065, z: 0.2}
   m_Center: {x: -0.88833827, y: 0.15002862, z: 0}
+--- !u!114 &2012512139621070679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868397327245891372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab812615166b8844b212e5268de53af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 11400000, guid: fd4d263acce487f4db41f2b45a64627e, type: 2}

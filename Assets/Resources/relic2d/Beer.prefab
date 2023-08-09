@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8471487444813683258}
   - component: {fileID: -2085530220391568485}
   - component: {fileID: -5237236599191787514}
+  - component: {fileID: 4526491398455558413}
   m_Layer: 0
   m_Name: Beer
   m_TagString: relics
@@ -113,3 +114,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.396683, y: 13.765472, z: 0.2}
   m_Center: {x: -1.0783434, y: -0.34996033, z: 0}
+--- !u!114 &4526491398455558413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141388898878151657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab812615166b8844b212e5268de53af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 11400000, guid: 9bf82a3f61c20ec41a043af4af47e176, type: 2}

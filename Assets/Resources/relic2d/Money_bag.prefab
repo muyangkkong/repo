@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6718537742366193902}
   - component: {fileID: 5184638339598049385}
   - component: {fileID: -342123519161300724}
+  - component: {fileID: -197984326228910868}
   m_Layer: 0
   m_Name: Money_bag
   m_TagString: relics
@@ -113,3 +114,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 14.074076, y: 15.507838, z: 0.2}
   m_Center: {x: -0.20075831, y: -0.58385587, z: 0}
+--- !u!114 &-197984326228910868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718537742366193901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab812615166b8844b212e5268de53af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 11400000, guid: a9314aad840b98e499d97d7c1175367c, type: 2}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6089990136152882008}
   - component: {fileID: -4597083605384584290}
   - component: {fileID: -6910551435145505569}
+  - component: {fileID: -4532315912559586683}
   m_Layer: 0
   m_Name: 4clover
   m_TagString: relics
@@ -113,3 +114,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 19.450182, y: 19.791372, z: 0.2}
   m_Center: {x: -1.6570771, y: -0.22137563, z: 0}
+--- !u!114 &-4532315912559586683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841879421173181033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab812615166b8844b212e5268de53af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 11400000, guid: 11edfc15d83628b4290f926b4e4cdfd4, type: 2}

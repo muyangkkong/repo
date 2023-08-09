@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 799148711242351073}
   - component: {fileID: 2645046121748691084}
   m_Layer: 0
-  m_Name: "note(\uD2B9\uC218)\uD2B8\uB7FC\uD33B2"
+  m_Name: "note(\uD2B9\uC218)\uD2B8\uB7FC\uD3AB2"
   m_TagString: note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

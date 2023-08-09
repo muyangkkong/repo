@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5172777931285681062}
   - component: {fileID: 2027120102241553428}
   - component: {fileID: -3957903953353288044}
+  - component: {fileID: 7785239732262414695}
   m_Layer: 0
   m_Name: Red_potion big
   m_TagString: relics
@@ -111,3 +112,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1182aa70437be4280e64e344a6f3e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7785239732262414695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6552111766781921416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab812615166b8844b212e5268de53af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 0}
