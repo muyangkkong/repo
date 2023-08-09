@@ -19,6 +19,8 @@ public class Teleport_Map3 : MonoBehaviour
         can = maincan.GetComponent<CanvasManager>();
         targetplayer = GameObject.Find("Player");
         move = targetplayer.GetComponent<PlayerMovement>();
+        PlayerPrefs.SetInt("time",3);
+
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class Teleport_Map3 : MonoBehaviour
             cam.limitMaxX = 99.5f;
             cam.limitMaxY = 100f;
             //Debug.Log(map.gameObject.GetInstanceID());
+            
         }
 
     }

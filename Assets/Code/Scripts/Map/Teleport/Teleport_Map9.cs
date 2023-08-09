@@ -19,6 +19,8 @@ public class Teleport_Map9 : MonoBehaviour
         can = maincan.GetComponent<CanvasManager>();
         targetplayer = GameObject.Find("Player");
         move = targetplayer.GetComponent<PlayerMovement>();
+        PlayerPrefs.SetInt("time",9);
+
     }
 
     // Update is called once per frame

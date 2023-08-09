@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Teleport_Map2 : MonoBehaviour
 {
+    
+    
     GameObject maincam;
     MainCamera cam;
     GameObject maincan;
@@ -19,6 +21,7 @@ public class Teleport_Map2 : MonoBehaviour
         can = maincan.GetComponent<CanvasManager>();
         targetplayer = GameObject.Find("Player");
         move = targetplayer.GetComponent<PlayerMovement>();
+        PlayerPrefs.SetInt("time",0);
 
     }
 
@@ -47,6 +50,8 @@ public class Teleport_Map2 : MonoBehaviour
             cam.limitMaxY = 21f;
             //move.speed = 10.0f;
             //Debug.Log(map.gameObject.GetInstanceID());
+             PlayerPrefs.SetInt("time",2);
+            
         }
 
     }

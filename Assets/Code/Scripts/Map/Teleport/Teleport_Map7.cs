@@ -10,6 +10,7 @@ public class Teleport_Map7 : MonoBehaviour
     CanvasManager can;
     GameObject targetplayer;
     PlayerMovement move;
+    NewBehaviourScript Base;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class Teleport_Map7 : MonoBehaviour
         can = maincan.GetComponent<CanvasManager>();
         targetplayer = GameObject.Find("Player");
         move = targetplayer.GetComponent<PlayerMovement>();
+        Base=GameObject.Find("Canvas").GetComponent<NewBehaviourScript>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,8 @@ public class Teleport_Map7 : MonoBehaviour
             can.Activate();
             cam.limitMaxX = 49.5f;
             cam.limitMaxY = 21f;
+            Base.St();
+            
             //Debug.Log(map.gameObject.GetInstanceID());
         }
 

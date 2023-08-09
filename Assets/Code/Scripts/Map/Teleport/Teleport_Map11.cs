@@ -12,13 +12,15 @@ public class Teleport_Map11 : MonoBehaviour
     PlayerMovement move;
     // Start is called before the first frame update
     void Start()
-    {
+    {PlayerPrefs.SetInt("time",0);
         maincam = GameObject.Find("Main Camera");
         cam = maincam.GetComponent<MainCamera>();
         maincan = GameObject.Find("Canvas");
         can = maincan.GetComponent<CanvasManager>();
         targetplayer = GameObject.Find("Player");
         move = targetplayer.GetComponent<PlayerMovement>();
+        
+
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class Teleport_Map11 : MonoBehaviour
             cam.limitMaxX = 49.5f;
             cam.limitMaxY = 21f;
             MapManager.Instance.BossStageStart();
+            PlayerPrefs.SetInt("time",11);
             //Debug.Log(map.gameObject.GetInstanceID());
         }
 

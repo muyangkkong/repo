@@ -123,7 +123,7 @@ public class Minimap : MonoBehaviour
                         else if (newarray[m,n]==-1) {
                             cell.color=Color.red;
                         }
-                        else if (newarray[m, n] == 9 || newarray[m, n] == 10 || newarray[m, n] ==11 || newarray[m, n] == 12 || newarray[m, n] == 13 || newarray[m, n] == 14 || newarray[m, n] == 15 )
+                        else if (newarray[m, n] == 9 || newarray[m, n] == 10 || newarray[m, n] ==11 || newarray[m, n] == 12 || newarray[m, n] == 13 || newarray[m, n] == 14 || newarray[m, n] == 15 || newarray[m, n] == 32)
                          {
                     cell.color = Color.cyan ;
                          }

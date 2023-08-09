@@ -17,6 +17,8 @@ public class MapManager1 : MonoBehaviour
     void Start() {
         LoadMap();
         BuildMap();
+        
+
     }
     
 
@@ -49,6 +51,10 @@ public class MapManager1 : MonoBehaviour
 
         sr.Close();
         st.Close();
+        int loadint=PlayerPrefs.GetInt("time");
+        Debug.Log(loadint);
+        GameObject convert=Instantiate(tiles[7+loadint],transform.position,transform.rotation);
+        convert.transform.position=new Vector3(48,3,0);
     }
     
     public void BuildMap() {

@@ -28,6 +28,7 @@ public class CanvasManager : MonoBehaviour
         uiObject[2].SetActive(true);
         uiObject[3].SetActive(true);
         uiObject[4].SetActive(true);
+        uiObject[5].SetActive(true);
         yield return new WaitForSeconds(0.3f);
         move.speed = 10.0f;
 
@@ -40,6 +41,7 @@ public class CanvasManager : MonoBehaviour
         uiObject[2].SetActive(true);
         uiObject[3].SetActive(true);
         uiObject[4].SetActive(true);
+        uiObject[5].SetActive(true);
     }
     public void Activate()
     {
@@ -53,6 +55,7 @@ public class CanvasManager : MonoBehaviour
         uiObject[2].SetActive(false);
         uiObject[3].SetActive(false);
         uiObject[4].SetActive(false);
+        uiObject[5].SetActive(false);
         move.speed = 0f;
     }
     // Update is called once per frame
